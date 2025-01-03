@@ -1,4 +1,4 @@
-const Product = require("../../models/product.model");
+const Product = require("../models/product.model");
 const asyncHandler = require("express-async-handler");
 const slugify = require("slugify");
 
@@ -54,8 +54,13 @@ const getProducts = asyncHandler(async (req, res) => {
   }
 
   // Pagination
+  // limit: số object lấy về 1 gọi API
+  // skip: 2
+  // 1 2 3 .... 10
+  // +2 =>  2
+  // +dsdsad => NaN
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
+  const limit = parseInt(req.query.limit) || process.env.LIMIT_PRODUCTS;
   const skip = (page - 1) * limit;
   queryCommand = queryCommand.skip(skip).limit(limit);
 
@@ -65,12 +70,13 @@ const getProducts = asyncHandler(async (req, res) => {
     const counts = await Product.find(formatedQueries).countDocuments();
     return res.status(200).json({
       success: true,
-      productDatas: response,
       counts,
+      productDatas: response,
     });
   } catch (err) {
     return res.status(500).json({
       success: false,
+      counts,
       message: err.message,
     });
   }
@@ -97,10 +103,38 @@ const deleteProduct = asyncHandler(async (req, res) => {
   });
 });
 
+const ratings = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const { star, comment, pid } = req.body;
+  if (!star || !pid) throw new Error("Missing input");
+  const ratingProduct = await Product.findById(pid);
+  const alreadyRating = ratingProduct?.ratings?.some((el) =>
+    el.postedBy.some((uid) => uid === _id)
+  );
+
+  if (alreadyRating) {
+    // Update star & comment
+  } else {
+    // add star & comment
+    const response = await Product.findByIdAndUpdate(
+      pid,
+      {
+        $push: { ratings: { star, comment, postedBy: _id } },
+      },
+      { new: true }
+    );
+  }
+
+  return res.status(200).json({
+    status: true,
+  });
+});
+
 module.exports = {
   createProduct,
   getProduct,
   getProducts,
   updateProduct,
   deleteProduct,
+  ratings,
 };

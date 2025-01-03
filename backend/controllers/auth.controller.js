@@ -2,11 +2,11 @@ const asyncHandler = require("express-async-handler");
 const {
   generateAccessToken,
   generateRefreshToken,
-} = require("../../middlewares/jwt");
+} = require("../middlewares/jwt");
 const jwt = require("jsonwebtoken");
-const sendMail = require("../../ultils/sendMail");
+const sendMail = require("../ultils/sendMail");
 const crypto = require("crypto");
-const User = require("../../models/user.model");
+const User = require("../models/user.model");
 
 const register = asyncHandler(async (req, res) => {
   const { email, password, firstname, lastname } = req.body;
