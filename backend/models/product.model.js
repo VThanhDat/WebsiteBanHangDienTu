@@ -30,7 +30,7 @@ var productSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: "Category",
     },
-    quantity: {
+    stock: {
       type: Number,
       default: 0,
     },
@@ -55,6 +55,22 @@ var productSchema = new mongoose.Schema(
     totalRatings: {
       type: Number,
       default: 0,
+    },
+    specifications: {
+      màn_hình: { type: String },
+      chip: { type: String },
+      ram: { type: String },
+      bộ_nhớ: { type: String },
+      camera: { type: String },
+      pin: { type: String },
+      sạc: { type: String },
+      màu_sắc: { type: [String] },
+    },
+    url_image: {
+      type: String,
+    },
+    url_product: {
+      type: String,
     },
   },
   {
