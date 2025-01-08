@@ -15,12 +15,19 @@ const createNewBlog = asyncHandler(async (req, res) => {
 // Get a single blog by ID
 const getBlog = asyncHandler(async (req, res) => {
   const { bid } = req.params;
-  const response = await Blog.findById(bid, )
-    .populate("likes", "firstnam lastname")
-    .populate("dislikes", "firstnam lastname");
+
+  // Tăng số lượt xem và tìm blog theo ID
+  const blog = await Blog.findOneAndUpdate(
+    { _id: bid }, // Điều kiện tìm blog theo ID
+    { $inc: { numberViews: 1 } }, // Tăng số lượt xem
+    { new: true } // Trả về blog sau khi được cập nhật
+  )
+    .populate("likes", "firstname lastname")
+    .populate("dislikes", "firstname lastname");
+
   return res.status(200).json({
-    success: response ? true : false,
-    blog: response,
+    success: blog ? true : false,
+    rs: blog,
   });
 });
 
