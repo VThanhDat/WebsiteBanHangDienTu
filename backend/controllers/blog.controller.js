@@ -15,11 +15,12 @@ const createNewBlog = asyncHandler(async (req, res) => {
 // Get a single blog by ID
 const getBlog = asyncHandler(async (req, res) => {
   const { bid } = req.params;
-  if (!bid) throw new Error("Missing blog ID");
-  const response = await Blog.findById(bid);
+  const response = await Blog.findById(bid, )
+    .populate("likes", "firstnam lastname")
+    .populate("dislikes", "firstnam lastname");
   return res.status(200).json({
     success: response ? true : false,
-    blog: response ? response : "Blog not found",
+    blog: response,
   });
 });
 
@@ -69,7 +70,7 @@ Khi người dùng like một bài blog thì:
 // push
 const likeBlog = asyncHandler(async (req, res) => {
   const { _id } = req.user; // ID của user, không cần admin
-  const { bid } = req.body;
+  const { bid } = req.params;
   if (!bid) throw new Error("Missing inputs");
   const blog = await Blog.findById(bid);
   const alreadyDisliked = blog?.dislikes?.find((el) => el.toString() === _id);
@@ -102,7 +103,7 @@ const likeBlog = asyncHandler(async (req, res) => {
 
 const dislikeBlog = asyncHandler(async (req, res) => {
   const { _id } = req.user; // ID của user
-  const { bid } = req.body; // Blog ID từ body request
+  const { bid } = req.params; // Blog ID từ body request
 
   // Kiểm tra input
   if (!bid) throw new Error("Missing inputs");
