@@ -13,7 +13,7 @@ var couponSchema = new mongoose.Schema(
       required: true,
     },
     expiry: {
-      type: String,
+      type: Date,
       required: true,
     },
   },
@@ -23,4 +23,4 @@ var couponSchema = new mongoose.Schema(
 );
 
 //Export the model
-module.exports = mongoose.model("User", couponSchema);
+module.exports = mongoose.model("Coupon", couponSchema);
