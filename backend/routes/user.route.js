@@ -1,14 +1,15 @@
-const router = require('express').Router()
-const ctrls = require('../controllers/user.controller')
-const { verifyAccessToken, isAdmin } = require('../middlewares/verifyToken')
+const router = require("express").Router();
+const ctrls = require("../controllers/user.controller");
+const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
 
-router.get('/', [verifyAccessToken, isAdmin], ctrls.getUsers)
-router.delete('/', [verifyAccessToken, isAdmin], ctrls.deleteUser)
-router.put('/current', [verifyAccessToken], ctrls.updateUser)
-router.put('/:uid', [verifyAccessToken, isAdmin], ctrls.updateUserByAdmin)
+router.get("/", [verifyAccessToken, isAdmin], ctrls.getUsers);
+router.delete("/", [verifyAccessToken, isAdmin], ctrls.deleteUser);
+router.put("/cart", [verifyAccessToken], ctrls.updateCart);
+router.put("/address", [verifyAccessToken], ctrls.updateUserAddress);
+router.put("/current", [verifyAccessToken], ctrls.updateUser);
+router.put("/:uid", [verifyAccessToken, isAdmin], ctrls.updateUserByAdmin);
 
-module.exports = router
-
+module.exports = router;
 
 // CRUD | Create - Read - Update - Delete | POST - GET - PUT - DELETEeee
 // CREATE (POST) + PUT - body
