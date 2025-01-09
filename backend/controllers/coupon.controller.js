@@ -5,10 +5,13 @@ const asyncHandler = require("express-async-handler");
 const createNewCoupon = asyncHandler(async (req, res) => {
   const { name, discount, expiry } = req.body;
   if (!name || !discount || !expiry) throw new Error("Missing inputs");
-  const response = await Coupon.create(req.body);
+  const response = await Coupon.create({
+    ...req.body,
+    expiry: Date.now() + +expiry * 24 * 60 * 60 * 1000,
+  });
   return res.status(200).json({
     success: response ? true : false,
-    createdCoupon: response ? response : "Cannot create new Coupon",
+    createdCoupon: response ? response : "Cannot create new coupon",
   });
 });
 
@@ -19,34 +22,35 @@ const getCoupon = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    productCoupon: response
-      ? response
-      : `Cannot find product Coupon with ID: ${cpid}`,
+    Coupon: response ? response : `Cannot find coupon with ID: ${cpid}`,
   });
 });
 
 // Get all categories
 const getCoupons = asyncHandler(async (req, res) => {
-  const response = await Coupon.find().select("title _id");
+  const response = await Coupon.find().select("-createdAt -updatedAt");
 
   return res.status(200).json({
     success: response ? true : false,
-    productCoupons: response?.length ? response : "No product Coupons found",
+    Coupons: response?.length ? response : "No coupons found",
   });
 });
 
 // Update a category by ID
 const updateCoupon = asyncHandler(async (req, res) => {
   const { cpid } = req.params;
+  if (Object.keys(req.body).length === 0) throw new Error("Missing inputs");
+  if (req.body.expiry)
+    req.body.expiry = Date.now() + +req.body.expiry * 24 * 60 * 60 * 1000;
   const response = await Coupon.findByIdAndUpdate(cpid, req.body, {
     new: true,
   });
 
   return res.status(200).json({
     success: response ? true : false,
-    updatedProductCategory: response
+    updatedCoupon: response
       ? response
-      : `Cannot update product Coupon with ID: ${cpid}`,
+      : `Cannot update Coupon with ID: ${cpid}`,
   });
 });
 
@@ -57,7 +61,7 @@ const deleteCoupon = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    deletedProductCoupon: response ? response : `Cannot delete product Coupon`,
+    deletedCoupon: response ? response : `Cannot delete Coupon`,
   });
 });
 
