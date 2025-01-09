@@ -153,32 +153,8 @@ const ratings = asyncHandler(async (req, res) => {
 });
 
 const uploadImageProduct = asyncHandler(async (req, res) => {
-  const { pid } = req.params;
-  if (!req.file) throw new Error("Missing input(s)");
-  const product = await Product.findByIdAndUpdate(
-    pid,
-    {
-      $push: { images: req.file.path },
-    },
-    { new: true }
-  );
-  let response;
-  if (product && !product.thumb) {
-    response = await Product.findByIdAndUpdate(
-      pid,
-      {
-        thumb: product.images[0],
-      },
-      { new: true }
-    );
-  } else {
-    response = product;
-  }
-
-  return res.status(200).json({
-    status: response ? true : false,
-    updatedProduct: response ? response : "Can not upload images ",
-  });
+  console.log(req.file);
+  return res.json("OKE");
 });
 
 module.exports = {
