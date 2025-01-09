@@ -1,4 +1,3 @@
-const multer = require("multer"); // dùng để upload ảnh, ...
 const router = require("express").Router();
 const ctrls = require("../controllers/product.controller");
 const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
@@ -11,7 +10,7 @@ router.put("/ratings", verifyAccessToken, ctrls.ratings);
 router.put(
   "/uploadimage/:pid",
   [verifyAccessToken, isAdmin],
-  uploader.single("images"),
+  uploader.array("images", 10),
   ctrls.uploadImageProduct
 );
 

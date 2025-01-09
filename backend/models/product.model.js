@@ -66,9 +66,6 @@ var productSchema = new mongoose.Schema(
       sạc: { type: String },
       màu_sắc: { type: [String] },
     },
-    url_image: {
-      type: String,
-    },
     url_product: {
       type: String,
     },
