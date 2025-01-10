@@ -1,7 +1,7 @@
-const Order = require("../models/order");
-const User = require("../models/user");
-const Product = require("../models/product");
-const Coupon = require("../models/coupon");
+const Order = require("../models/order.model");
+const User = require("../models/user.model");
+const Product = require("../models/product.model");
+const Coupon = require("../models/coupon.model");
 const asyncHandler = require("express-async-handler");
 
 const createOrder = asyncHandler(async (req, res) => {
