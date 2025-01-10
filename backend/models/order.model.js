@@ -10,7 +10,14 @@ var orderSchema = new mongoose.Schema({
   status: {
     type: String,
     default: "Processing",
-    enum: ["Cancelled", "Processing", "Successed"],
+    enum: [
+      "Cancelled",
+      "Accepted",
+      "Shipping",
+      "Processing",
+      "Returning",
+      "Success",
+    ],
   },
   paymentIntent: {},
   orderBy: {
