@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.custom-slider button.slick-arrow {
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  background: rgb(255, 0, 0, 0.06);
+}
+.custom-slider button.slick-arrow:hover {
+  background: rgb(255, 0, 0, 0.09);
+}
+
+.custom-slider button.slick-arrow::before {
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+}
+
+.custom-slider .slick-arrow:hover:before {
+  color: red;
+}
+
+.custom-slider button.slick-prev {
+  left: 10px;
+}
+.custom-slider button.slick-next {
+  right: 10px;
+}
+.custom-slider button.slick-next::before {
+  content: "\276F";
+  /* https://www.toptal.com/designers/htmlarrows/symbols/ */
+}
+.custom-slider button.slick-prev::before {
+  content: "\276E";
+  /* https://www.toptal.com/designers/htmlarrows/symbols/ */
+}
+
+/* CSS Scrollbar */
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-moz-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-moz-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(22, 24, 35, 0.06);
+}
+
+html *::-moz-scrollbar-track:hover {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* How TO - Hide Arrows From Input Number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
