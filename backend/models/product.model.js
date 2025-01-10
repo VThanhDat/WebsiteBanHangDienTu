@@ -19,8 +19,12 @@ var productSchema = new mongoose.Schema(
       required: true,
     },
     brand: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Brand",
       required: true,
+    },
+    thumb: {
+      type: String,
     },
     price: {
       type: Number,
@@ -28,7 +32,7 @@ var productSchema = new mongoose.Schema(
     },
     category: {
       type: mongoose.Types.ObjectId,
-      ref: "Category",
+      ref: "ProductCategory",
     },
     stock: {
       type: Number,
@@ -50,6 +54,8 @@ var productSchema = new mongoose.Schema(
         star: { type: Number },
         postedBy: { type: mongoose.Types.ObjectId, ref: "User" },
         comment: { type: String },
+        createdAt: { type: Date, default: Date.now },
+        updatedAt: { type: Date, default: Date.now },
       },
     ],
     totalRatings: {
