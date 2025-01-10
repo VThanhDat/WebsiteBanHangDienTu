@@ -17,10 +17,9 @@ var userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    mobile: {
+    phone: {
       type: String,
       required: true,
-      unique: true,
     },
     password: {
       type: String,
@@ -35,12 +34,10 @@ var userSchema = new mongoose.Schema(
         product: { type: mongoose.Types.ObjectId, ref: "Product" },
         quantity: Number,
         color: String,
+        variant: [{ label: String, variant: String }],
       },
     ],
-    address: {
-      type: Array,
-      default: [],
-    },
+    address: String,
     wishlist: [{ type: mongoose.Types.ObjectId, ref: "Product" }],
     isBlocked: {
       type: Boolean,
@@ -71,16 +68,18 @@ userSchema.pre("save", async function (next) {
   const salt = bcrypt.genSaltSync(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+
 userSchema.methods = {
-  isCorrectPassword: async function (password) {
+  async isCorrectPassword(password) {
     return await bcrypt.compare(password, this.password);
   },
-  createPasswordChangedToken: function () {
+  createPasswordChangedToken() {
     const resetToken = crypto.randomBytes(32).toString("hex");
     this.passwordResetToken = crypto
       .createHash("sha256")
       .update(resetToken)
       .digest("hex");
+
     this.passwordResetExpires = Date.now() + 15 * 60 * 1000;
     return resetToken;
   },

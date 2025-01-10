@@ -8,6 +8,7 @@ var orderSchema = new mongoose.Schema(
         product: { type: mongoose.Types.ObjectId, ref: "Product" },
         quantity: Number,
         variant: [{ label: String, variant: String }],
+        color: String,
       },
     ],
     status: {
