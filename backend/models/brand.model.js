@@ -10,10 +10,15 @@ var brandSchema = new mongoose.Schema(
       index: true,
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
+
+// brandSchema.virtual('productCount', {
+//     ref: 'Product',
+//     localField: '_id',
+//     foreignField: 'brand',
+//     count: true
+//   });
 
 //Export the model
 module.exports = mongoose.model("Brand", brandSchema);
