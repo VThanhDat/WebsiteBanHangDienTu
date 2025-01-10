@@ -12,8 +12,8 @@ var blogSchema = new mongoose.Schema(
       required: true,
     },
     category: {
-      type: String,
-      required: true,
+      type: mongoose.Types.ObjectId,
+      ref: "BlogCategory",
     },
     numberViews: {
       type: Number,
