@@ -33,8 +33,9 @@ var productSchema = new mongoose.Schema(
     category: {
       type: mongoose.Types.ObjectId,
       ref: "ProductCategory",
+      require: true,
     },
-    stock: {
+    quantity: {
       type: Number,
       default: 0,
     },
@@ -45,10 +46,12 @@ var productSchema = new mongoose.Schema(
     images: {
       type: Array,
     },
-    color: {
-      type: String,
-      enum: ["Black", "Grown", "Red"],
-    },
+    variants: [
+      {
+        label: { type: String },
+        variants: [{ variant: String, quantity: { type: Number } }],
+      },
+    ],
     ratings: [
       {
         star: { type: Number },
@@ -80,6 +83,24 @@ var productSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+productSchema.pre("updateOne", function (next) {
+  const update = this.getUpdate();
+  if (update.images && update.images.length > 0 && !update.thumb) {
+    update.thumb = update.images[0];
+  }
+  next();
+});
+
+productSchema.pre("save", function (next) {
+  let totalQuantity = Math.max(
+    ...this.variants.map((el) =>
+      el.variants.reduce((total, el) => (total += el.quantity), 0)
+    )
+  );
+  this.quantity = totalQuantity;
+  next();
+});
 
 //Export the model
 module.exports = mongoose.model("Product", productSchema);
