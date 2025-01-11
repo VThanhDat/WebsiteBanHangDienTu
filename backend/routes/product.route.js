@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const ctrls = require("../controllers/product.controller");
 const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
-const uploader = require("../config/cloudinary.config");
+const uploader = require("../configs/cloudinary.config");
 
 router.post("/", [verifyAccessToken, isAdmin], ctrls.createProduct);
 router.get("/", ctrls.getProducts);
