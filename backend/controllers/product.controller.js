@@ -69,14 +69,13 @@ const getProducts = asyncHandler(async (req, res) => {
     const response = await queryCommand;
     const counts = await Product.find(formatedQueries).countDocuments();
     return res.status(200).json({
-      success: true,
+      success: response ? true : false,
       counts,
-      productDatas: response,
+      products: response ? response : "Can not get products.",
     });
   } catch (err) {
     return res.status(500).json({
       success: false,
-      counts,
       message: err.message,
     });
   }

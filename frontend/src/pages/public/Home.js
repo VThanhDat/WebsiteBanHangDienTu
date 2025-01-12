@@ -1,6 +1,9 @@
-import React from "react";
-import { Sidebar, Banner } from "../../components";
+import React, { useEffect } from "react";
+import { Sidebar, Banner, BestSeller } from "../../components";
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="flex w-main">
       <div className="flex w-[25%] flex-auto flex-col gap-5 border">
@@ -9,7 +12,7 @@ const Home = () => {
       </div>
       <div className="flex w-[75%] flex-auto flex-col gap-5 border pl-5">
         <Banner />
-        <span>Best seller</span>
+        <BestSeller />
       </div>
     </div>
   );
