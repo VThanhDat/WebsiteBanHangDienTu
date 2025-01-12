@@ -6,7 +6,7 @@ const createCategory = asyncHandler(async (req, res) => {
   const response = await ProductCategory.create(req.body);
   return res.status(200).json({
     success: response ? true : false,
-    createdProductCategory: response
+    createdProdCategory: response
       ? response
       : "Cannot create new product category",
   });
@@ -19,7 +19,7 @@ const getCategory = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    productCategory: response
+    prodCategory: response
       ? response
       : `Cannot find product category with ID: ${cid}`,
   });
@@ -31,9 +31,7 @@ const getCategories = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    productCategories: response?.length
-      ? response
-      : "No product categories found",
+    prodCategories: response?.length ? response : "No product categories found",
   });
 });
 
@@ -46,7 +44,7 @@ const updateCategory = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    updatedProductCategory: response
+    updatedProdCategory: response
       ? response
       : `Cannot update product category with ID: ${cid}`,
   });
@@ -59,9 +57,7 @@ const deleteCategory = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    deletedProductCategory: response
-      ? response
-      : `Cannot delete product category`,
+    deletedProdCategory: response ? response : `Cannot delete product category`,
   });
 });
 
