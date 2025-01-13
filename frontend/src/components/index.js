@@ -6,3 +6,4 @@ export { default as BestSeller } from "./BestSeller";
 export { default as Product } from "./Product";
 export { default as CustomSlider } from "./CustomSlider";
 export { default as DealDaily } from "./DealDaily";
+export { default as SelectOption } from "./SelectOption";
