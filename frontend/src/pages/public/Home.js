@@ -1,5 +1,11 @@
 import React, { useEffect } from "react";
-import { Sidebar, Banner, BestSeller, DealDaily } from "../../components";
+import {
+  Sidebar,
+  Banner,
+  BestSeller,
+  DealDaily,
+  FeatureProduct,
+} from "../../components";
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +29,9 @@ const Home = () => {
             <BestSeller />
           </div>
         </div>
+      </div>
+      <div className="my-8">
+        <FeatureProduct />
       </div>
     </>
   );

@@ -8,3 +8,5 @@ export { default as CustomSlider } from "./CustomSlider";
 export { default as DealDaily } from "./DealDaily";
 export { default as SelectOption } from "./SelectOption";
 export { default as Countdown } from "./CountDown";
+export { default as FeatureProduct } from "./FeatureProduct";
+export { default as ProductCard } from "./ProductCard";
