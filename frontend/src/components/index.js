@@ -10,3 +10,5 @@ export { default as SelectOption } from "./SelectOption";
 export { default as Countdown } from "./CountDown";
 export { default as FeatureProduct } from "./FeatureProduct";
 export { default as ProductCard } from "./ProductCard";
+export { default as TopHeader } from "./TopHeader";
+export { default as Footer } from "./Footer";

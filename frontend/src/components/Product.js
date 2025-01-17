@@ -5,13 +5,17 @@ import labelNew from "../assets/new.png";
 import labelTrending from "../assets/trending.png";
 import SelectOption from "./SelectOption";
 import icons from "../utils/icons";
+import path from "../utils/path";
 
 const { BsFillCartFill, AiOutlineMenu, BsFillSuitHeartFill } = icons;
 
 const Product = ({ productData, isNew, isHasLabel = true }) => {
   return (
     <div className="w-full px-[10px] text-base">
-      <div className="group flex w-full flex-col items-center border p-[15px]">
+      <div
+        className="group flex w-full flex-col items-center border p-[15px]"
+        to={`/${path.DETAIL_PRODUCT}/${productData?.slug}`}
+      >
         <div className="relative w-full overflow-hidden">
           <div className="absolute bottom-0 flex w-full justify-center gap-4 lg:invisible lg:group-hover:visible lg:group-hover:animate-slide-top">
             <SelectOption
@@ -24,7 +28,10 @@ const Product = ({ productData, isNew, isHasLabel = true }) => {
               productId={productData?._id}
             />
           </div>
-          <Link className="flex justify-center">
+          <Link
+            to={`/${path.DETAIL_PRODUCT}/${productData?.slug}`}
+            className="flex justify-center"
+          >
             <img
               src={
                 productData?.thumb ||
@@ -43,7 +50,10 @@ const Product = ({ productData, isNew, isHasLabel = true }) => {
           </Link>
         </div>
         <div className="mt-[15px] flex w-full flex-col items-start gap-1">
-          <Link className="line-clamp-1 capitalize hover:text-main">
+          <Link
+            to={`/${path.DETAIL_PRODUCT}/${productData?.slug}`}
+            className="line-clamp-1 capitalize hover:text-main"
+          >
             {productData?.title?.toLowerCase()}
           </Link>
           <span className="flex h-4">
