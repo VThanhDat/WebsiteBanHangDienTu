@@ -1,10 +1,22 @@
 import React, { useCallback, useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
+import { auth } from "../../firebase/config";
 import { InputField, Button } from "../../components";
+import { apiForgotPassword, apiLogin, apiRegister } from "../../apis";
+import path from "../../utils/path";
+import { useDispatch, useSelector } from "react-redux";
+import { userSlice } from "../../store/user/userSlice";
 import icons from "../../utils/icons";
+import { validate } from "../../utils/helpers";
 
 const { AiOutlineClose } = icons;
 
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [payload, setPayload] = useState({
     firstName: "",
     lastName: "",
@@ -18,9 +30,48 @@ const Login = () => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = useCallback(async () => {
-    console.log(payload);
-  }, [payload]);
+    const { firstName, lastName, phone, ...data } = payload;
 
+    const invalidCount = isRegister
+      ? validate(payload, setInvalidFields)
+      : validate(data, setInvalidFields);
+    if (!invalidCount) {
+      if (isRegister) {
+        const response = await apiRegister(payload);
+        await Swal.fire(
+          response.success ? "Congratulation" : "Opps!",
+          response.mes,
+          response.success ? "success" : "error",
+        ).then(() => {
+          if (response.success) {
+            setIsRegister(false);
+            setPayload({
+              firstName: "",
+              lastName: "",
+              email: "",
+              password: "",
+              phone: "",
+            });
+          }
+        });
+      } else {
+        const response = await apiLogin(data);
+        if (response?.success) {
+          dispatch(
+            userSlice.actions.login({
+              isLoggedIn: true,
+              token: response.accessToken,
+              userData: response.userData,
+            }),
+          );
+          navigate(`/${path.HOME}`);
+        } else {
+          await Swal.fire("Opps!", response?.mes, "error");
+        }
+      }
+    }
+    return true;
+  }, [isRegister, payload]);
   const handleForgotPassword = async () => {};
 
   const handleLoginWithFacebook = () => {};

@@ -9,11 +9,11 @@ const crypto = require("crypto");
 const User = require("../models/user.model");
 
 const register = asyncHandler(async (req, res) => {
-  const { email, password, firstname, lastname } = req.body;
-  if (!email || !password || !lastname || !firstname)
+  const { email, password, firstName, lastName, phone } = req.body;
+  if (!email || !password || !firstName || !lastName || !phone)
     return res.status(400).json({
-      sucess: false,
-      mes: "Missing inputs",
+      success: false,
+      mes: "Missing input(s)",
     });
 
   const user = await User.findOne({ email });
@@ -58,7 +58,7 @@ const login = asyncHandler(async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
     return res.status(200).json({
-      sucess: true,
+      success: true,
       accessToken,
       userData,
     });

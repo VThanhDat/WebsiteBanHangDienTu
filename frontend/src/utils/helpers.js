@@ -26,3 +26,51 @@ export const renderStarFromNumber = (num, size = 16) => {
     stars.push(<AiOutlineStar color="orange" size={size} />);
   return stars?.map((item, index) => <span key={index}>{item}</span>);
 };
+
+export const validate = (payload = {}, setInvalidFields) => {
+  let invalidCount = 0;
+
+  const entries = Object.entries(payload);
+
+  for (const field of entries) {
+    if (!field[1].trim()) {
+      invalidCount++;
+      setInvalidFields((prev) => [
+        ...prev,
+        {
+          name: field[0],
+          mes: "This is required",
+        },
+      ]);
+    }
+
+    switch (field[0]) {
+      case "email":
+        const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!field[1].match(regex)) {
+          // eslint-disable-next-line no-loop-func
+          invalidCount++;
+          setInvalidFields((prev) => [
+            ...prev,
+            { name: field[0], mes: "Email is incorrect" },
+          ]);
+        }
+        break;
+      case "password":
+        if (field[1].trim().length < 6) {
+          invalidCount++;
+          setInvalidFields((prev) => [
+            ...prev,
+            {
+              name: field[0],
+              mes: "Password is at least 6 keywords",
+            },
+          ]);
+        }
+        break;
+      default:
+        break;
+    }
+  }
+  return invalidCount;
+};
