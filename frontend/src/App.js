@@ -44,6 +44,7 @@ function App() {
           <Route path={path.CART} element={<Cart />} />
           <Route path={`/${path.CHECKOUT}`} element={<Checkout />} />
         </Route>
+        <Route path={path.AUTH_REGISTER} element={<AuthRegister />} />
         <Route path={`/${path.LOGIN}`} element={<Login />} />
       </Routes>
     </div>
