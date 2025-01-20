@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const {
   generateAccessToken,
   generateRefreshToken,
+  generateRegisterToken,
 } = require("../middlewares/jwt");
 const jwt = require("jsonwebtoken");
 const sendMail = require("../ultils/sendMail");
@@ -16,18 +17,65 @@ const register = asyncHandler(async (req, res) => {
       mes: "Missing input(s)",
     });
 
-  const user = await User.findOne({ email });
-  if (user) throw new Error("User has existed");
-  else {
-    const newUser = await User.create(req.body);
+  const existedUsers = await Promise.all([
+    User.findOne({ email }),
+    User.findOne({ phone }),
+  ]);
+
+  if (existedUsers[0]) {
+    throw new Error("Email is existed!");
+  } else if (existedUsers[1]) {
+    throw new Error("Phone is existed!");
+  } else {
+    const registerToken = generateRegisterToken(
+      email,
+      password,
+      firstName,
+      lastName,
+      phone
+    );
+    const html = `Click on the link below to complete your registration.
+        <a href=${process.env.URL_SERVER}/api/auth/authregister/${registerToken}>Click Here</a>.
+        This link will be expired after 15 minutes`;
+    sendMail({
+      email,
+      html,
+      subject: "Complete registration on Digital World",
+    });
     return res.status(200).json({
-      sucess: newUser ? true : false,
-      mes: newUser
-        ? "Register is successfully. Please go login~"
-        : "Something went wrong",
+      success: true,
+      mes: "Please check your email to active your account",
     });
   }
 });
+
+const authRegister = asyncHandler(async (req, res) => {
+  const { token } = req.params;
+  const { email, password, firstName, lastName, phone } = jwt.verify(
+    token,
+    process.env.JWT_SECRET,
+    (err, decode) => {
+      if (err) {
+        return res.redirect(`${process.env.CLIENT_URL}/authregister/failed`);
+      } else {
+        return decode;
+      }
+    }
+  );
+  const newUser = await User.create({
+    email,
+    password,
+    phone,
+    firstName,
+    lastName,
+  });
+  if (newUser) {
+    return res.redirect(`${process.env.CLIENT_URL}/authregister/success`);
+  } else {
+    return res.redirect(`${process.env.CLIENT_URL}/authregister/failed}`);
+  }
+});
+
 // Refresh token => Cấp mới access token
 // Access token => Xác thực người dùng, quân quyên người dùng
 const login = asyncHandler(async (req, res) => {
@@ -172,4 +220,5 @@ module.exports = {
   logout,
   forgotPassword,
   resetPassword,
+  authRegister,
 };
