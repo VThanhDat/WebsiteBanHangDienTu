@@ -72,7 +72,19 @@ const Login = () => {
     }
     return true;
   }, [isRegister, payload]);
-  const handleForgotPassword = async () => {};
+  const handleForgotPassword = async () => {
+    const response = await apiForgotPassword({ email });
+    Swal.fire(
+      response.success ? "Success" : "Opps!",
+      response.mes || "Please check your mail to reset your password",
+      response.success ? "success" : "error",
+    ).then(() => {
+      if (response.success) {
+        setIsForgotPassword(false);
+        setEmail("");
+      }
+    });
+  };
 
   const handleLoginWithFacebook = () => {};
 

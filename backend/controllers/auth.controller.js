@@ -170,25 +170,26 @@ const logout = asyncHandler(async (req, res) => {
 // Change password
 
 const forgotPassword = asyncHandler(async (req, res) => {
-  const { email } = req.query;
+  const { email } = req.body;
   if (!email) throw new Error("Missing email");
   const user = await User.findOne({ email });
   if (!user) throw new Error("User not found");
   const resetToken = user.createPasswordChangedToken();
   await user.save();
 
-  const html = `Xin vui lòng click vào link dưới đây để thay đổi mật khẩu của bạn. Link này sẽ hết hạn sau 15 phút kể từ bây giờ. <a href=${process.env.URL_SERVER}/user/resetpassword/${resetToken}>Click here</a>`;
-
+  const html = `Click on the link below to change your password. <a href=${process.env.CLIENT_URL}/resetpassword/${resetToken}>Click Here</a>. This link will be expired after 15 minutes`;
   const data = {
     email,
     html,
+    subject: "Forgot password",
   };
-  const rs = await sendMail(data);
+  const rs = sendMail(data);
   return res.status(200).json({
     success: true,
     rs,
   });
 });
+
 const resetPassword = asyncHandler(async (req, res) => {
   const { password, token } = req.body;
   if (!password || !token) throw new Error("Missing imputs");

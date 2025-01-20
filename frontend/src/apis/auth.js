@@ -4,7 +4,7 @@ export const apiRegister = (data) =>
   axios({
     url: "/auth/register",
     method: "post",
-    // withCredentials: true,
+    withCredentials: true,
     data,
   });
 
@@ -12,7 +12,7 @@ export const apiLogin = (data) =>
   axios({
     url: "/auth/login",
     method: "post",
-    // withCredentials: true,
+    withCredentials: true,
     data,
   });
 
