@@ -7,6 +7,7 @@ const path = {
   BLOGS: "blogs",
   SERVICES: "services",
   FAQs: "faqs",
+  COUPONS: "coupons",
   DETAIL_PRODUCT: "products",
   DETAIL_PRODUCT__SLUG: "products/:slug/",
   AUTH_REGISTER: "authregister/:status",
@@ -22,14 +23,14 @@ const path = {
   ACCOUNT_ORDERS: "account/orders",
 
   ADMIN: "admin",
-  DASHBOARD: "admin/dashboard",
+  DASHBOARD_ADMIN: "admin/dashboard",
   PRODUCTS_ADMIN: "admin/products",
-  BRANDS: "admin/brands",
-  CATEGOGIES: "admin/categories",
-  ORDERS: "admin/orders",
-  RATINGS: "admin/ratings",
-  COUPONS: "admin/coupons",
-  USERS: "admin/users",
+  BRANDS_ADMIN: "admin/brands",
+  CATEGOGIES_ADMIN: "admin/categories",
+  ORDERS_ADMIN: "admin/orders",
+  RATINGS_ADMIN: "admin/ratings",
+  COUPONS_ADMIN: "admin/coupons",
+  USERS_ADMIN: "admin/users",
 };
 
 export default path;

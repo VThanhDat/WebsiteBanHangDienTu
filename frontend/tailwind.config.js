@@ -14,10 +14,12 @@ module.exports = {
       },
       backgroundColor: {
         main: "#ee3131",
+        subs: "#d4d8d9",
         overlay: "rgba(0,0,0,0.6)",
       },
       colors: {
         main: "#ee3131",
+        subs: "#d4d8d9",
         modal: "rgba(0,0,0,0.3)",
       },
       flex: {

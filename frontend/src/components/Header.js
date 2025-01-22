@@ -4,7 +4,13 @@ import icons from "../utils/icons";
 import { Link } from "react-router-dom";
 import path from "../utils/path";
 
-const { AiFillPhone, MdEmail, BsFillBagFill, FaUserCircle } = icons;
+const {
+  AiFillPhone,
+  MdEmail,
+  BsFillBagFill,
+  FaUserCircle,
+  FaFacebookMessenger,
+} = icons;
 
 const Header = () => {
   return (
@@ -34,9 +40,13 @@ const Header = () => {
         </div>
         <div className="relative flex items-center justify-center px-6 text-sm max-md:px-3">
           <div>
+            <FaFacebookMessenger className="cursor-pointer" size={24} />
+          </div>
+        </div>
+        <div className="relative flex items-center justify-center px-6 text-sm max-md:px-3">
+          <div>
             <FaUserCircle className="cursor-pointer" size={24} />
           </div>
-          <div></div>
         </div>
       </div>
     </div>

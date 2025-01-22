@@ -7,7 +7,7 @@ import {
   BsFillCartFill,
   BsBell,
 } from "react-icons/bs";
-import { FaUserCircle, FaCheck } from "react-icons/fa";
+import { FaUserCircle, FaCheck, FaFacebookMessenger } from "react-icons/fa";
 import {
   IoIosArrowForward,
   IoIosArrowRoundBack,
@@ -92,6 +92,7 @@ const icons = {
   CgProfile,
   AiOutlineEdit,
   CiDiscount1,
+  FaFacebookMessenger,
 };
 
 export default icons;
