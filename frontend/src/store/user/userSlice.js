@@ -58,3 +58,10 @@ export const userSlice = createSlice({
     });
   },
 });
+
+// Export individual actions
+export const { login, setIsRefreshingToken, logout, editOrder } =
+  userSlice.actions;
+
+// Export the slice reducer
+export default userSlice.reducer;

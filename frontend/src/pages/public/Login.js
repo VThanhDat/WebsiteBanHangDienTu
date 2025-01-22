@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-import { auth } from "../../firebase/config";
+// import { auth } from "../../firebase/config";
 import { InputField, Button } from "../../components";
 import { apiForgotPassword, apiLogin, apiRegister } from "../../apis";
 import path from "../../utils/path";
@@ -11,7 +11,7 @@ import { userSlice } from "../../store/user/userSlice";
 import icons from "../../utils/icons";
 import { validate } from "../../utils/helpers";
 
-const { AiOutlineClose } = icons;
+const { AiOutlineClose, FaArrowLeftLong } = icons;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -85,7 +85,6 @@ const Login = () => {
       }
     });
   };
-
   const handleLoginWithFacebook = () => {};
 
   return (
@@ -118,9 +117,19 @@ const Login = () => {
         </div>
       </div>
       <div className="flex w-[500px] flex-col items-center rounded-xl border bg-white px-5 pb-5 pt-5 shadow-2xl">
-        <h3 className="mb-5 font-semibold text-main">
-          {isRegister ? "Register" : "Login"}
-        </h3>
+        <div className="relative mb-5 flex w-full items-center">
+          <button
+            className="absolute left-0 flex items-center gap-2 rounded-full bg-gray-100 p-2 shadow-lg hover:bg-gray-200"
+            onClick={() => navigate(`/${path.HOME}`)}
+          >
+            <FaArrowLeftLong size={20} className="text-main" />
+            <span className="text-main">Home</span>
+          </button>
+          <h3 className="mx-auto font-semibold text-main">
+            {isRegister ? "Register" : "Login"}
+          </h3>
+        </div>
+
         {isRegister && (
           <>
             <div className="flex items-center gap-3">

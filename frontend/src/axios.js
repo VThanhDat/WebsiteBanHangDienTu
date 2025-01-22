@@ -1,4 +1,10 @@
 import axios from "axios";
+import jwt_decode from "jwt-decode";
+import { store } from "./store/store";
+import { refreshToken } from "./store/user/asyncThunk";
+import Cookies from "js-cookie";
+import { userSlice } from "./store/user/userSlice";
+import Swal from "sweetalert2";
 
 const instance = axios.create({
   withCredentials: true,
@@ -8,6 +14,36 @@ const instance = axios.create({
 // Add a request interceptor
 instance.interceptors.request.use(
   async function (config) {
+    let currentDate = new Date();
+    const { token, isRefreshingToken, isLoggedIn } = store?.getState()?.user;
+
+    const refToken = Cookies.get("refreshToken");
+    if (refToken && isLoggedIn) {
+      const decodeRefreshToken = jwt_decode(refToken);
+      if (decodeRefreshToken.exp * 1000 < currentDate.getTime()) {
+        store.dispatch(userSlice.actions.logout());
+        Swal.fire(
+          "Opps!",
+          "your token is expired! Please login again",
+          "error",
+        );
+      }
+    }
+
+    if (token) {
+      const decodedToken = jwt_decode(token);
+      if (decodedToken.exp * 1000 - 2000 < currentDate.getTime()) {
+        if (!isRefreshingToken) {
+          await store.dispatch(refreshToken());
+        }
+      }
+    }
+
+    if (config?.headers) {
+      config.headers["authorization"] = `Bearer ${
+        store?.getState()?.user?.token
+      }`;
+    }
     return config;
   },
   function (error) {

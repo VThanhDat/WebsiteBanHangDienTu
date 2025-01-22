@@ -1,22 +1,44 @@
-import React, { memo } from "react";
-// import { useSelector } from "react-redux";
+import React, { memo, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import path from "../utils/path";
+import { logout } from "../store/user/userSlice";
+import { getCurrent } from "../store/user/asyncThunk";
 
 const TopHeader = () => {
-  // const { isLoggedIn } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const { isLoggedIn, current } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (isLoggedIn && !current) dispatch(getCurrent());
+  }, [dispatch, isLoggedIn]);
 
   return (
-    <div className="flex h-[38px] w-full justify-center bg-main">
-      <div className="flex w-full max-w-main items-center justify-between text-xs text-white max-xl:px-3">
-        <span className="mr-4">ORDER ONLINE OR CALL US (+84) 32 XXXX XXX</span>
-        <span>Welcome to Digital World</span>
-        <Link
-          className="transition-colors hover:text-gray-800"
-          to={`/${path.LOGIN}`}
-        >
-          Sign In or Create Account
-        </Link>
+    <div className="bg-subs flex h-[60px] w-full justify-center">
+      <div className="flex w-full max-w-main items-center justify-between text-sm text-black max-xl:px-3">
+        <span className="mr-4 text-base font-medium">
+          ORDER ONLINE OR CALL US (+84) 32 XXXX XXX
+        </span>
+        {isLoggedIn ? (
+          <div className="flex items-center gap-4">
+            <span className="text-base font-medium">
+              {`Welcome, ${current?.firstName} ${current?.lastName}`}
+            </span>
+            <span
+              onClick={() => dispatch(logout())}
+              className="cursor-pointer p-2 text-base font-medium hover:rounded-full hover:bg-gray-200 hover:text-main"
+            >
+              LOG OUT
+            </span>
+          </div>
+        ) : (
+          <Link
+            className="text-base font-medium transition-colors hover:text-main"
+            to={`/${path.LOGIN}`}
+          >
+            SIGN IN | REGISTER
+          </Link>
+        )}
       </div>
     </div>
   );

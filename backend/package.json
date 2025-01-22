@@ -33,7 +33,8 @@
     "nodemailer": "^6.9.1",
     "path": "^0.12.7",
     "slug": "^9.0.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

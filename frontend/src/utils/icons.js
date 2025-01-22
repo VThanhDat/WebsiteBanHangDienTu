@@ -8,6 +8,7 @@ import {
   BsBell,
 } from "react-icons/bs";
 import { FaUserCircle, FaCheck, FaFacebookMessenger } from "react-icons/fa";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import {
   IoIosArrowForward,
   IoIosArrowRoundBack,
@@ -93,6 +94,7 @@ const icons = {
   AiOutlineEdit,
   CiDiscount1,
   FaFacebookMessenger,
+  FaArrowLeftLong,
 };
 
 export default icons;
