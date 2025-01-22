@@ -30,7 +30,7 @@ var userSchema = new mongoose.Schema(
       default: "user",
     },
     address: {
-      type: Array,
+      type: [String], // Định nghĩa address là một mảng các chuỗi
       default: [],
     },
     cart: [

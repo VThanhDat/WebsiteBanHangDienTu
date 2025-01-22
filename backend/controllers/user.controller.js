@@ -116,6 +116,8 @@ const updateCart = asyncHandler(async (req, res) => {
   }
 });
 
+const createUserAddress = asyncHandler(async (req, res) => {});
+
 module.exports = {
   getUsers,
   deleteUser,
