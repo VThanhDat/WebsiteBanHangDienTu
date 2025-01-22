@@ -31,7 +31,6 @@ var userSchema = new mongoose.Schema(
     },
     address: {
       type: Array,
-      require: true,
       default: [],
     },
     cart: [
