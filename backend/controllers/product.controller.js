@@ -13,11 +13,17 @@ const createProduct = asyncHandler(async (req, res) => {
 });
 
 const getProduct = asyncHandler(async (req, res) => {
-  const { pid } = req.params;
-  const product = await Product.findById(pid);
+  const { slug } = req.params;
+  const product = await Product.findOne({ slug })
+    .populate("brand")
+    .populate("category")
+    .populate({
+      path: "ratings.postedBy",
+      select: "firstName lastName -_id",
+    });
   return res.status(200).json({
     success: product ? true : false,
-    productData: product ? product : "Cannot get product",
+    productData: product ? product : "Not found product.",
   });
 });
 

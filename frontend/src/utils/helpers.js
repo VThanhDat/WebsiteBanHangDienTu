@@ -74,3 +74,7 @@ export const validate = (payload = {}, setInvalidFields) => {
   }
   return invalidCount;
 };
+
+export const convertSlugToNormal = (slug) => {
+  return slug.split("_")[0].split("-").join(" ");
+};

@@ -1,8 +1,8 @@
 import axios from "../axios";
 
-export const apiGetProduct = (pid) =>
+export const apiGetProduct = (params) =>
   axios({
-    url: `/product/` + pid,
+    url: `/product/get/${params}`,
     method: "get",
   });
 

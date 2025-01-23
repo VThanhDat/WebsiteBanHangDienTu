@@ -16,6 +16,6 @@ router.put(
 
 router.put("/:pid", [verifyAccessToken, isAdmin], ctrls.updateProduct);
 router.delete("/:pid", [verifyAccessToken, isAdmin], ctrls.deleteProduct);
-router.get("/:pid", ctrls.getProduct);
+router.get("/get/:slug", ctrls.getProduct);
 
 module.exports = router;
