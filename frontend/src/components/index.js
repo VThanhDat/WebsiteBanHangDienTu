@@ -16,3 +16,7 @@ export { default as InputField } from "./InputField";
 export { default as Button } from "./Button";
 export { default as FAQBox } from "./FAQBox";
 export { default as BreadCrumb } from "./BreadCrumb";
+export { default as InputNumberProduct } from "./InputNumberProduct";
+export { default as InputVariants } from "./InputVariants";
+export { default as SelectVariant } from "./SelectVariant";
+export { default as DetailDescription } from "./DetailDescription";

@@ -78,3 +78,11 @@ export const validate = (payload = {}, setInvalidFields) => {
 export const convertSlugToNormal = (slug) => {
   return slug.split("_")[0].split("-").join(" ");
 };
+
+export const capitalize = (str) => {
+  return str
+    ?.trim()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};

@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { appSlice } from "./app/appSlice";
 import { productSlice } from "./product/productSlice";
 import { userSlice } from "./user/userSlice";
@@ -21,6 +21,9 @@ export const store = configureStore({
     products: productSlice.reducer,
     user: persistReducer(userConfig, userSlice.reducer),
   },
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export const persistor = persistStore(store);

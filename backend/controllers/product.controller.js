@@ -23,7 +23,7 @@ const getProduct = asyncHandler(async (req, res) => {
     });
   return res.status(200).json({
     success: product ? true : false,
-    productData: product ? product : "Not found product.",
+    product: product ? product : "Not found product.",
   });
 });
 
