@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import Swal from "sweetalert2";
-import { apiGetProduct } from "../../apis";
+import { apiGetProduct, apiGetProducts } from "../../apis";
 import { Button } from "../../components";
 import DetailDescription from "../../components/DetailDescription";
 import InputNumberProduct from "../../components/InputNumberProduct";
@@ -12,6 +12,7 @@ import { getCurrent } from "../../store/user/asyncThunk";
 import { formatMoney, renderStarFromNumber } from "../../utils/helpers";
 import icons from "../../utils/icons";
 import path from "../../utils/path";
+import { CustomSlider } from "../../components";
 import ReactImageMagnify from "react-image-magnify";
 
 const {
@@ -60,12 +61,18 @@ const serviceBox = [
 ];
 
 const DetailProduct = () => {
-  const { slug } = useParams();
+  const { slug, category } = useParams();
   const [product, setProduct] = useState(null);
   const [imageActive, setImageActive] = useState("");
   const [available, setAvailable] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [payload, setPayload] = useState([{ label: "", variant: "" }]);
+  const [relatedProducts, setRelatedProducts] = useState(null);
+
+  const fetchProducts = async () => {
+    const response = await apiGetProducts({ category });
+    if (response.success) setRelatedProducts(response.products);
+  };
 
   const fetchProductData = async () => {
     const response = await apiGetProduct(slug);
@@ -74,6 +81,14 @@ const DetailProduct = () => {
       setImageActive(response.product.thumb);
     }
   };
+
+  useEffect(() => {
+    if (slug) {
+      fetchProductData();
+      fetchProducts();
+    }
+  }, [slug]);
+
   const handleChangeImage = (link) => {
     setImageActive(link);
   };
@@ -214,6 +229,12 @@ const DetailProduct = () => {
             description={product?.description}
             review={product?.ratings}
           />
+          <div className="m-auto mt-8 w-main">
+            <h3 className="border-b-2 border-main py-[15px] text-[20px] font-semibold">
+              OTHER CUSTOMER ALSO LIKED
+            </h3>
+            <CustomSlider normal={true} products={relatedProducts} />
+          </div>
         </>
       )}
     </div>
