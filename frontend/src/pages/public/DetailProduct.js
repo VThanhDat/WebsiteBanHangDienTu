@@ -233,7 +233,7 @@ const DetailProduct = () => {
             <h3 className="mb-5 border-b-2 border-main text-[20px] font-semibold uppercase">
               OTHER CUSTOMER ALSO LIKED
             </h3>
-            <CustomSlider normal={true} products={relatedProducts} />
+            <CustomSlider products={relatedProducts} />
           </div>
         </>
       )}

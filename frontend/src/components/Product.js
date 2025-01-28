@@ -9,7 +9,7 @@ import path from "../utils/path";
 
 const { BsFillCartFill, AiOutlineMenu, BsFillSuitHeartFill } = icons;
 
-const Product = ({ productData, isNew, isHasLabel = true, normal }) => {
+const Product = ({ productData, isNew, isHasLabel = true }) => {
   return (
     <div className="w-full px-[10px] text-base">
       <div
@@ -45,13 +45,6 @@ const Product = ({ productData, isNew, isHasLabel = true, normal }) => {
                 src={isNew ? labelNew : labelTrending}
                 alt="label"
                 className="absolute right-[0px] top-0 h-[25px] w-[70px] object-contain"
-              />
-            )}
-            {!normal && (
-              <img
-                src={isNew ? labelNew : labelTrending}
-                alt=""
-                className={`right-[0 object-cover] absolute top-0 h-[35px] w-[100px]`}
               />
             )}
           </Link>

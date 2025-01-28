@@ -37,12 +37,7 @@ const CustomSlider = ({ products, activeTab = 2, normal }) => {
     products && (
       <Slider className="custom-slider" {...settings}>
         {products?.map((item) => (
-          <Product
-            key={item._id}
-            productData={item}
-            isNew={activeTab === 2}
-            normal={normal}
-          />
+          <Product key={item._id} productData={item} isNew={activeTab === 2} />
         ))}
       </Slider>
     )
