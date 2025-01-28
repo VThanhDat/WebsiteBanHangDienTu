@@ -38,7 +38,15 @@ function App() {
             path={`/${path.DETAIL_PRODUCT__SLUG}`}
             element={<DetailProduct />}
           />
-          <Route path={path.PRODUCTS} element={<Products />}></Route>
+          <Route path={path.PRODUCTS} element={<Products />}>
+            {categories?.map((cate, index) => (
+              <Route
+                key={index}
+                path={`/${path.PRODUCTS}/${cate.title}`}
+                element={<Products />}
+              />
+            ))}
+          </Route>
           <Route path={path.BLOGS} element={<Blogs />} />
           <Route path={path.SERVICES} element={<Services />} />
           <Route path={path.WISHLIST} element={<WishList />} />

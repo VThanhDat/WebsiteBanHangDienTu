@@ -19,4 +19,7 @@ export { default as BreadCrumb } from "./BreadCrumb";
 export { default as InputNumberProduct } from "./InputNumberProduct";
 export { default as InputVariants } from "./InputVariants";
 export { default as SelectVariant } from "./SelectVariant";
-export { default as DetailDescription } from "./DetailDescription";
+export { default as Filter } from "./Filter";
+export { default as SortBy } from "./SortBy";
+export { default as CustomSelect } from "./CustomSelect";
+export { default as Pagination } from "./Pagination";
