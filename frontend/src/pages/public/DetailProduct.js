@@ -229,8 +229,8 @@ const DetailProduct = () => {
             description={product?.description}
             review={product?.ratings}
           />
-          <div className="m-auto mt-8 w-main">
-            <h3 className="border-b-2 border-main py-[15px] text-[20px] font-semibold">
+          <div className="my-8">
+            <h3 className="mb-5 border-b-2 border-main text-[20px] font-semibold uppercase">
               OTHER CUSTOMER ALSO LIKED
             </h3>
             <CustomSlider normal={true} products={relatedProducts} />
