@@ -1,4 +1,6 @@
 const Product = require("../models/product.model");
+const ProductCategory = require("../models/productCategory.model");
+const Brand = require("../models/brand.model");
 const asyncHandler = require("express-async-handler");
 const slugify = require("slugify");
 
@@ -29,63 +31,137 @@ const getProduct = asyncHandler(async (req, res) => {
 
 // Filtering, sorting & pagination
 const getProducts = asyncHandler(async (req, res) => {
-  const queries = { ...req.query };
+  const { brand, category, ...queries } = { ...req.query };
   // Tách các trường đặc biệt ra khỏi query
   const excludeFields = ["limit", "sort", "page", "fields"];
   excludeFields.forEach((el) => delete queries[el]);
 
+  if (!queries?.price) queries.price = { gt: 0 };
   // Format lại các operators cho đúng cú pháp mongoose
   let queryString = JSON.stringify(queries);
   queryString = queryString.replace(
     /\b(gte|gt|lt|lte)\b/g,
     (matchedEl) => `$${matchedEl}`
   );
-  const formatedQueries = JSON.parse(queryString);
+  const formattedQueries = JSON.parse(queryString);
 
-  // Filtering
+  //Filtering
   if (queries?.title)
-    formatedQueries.title = { $regex: queries.title, $options: "i" };
-  if (queries?.category)
-    formatedQueries.category = { $regex: queries.category, $options: "i" };
-  let queryCommand = Product.find(formatedQueries);
+    formattedQueries.title = { $regex: queries.title, $options: "i" };
 
-  // Sorting
+  let queryCommand = Product.find(formattedQueries);
+
+  //Sorting
   if (req.query.sort) {
     const sortBy = req.query.sort.split(",").join(" ");
-    queryCommand = queryCommand.sort(sortBy);
+    queryCommand.sort(sortBy);
   }
 
-  // Fields limiting
+  //Fields limiting
   if (req.query.fields) {
     const fields = req.query.fields.split(",").join(" ");
-    queryCommand = queryCommand.select(fields);
+    queryCommand.select(fields);
   }
-
-  // Pagination
+  //Pagination
   // limit: số object lấy về 1 gọi API
   // skip: 2
   // 1 2 3 .... 10
-  // +2 =>  2
+  // +2 => 2
   // +dsdsad => NaN
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || process.env.LIMIT_PRODUCTS;
+  const page = +req.query.page || 1;
+  const limit = +req.query.limit || process.env.LIMIT_PRODUCTS;
   const skip = (page - 1) * limit;
-  queryCommand = queryCommand.skip(skip).limit(limit);
 
-  try {
-    // Execute query
-    const response = await queryCommand;
-    const counts = await Product.find(formatedQueries).countDocuments();
-    return res.status(200).json({
-      success: response ? true : false,
-      counts,
-      products: response ? response : "Can not get products.",
-    });
-  } catch (err) {
-    return res.status(500).json({
-      success: false,
-      message: err.message,
-    });
+  //Execute query
+  if (category && brand) {
+    ProductCategory.findOne({ title: { $regex: category, $options: "i" } })
+      .exec()
+      .then(async (category) => {
+        const brandMacthed = await Brand.findOne({
+          title: { $regex: brand, $options: "i" },
+        });
+
+        queryCommand
+          .find({ category: category?._id, brand: brandMacthed?._id })
+          .skip(skip)
+          .limit(limit)
+          .populate("brand")
+          .populate("category")
+          .exec()
+          .then(async (products) => {
+            const counts = await Product.find({
+              category: category?._id,
+            }).countDocuments();
+            return res.status(200).json({
+              success: products ? true : false,
+              counts,
+              products: products ? products : "Can not get products.",
+            });
+          });
+      });
+  } else if (category) {
+    ProductCategory.findOne({ title: { $regex: category, $options: "i" } })
+      .exec()
+      .then((category) => {
+        queryCommand
+          .find({ category: category?._id })
+          .skip(skip)
+          .limit(limit)
+          .populate("brand")
+          .populate("category")
+          .exec()
+          .then(async (products) => {
+            const counts = await Product.find({
+              category: category?._id,
+            }).countDocuments();
+            return res.status(200).json({
+              success: products ? true : false,
+              counts,
+              products: products ? products : "Can not get products.",
+            });
+          });
+      });
+  } else if (brand) {
+    Brand.findOne({ title: { $regex: brand, $options: "i" } })
+      .exec()
+      .then((brand) => {
+        queryCommand
+          .find({ brand: brand?._id })
+          .skip(skip)
+          .limit(limit)
+          .populate("brand")
+          .populate("category")
+          .exec()
+          .then(async (products) => {
+            const counts = await Product.find({
+              brand: brand?._id,
+            }).countDocuments();
+            return res.status(200).json({
+              success: products ? true : false,
+              counts,
+              products: products ? products : "Can not get products.",
+            });
+          });
+      });
+  } else {
+    queryCommand.skip(skip).limit(limit);
+
+    queryCommand
+      .populate("category")
+      .populate("brand")
+      .exec()
+      .then(async (response) => {
+        const counts = await Product.find(formattedQueries).countDocuments();
+
+        return res.status(200).json({
+          success: response ? true : false,
+          counts,
+          products: response ? response : "Can not get products.",
+        });
+      })
+      .catch((err) => {
+        return res.status(500).json({ success: false, err: err.message });
+      });
   }
 });
 

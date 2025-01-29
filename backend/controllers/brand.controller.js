@@ -29,7 +29,7 @@ const getBrands = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    productBrands: response?.length ? response : "No product brands found",
+    brands: response?.length ? response : "No product brands found",
   });
 });
 

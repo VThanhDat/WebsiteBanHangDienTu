@@ -22,16 +22,48 @@ const Products = () => {
   const [brandFilter, setbrandFilter] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchProducts = async () => {
-    const response = await apiGetProducts();
+  const fetchProducts = async (page, limit, pathname, sort) => {
+    const arrLocation = pathname.split("/");
+    let category;
+    if (arrLocation[1] === "products") {
+      category = arrLocation[2];
+    }
+    setIsLoading(true);
+    const response = await apiGetProducts({
+      sort,
+      limit,
+      page,
+      category,
+      price: priceFilter,
+      brand: brandFilter,
+    });
+    if (response) setIsLoading(false);
     if (response.success) {
       setProducts(response.products);
+      setTotalItem(response.counts);
     }
   };
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    for (const entry of searchParams.entries()) {
+      const [param, value] = entry;
+      if (param === "page") setCurrentPage(+value || 1);
+      if (param === "limit") setLimitItem(+value || 12);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    fetchProducts(currentPage, limitItem, pathname, sort);
+  }, [currentPage, limitItem, pathname, sort, priceFilter, brandFilter]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [sort, priceFilter]);
+
+  useEffect(() => {
+    if (!totalItem) setCurrentPage(1);
+  }, [totalItem]);
 
   return (
     <div>
@@ -49,15 +81,42 @@ const Products = () => {
         </div>
       </div>
       <div className="mx-[-10px] flex w-full flex-wrap">
-        {products?.map((data) => (
-          <div
-            className="mb-5 w-1/4 px-2 sm:w-full md:w-1/2 lg:w-1/3"
-            key={data._id}
-          >
-            <Product productData={data} isHasLabel={false} />
+        {products?.length ? (
+          products?.map((data) => (
+            <div
+              className="mb-5 w-1/4 max-lg:w-1/3 max-md:w-1/2 max-sm:w-full"
+              key={data._id}
+            >
+              <Product productData={data} isHasLabel={false} />
+            </div>
+          ))
+        ) : !isLoading ? (
+          <div className="flex w-full items-center justify-center">
+            <img
+              className="w-[1000px] object-contain"
+              alt="no-product-found"
+              src={noProductFoundImg}
+            />
           </div>
-        ))}
+        ) : (
+          <div className="ml-[10px] flex h-[50vh] w-full items-center justify-center">
+            <span className="flex items-center">
+              <AiOutlineLoading size={20} className="animate-spin" />
+            </span>
+            <span className="ml-3 text-lg">Loading products...</span>
+          </div>
+        )}
       </div>
+      {!!products?.length && (
+        <div className="my-10 flex justify-center">
+          <Pagination
+            totalItem={totalItem}
+            currentPage={currentPage}
+            limitItem={limitItem}
+            onChange={setCurrentPage}
+          />
+        </div>
+      )}
     </div>
   );
 };
