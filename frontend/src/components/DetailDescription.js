@@ -3,15 +3,20 @@ import { Votebar, Button, VoteOption } from "./";
 import { capitalize, renderStarFromNumber } from "../utils/helpers";
 import moment from "moment";
 import { apiRatings } from "../apis";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { showModal } from "../store/app/appSlice";
+import Swal from "sweetalert2";
+import path from "../utils/path";
+import { useNavigate } from "react-router-dom";
 
 const DetailDescription = ({
   description = [],
   review = [],
   totalRatings,
-  totalCount,
+  ratings,
   nameProduct,
+  pid,
+  rerender,
 }) => {
   const contentBox = [
     { id: 1, label: "DESCRIPTION", title: "", content: description },
@@ -72,6 +77,54 @@ const DetailDescription = ({
 
   const [boxActive, setboxActive] = useState(1);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isLoggedIn } = useSelector((state) => state.user);
+  const handleSubmitVoteOption = async ({ comment, score }) => {
+    if (!comment || !pid || !score) {
+      alert("Please vote when click submit");
+      return;
+    }
+    await apiRatings({
+      star: score,
+      comment,
+      pid,
+    });
+    rerender();
+    dispatch(
+      showModal({
+        isShowModal: false,
+        modalChildren: null,
+      }),
+    );
+  };
+  const handleVoteNow = () => {
+    if (!isLoggedIn) {
+      Swal.fire({
+        text: "Login to vote",
+        cancelButtonText: "Cancel",
+        confirmButtonText: "Go login",
+        showCancelButton: true,
+        title: "Oops!",
+      }).then((rs) => {
+        if (rs.isConfirmed) {
+          navigate(`/${path.LOGIN}`);
+        }
+      });
+    } else {
+      dispatch(
+        showModal({
+          isShowModal: true,
+          modalChildren: (
+            <VoteOption
+              nameProduct={nameProduct}
+              handleSubmitVoteOption={handleSubmitVoteOption}
+            />
+          ),
+        }),
+      );
+    }
+  };
+
   return (
     <div className="mb-[50px] flex md:flex-col">
       <div className="flex gap-1 max-md:flex-col">
@@ -142,7 +195,7 @@ const DetailDescription = ({
                           ),
                         )}
                       </span>
-                      <span className="text-sm">{`${totalCount} reviews and commentors`}</span>
+                      <span className="text-sm">{`${ratings?.length} reviews and commentors`}</span>
                     </div>
                     <div className="flex flex-6 flex-col gap-2 border p-4">
                       {Array.from(Array(5).keys())
@@ -151,8 +204,13 @@ const DetailDescription = ({
                           <Votebar
                             key={el}
                             number={el + 1}
-                            ratingTotal={5}
-                            ratingCount={2}
+                            ratingTotal={ratings?.length}
+                            ratingCount={
+                              Array.isArray(ratings)
+                                ? ratings.filter((i) => i.star === el + 1)
+                                    .length
+                                : 0
+                            }
                           />
                         ))}
                     </div>
@@ -162,16 +220,7 @@ const DetailDescription = ({
                     <Button
                       type="button"
                       name="Vote now!"
-                      handleClick={() =>
-                        dispatch(
-                          showModal({
-                            isShowModal: true,
-                            modalChildren: (
-                              <VoteOption nameProduct={nameProduct} />
-                            ),
-                          }),
-                        )
-                      }
+                      handleClick={handleVoteNow}
                       className={`text-semibold rounded-md bg-main px-4 py-2 text-white`}
                     ></Button>
                   </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
@@ -68,6 +68,7 @@ const DetailProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [payload, setPayload] = useState([{ label: "", variant: "" }]);
   const [relatedProducts, setRelatedProducts] = useState(null);
+  const [update, setUpdate] = useState(false);
 
   const fetchProducts = async () => {
     const response = await apiGetProducts({ category });
@@ -76,7 +77,6 @@ const DetailProduct = () => {
 
   const fetchProductData = async () => {
     const response = await apiGetProduct(slug);
-    console.log(response);
     if (response?.success) {
       setProduct(response.product);
       setImageActive(response.product.thumb);
@@ -88,7 +88,18 @@ const DetailProduct = () => {
       fetchProductData();
       fetchProducts();
     }
+    window.scrollTo(0, 0);
   }, [slug]);
+
+  useEffect(() => {
+    if (slug) {
+      fetchProductData();
+    }
+  }, [update]);
+
+  const rerender = useCallback(() => {
+    setUpdate(!update);
+  }, [update]);
 
   const handleChangeImage = (link) => {
     setImageActive(link);
@@ -230,8 +241,10 @@ const DetailProduct = () => {
             description={product?.description}
             review={product?.ratings}
             totalRatings={product?.totalRatings}
-            totalCount={18}
+            ratings={product?.ratings} // Truyền cả mảng, không phải độ dài
             nameProduct={product?.title}
+            pid={product?._id}
+            rerender={rerender} 
           />
           <div className="my-8">
             <h3 className="mb-5 border-b-2 border-main text-[20px] font-semibold uppercase">
