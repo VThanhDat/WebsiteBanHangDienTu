@@ -76,6 +76,7 @@ const DetailProduct = () => {
 
   const fetchProductData = async () => {
     const response = await apiGetProduct(slug);
+    console.log(response);
     if (response?.success) {
       setProduct(response.product);
       setImageActive(response.product.thumb);
@@ -228,6 +229,9 @@ const DetailProduct = () => {
           <DetailDescription
             description={product?.description}
             review={product?.ratings}
+            totalRatings={product?.totalRatings}
+            totalCount={18}
+            nameProduct={product?.title}
           />
           <div className="my-8">
             <h3 className="mb-5 border-b-2 border-main text-[20px] font-semibold uppercase">

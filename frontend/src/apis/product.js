@@ -12,3 +12,13 @@ export const apiGetProducts = (params) =>
     method: "get",
     params,
   });
+
+export const apiRatings = (/*token,*/ data = {}) =>
+  axios({
+    url: `/product/ratings`,
+    method: "put",
+    // headers: {
+    //   Authorization: `Bearer ${token}`,
+    // },
+    data,
+  });

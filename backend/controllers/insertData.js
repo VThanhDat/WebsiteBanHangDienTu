@@ -24,7 +24,8 @@ const createProduct = async (product) => {
     sold: Math.round(Math.random() * 100),
     images: product?.images,
     variants: product?.variants,
-    totalRatings: Math.ceil(Math.random() * 5),
+    // totalRatings: Math.ceil(Math.random() * 5),
+    totalRatings: 0,
   });
 };
 

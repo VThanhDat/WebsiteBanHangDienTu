@@ -8,6 +8,8 @@ export const appSlice = createSlice({
     isLoading: false,
     isIconCardClick: false,
     isShowCart: false,
+    isShowModal: false,
+    modalChildren: null,
   },
   // Các action bình thường (sync action)
   reducers: {
@@ -19,6 +21,10 @@ export const appSlice = createSlice({
     },
     setisIconCartClickFalse: (state) => {
       state.isIconCardClick = false;
+    },
+    showModal: (state, action) => {
+      state.isShowModal = action.payload.isShowModal;
+      state.modalChildren = action.payload.modalChildren;
     },
   },
   // Code logic xử lý async action
@@ -44,3 +50,8 @@ export const appSlice = createSlice({
     });
   },
 });
+
+export const { showModal } = appSlice.actions;
+
+// Export the slice reducer
+export default appSlice.reducer;

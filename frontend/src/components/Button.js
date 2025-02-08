@@ -43,7 +43,7 @@ const Button = ({
             }`
       }
       onClick={
-        isNotPreventOnClick &&    
+        isNotPreventOnClick &&
         (async () => {
           setIsLoading(true);
           if (handleClick?.constructor?.name === "AsyncFunction") {

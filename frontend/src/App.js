@@ -18,17 +18,19 @@ import path from "./utils/path";
 import { getCategories } from "./store/app/asyncThunk";
 import { useDispatch, useSelector } from "react-redux";
 import Checkout from "./pages/public/Checkout";
+import { Modal } from "./components";
 
 function App() {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.app.categories);
-
+  const { isShowModal, modalChildren } = useSelector((state) => state.app);
   useEffect(() => {
     dispatch(getCategories());
   }, []);
 
   return (
-    <div className="min-h-screen font-main">
+    <div className="relative font-main">
+      {isShowModal && <Modal>{modalChildren}</Modal>}
       <Routes>
         {/* CLIENT */}
         <Route path={path.PUBLIC} element={<Public />}>
