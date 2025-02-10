@@ -18,8 +18,9 @@ export const formatMoney = (num) => {
 export const renderStarFromNumber = (num, size = 16) => {
   // 4 => [1,1,1,1,0]
   // 2 => [1,1,0,0,0]
-  if (!Number(num)) num = 5;
+  if (!Number(num)) return;
   const stars = [];
+  num = Math.round(num);
   for (let i = 0; i < +num; i++)
     stars.push(<AiFillStar color="orange" size={size} />);
   for (let i = 5; i > +num; i--)

@@ -10,11 +10,17 @@ const TopHeader = () => {
   const { isLoggedIn, current } = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (isLoggedIn && !current) dispatch(getCurrent());
+    const setTimeoutId = setTimeout(() => {
+      if (isLoggedIn && !current) dispatch(getCurrent());
+    });
+
+    return () => {
+      clearTimeout(setTimeoutId);
+    };
   }, [dispatch, isLoggedIn]);
 
   return (
-    <div className="bg-subs flex h-[60px] w-full justify-center">
+    <div className="flex h-[60px] w-full justify-center bg-subs">
       <div className="flex w-full max-w-main items-center justify-between text-sm text-black max-xl:px-3">
         <span className="mr-4 text-base font-medium">
           ORDER ONLINE OR CALL US (+84) 32 XXXX XXX

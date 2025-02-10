@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useState } from "react";
-import { Votebar, Button, VoteOption } from "./";
+import { Votebar, Button, VoteOption, Comment } from "./";
 import { capitalize, renderStarFromNumber } from "../utils/helpers";
 import moment from "moment";
 import { apiRatings } from "../apis";
@@ -88,14 +88,15 @@ const DetailDescription = ({
       star: score,
       comment,
       pid,
+      updatedAt: Date.now(),
     });
-    rerender();
     dispatch(
       showModal({
         isShowModal: false,
         modalChildren: null,
       }),
     );
+    rerender();
   };
   const handleVoteNow = () => {
     if (!isLoggedIn) {
@@ -185,8 +186,8 @@ const DetailDescription = ({
                 }}
               >
                 <div className="max-h-screen overflow-y-scroll">
-                  <div className="flex">
-                    <div className="flex flex-4 flex-col items-center justify-center border border-red-500">
+                  <div className="flex border">
+                    <div className="flex flex-4 flex-col items-center justify-center">
                       <span className="text-3xl font-semibold">{`${totalRatings}/5`}</span>
                       <span className="flex items-center gap-1">
                         {renderStarFromNumber(totalRatings)?.map(
@@ -197,7 +198,7 @@ const DetailDescription = ({
                       </span>
                       <span className="text-sm">{`${ratings?.length} reviews and commentors`}</span>
                     </div>
-                    <div className="flex flex-6 flex-col gap-2 border p-4">
+                    <div className="flex flex-6 flex-col gap-2 p-4">
                       {Array.from(Array(5).keys())
                         .reverse()
                         .map((el) => (
@@ -223,6 +224,17 @@ const DetailDescription = ({
                       handleClick={handleVoteNow}
                       className={`text-semibold rounded-md bg-main px-4 py-2 text-white`}
                     ></Button>
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    {ratings?.map((el) => (
+                      <Comment
+                        key={el._id}
+                        star={el.star}
+                        updatedAt={el.updatedAt}
+                        comment={el.comment}
+                        name={`${el.postedBy?.lastName} ${el.postedBy?.firstName}`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
