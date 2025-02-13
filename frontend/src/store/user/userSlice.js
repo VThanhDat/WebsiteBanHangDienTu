@@ -36,11 +36,15 @@ export const userSlice = createSlice({
 
     builder.addCase(getCurrent.fulfilled, (state, action) => {
       state.isLoading = false;
+      state.isLoggedIn = true;
       state.current = action.payload;
     });
 
     builder.addCase(getCurrent.rejected, (state, action) => {
       state.isLoading = false;
+      state.current = null;
+      state.isLoggedIn = false;
+      state.token = null;
     });
 
     builder.addCase(refreshToken.pending, (state) => {

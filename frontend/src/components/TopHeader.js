@@ -12,12 +12,12 @@ const TopHeader = () => {
   useEffect(() => {
     const setTimeoutId = setTimeout(() => {
       if (isLoggedIn && !current) dispatch(getCurrent());
-    });
+    }, 300);
 
     return () => {
       clearTimeout(setTimeoutId);
     };
-  }, [dispatch, isLoggedIn]);
+  }, [dispatch, isLoggedIn, current]);
 
   return (
     <div className="flex h-[60px] w-full justify-center bg-subs">
@@ -25,7 +25,7 @@ const TopHeader = () => {
         <span className="mr-4 text-base font-medium">
           ORDER ONLINE OR CALL US (+84) 32 XXXX XXX
         </span>
-        {isLoggedIn ? (
+        {isLoggedIn && current ? (
           <div className="flex items-center gap-4">
             <span className="text-base font-medium">
               {`Welcome, ${current?.firstName} ${current?.lastName}`}

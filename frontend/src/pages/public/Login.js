@@ -3,13 +3,13 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 // import { auth } from "../../firebase/config";
-import { InputField, Button } from "../../components";
-import { apiForgotPassword, apiLogin, apiRegister } from "../../apis";
-import path from "../../utils/path";
+import { InputField, Button } from "components";
+import { apiForgotPassword, apiLogin, apiRegister } from "apis";
+import path from "utils/path";
 import { useDispatch, useSelector } from "react-redux";
-import { userSlice } from "../../store/user/userSlice";
-import icons from "../../utils/icons";
-import { validate } from "../../utils/helpers";
+import { userSlice } from "store/user/userSlice";
+import icons from "utils/icons";
+import { validate } from "utils/helpers";
 
 const { AiOutlineClose, FaArrowLeftLong } = icons;
 
