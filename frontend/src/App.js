@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useJwt } from "react-jwt";
 import {
   Login,
   Home,
@@ -14,19 +15,34 @@ import {
   WishList,
   Cart,
 } from "./pages/public";
+import {
+  Account,
+  Profile,
+  Ratings,
+  Address,
+  Orders as ProfileOrders,
+} from "./pages/public/Account";
 import path from "./utils/path";
 import { getCategories } from "./store/app/asyncThunk";
 import { useDispatch, useSelector } from "react-redux";
 import Checkout from "./pages/public/Checkout";
 import { Modal } from "./components";
+import { getCurrent } from "./store/user/asyncThunk";
 
 function App() {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.app.categories);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const token = useSelector((state) => state.user.token);
+  const { decodedToken, isExpired } = useJwt(token);
   const { isShowModal, modalChildren } = useSelector((state) => state.app);
   useEffect(() => {
     dispatch(getCategories());
   }, []);
+
+  useEffect(() => {
+    dispatch(getCurrent(token));
+  }, [token, dispatch]);
 
   return (
     <div className="relative font-main">
@@ -54,10 +70,19 @@ function App() {
           <Route path={path.WISHLIST} element={<WishList />} />
           <Route path={path.CART} element={<Cart />} />
           <Route path={`/${path.CHECKOUT}`} element={<Checkout />} />
+          <Route path={path.ACCOUNT} element={<Account />}>
+            <Route path={`/${path.ACCOUNT_PROFILE}`} element={<Profile />} />
+            <Route
+              path={`/${path.ACCOUNT_ORDERS}`}
+              element={<ProfileOrders />}
+            />
+            <Route path={`/${path.ACCOUNT_RATINGS}`} element={<Ratings />} />
+            <Route path={`/${path.ACCOUNT_ADDRESS}`} element={<Address />} />
+          </Route>
         </Route>
         <Route path={path.RESET_PASSWORD} element={<ResetPassword />} />
         <Route path={path.AUTH_REGISTER} element={<AuthRegister />} />
-        <Route path={`/${path.LOGIN}`} element={<Login />} />
+        {!isLoggedIn && <Route path={path.LOGIN} element={<Login />} />}
 
         {/* ADMIN */}
       </Routes>

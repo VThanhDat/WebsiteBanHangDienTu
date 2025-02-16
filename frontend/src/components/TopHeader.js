@@ -20,8 +20,8 @@ const TopHeader = () => {
   }, [dispatch, isLoggedIn, current]);
 
   return (
-    <div className="flex h-[60px] w-full justify-center bg-subs">
-      <div className="flex w-full max-w-main items-center justify-between text-sm text-black max-xl:px-3">
+    <div className="flex h-[60px] w-full justify-center bg-main">
+      <div className="flex w-full max-w-main items-center justify-between text-sm text-white max-xl:px-3">
         <span className="mr-4 text-base font-medium">
           ORDER ONLINE OR CALL US (+84) 32 XXXX XXX
         </span>

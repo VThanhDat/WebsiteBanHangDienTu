@@ -116,10 +116,12 @@ const login = asyncHandler(async (req, res) => {
 });
 const getCurrent = asyncHandler(async (req, res) => {
   const { _id } = req.user;
-  const user = await User.findById(_id).select("-refreshToken -password -role");
+  const user = await User.findById({ _id })
+    .select("-password -refreshToken -role")
+    .populate("wishlist cart.product");
   return res.status(200).json({
     success: user ? true : false,
-    rs: user ? user : "User not found",
+    result: user ? user : "User is not found",
   });
 });
 const refreshAccessToken = asyncHandler(async (req, res) => {
