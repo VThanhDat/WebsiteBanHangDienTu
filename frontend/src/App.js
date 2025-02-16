@@ -16,12 +16,23 @@ import {
   Cart,
 } from "./pages/public";
 import {
+  Admin,
+  Dashboard,
+  Products as ProductsAdmin,
+  Brands,
+  Categories,
+  Orders,
+  Ratings as RatingsAdmin,
+  Coupons,
+} from "./pages/private";
+import {
   Account,
   Profile,
   Ratings,
   Address,
   Orders as ProfileOrders,
 } from "./pages/public/Account";
+import User from "./pages/private/Users";
 import path from "./utils/path";
 import { getCategories } from "./store/app/asyncThunk";
 import { useDispatch, useSelector } from "react-redux";
@@ -85,6 +96,21 @@ function App() {
         {!isLoggedIn && <Route path={path.LOGIN} element={<Login />} />}
 
         {/* ADMIN */}
+        {isLoggedIn && decodedToken?.role === "admin" && !isExpired && (
+          <Route path={`/${path.ADMIN}`} element={<Admin />}>
+            <Route path={`/${path.DASHBOARD}`} element={<Dashboard />} />
+            <Route
+              path={`/${path.PRODUCTS_ADMIN}`}
+              element={<ProductsAdmin />}
+            />
+            <Route path={`/${path.BRANDS}`} element={<Brands />} />
+            <Route path={`/${path.USERS}`} element={<User />} />
+            <Route path={`/${path.CATEGOGIES}`} element={<Categories />} />
+            <Route path={`/${path.ORDERS}`} element={<Orders />} />
+            <Route path={`/${path.RATINGS}`} element={<RatingsAdmin />} />
+            <Route path={`/${path.COUPONS}`} element={<Coupons />} />
+          </Route>
+        )}
       </Routes>
     </div>
   );

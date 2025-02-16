@@ -24,14 +24,14 @@ const path = {
   ACCOUNT_ADDRESS: "account/address",
 
   ADMIN: "admin",
-  DASHBOARD_ADMIN: "admin/dashboard",
+  DASHBOARD: "admin/dashboard",
   PRODUCTS_ADMIN: "admin/products",
-  BRANDS_ADMIN: "admin/brands",
-  CATEGOGIES_ADMIN: "admin/categories",
-  ORDERS_ADMIN: "admin/orders",
-  RATINGS_ADMIN: "admin/ratings",
-  COUPONS_ADMIN: "admin/coupons",
-  USERS_ADMIN: "admin/users",
+  BRANDS: "admin/brands",
+  CATEGOGIES: "admin/categories",
+  ORDERS: "admin/orders",
+  RATINGS: "admin/ratings",
+  COUPONS: "admin/coupons",
+  USERS: "admin/users",
 };
 
 export default path;

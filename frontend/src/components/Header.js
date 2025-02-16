@@ -1,7 +1,12 @@
-import React from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
+import { useJwt } from "react-jwt";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import logo from "../assets/logo.png";
+import { appSlice } from "../store/app/appSlice";
+import { userSlice } from "../store/user/userSlice";
 import icons from "../utils/icons";
-import { Link } from "react-router-dom";
 import path from "../utils/path";
 
 const {
@@ -13,6 +18,34 @@ const {
 } = icons;
 
 const Header = () => {
+  const [isClickAvatar, setIsClickAvatar] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const menuRef = useRef(null);
+  const iconMenuRef = useRef(null);
+  const token = useSelector((state) => state.user.token);
+  const { decodedToken, isExpired } = useJwt(token);
+  const isIconCardClick = useSelector((state) => state.app.isIconCardClick);
+  const currentUser = useSelector((state) => state.user.current);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
+  const handleToggleMenu = () => {
+    setIsClickAvatar(!isClickAvatar);
+  };
+
+  const handleClickOutsideMenu = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (!iconMenuRef.current.contains(event.target)) setIsClickAvatar(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutsideMenu);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideMenu);
+    };
+  }, []);
+
   return (
     <div className="flex h-[110px] w-full max-w-main justify-between py-[35px] max-xl:px-3">
       <Link to={`/${path.HOME}`} className="flex items-center">
@@ -44,8 +77,54 @@ const Header = () => {
           </div>
         </div>
         <div className="relative flex items-center justify-center px-6 text-sm max-md:px-3">
-          <div>
-            <FaUserCircle className="cursor-pointer" size={24} />
+          <div ref={iconMenuRef}>
+            {isLoggedIn ? (
+              <FaUserCircle
+                size={30}
+                className="cursor-pointer"
+                onClick={handleToggleMenu}
+              />
+            ) : (
+              <FaUserCircle
+                size={30}
+                className="cursor-pointer"
+                onClick={() => {
+                  navigate(`/login`);
+                }}
+              />
+            )}
+          </div>
+
+          <div
+            ref={menuRef}
+            className={`absolute right-[8px] top-[48px] w-[160px] overflow-hidden rounded-md border bg-white text-gray-700 shadow-xl ${
+              !isClickAvatar && "hidden"
+            }`}
+          >
+            <Link
+              className="flex border-b border-gray-300 p-3 hover:bg-gray-100"
+              onClick={handleToggleMenu}
+              to={`/${path.ACCOUNT_PROFILE}`}
+              state={"profile"}
+            >
+              My Account
+            </Link>
+            <Link
+              to={`${path.WISHLIST}`}
+              className="flex border-b border-gray-300 p-3 hover:bg-gray-100"
+              onClick={handleToggleMenu}
+            >
+              Wish List
+            </Link>
+            {isLoggedIn && decodedToken?.role === "admin" && !isExpired && (
+              <Link
+                to={`/${path.ADMIN}`}
+                className="flex border-b border-gray-300 p-3 font-semibold hover:bg-gray-100"
+                onClick={handleToggleMenu}
+              >
+                Go To Admin
+              </Link>
+            )}
           </div>
         </div>
       </div>
