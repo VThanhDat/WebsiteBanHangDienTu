@@ -28,7 +28,6 @@ import {
 import {
   Account,
   Profile,
-  Ratings,
   Address,
   Orders as ProfileOrders,
 } from "./pages/public/Account";
@@ -87,7 +86,6 @@ function App() {
               path={`/${path.ACCOUNT_ORDERS}`}
               element={<ProfileOrders />}
             />
-            <Route path={`/${path.ACCOUNT_RATINGS}`} element={<Ratings />} />
             <Route path={`/${path.ACCOUNT_ADDRESS}`} element={<Address />} />
           </Route>
         </Route>

@@ -39,7 +39,7 @@ const TopHeader = () => {
           </div>
         ) : (
           <Link
-            className="text-base font-medium transition-colors hover:text-main"
+            className="text-base font-medium transition-colors hover:text-gray-800"
             to={`/${path.LOGIN}`}
           >
             SIGN IN | REGISTER
