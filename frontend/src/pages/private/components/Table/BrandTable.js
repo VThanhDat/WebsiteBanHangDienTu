@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaSortAlphaDown, FaSortAlphaDownAlt } from "react-icons/fa"; // Import icon sắp xếp
 import {
   apiGetBrands,
   apiDeleteBrand,
@@ -30,6 +31,7 @@ export default function BrandTable() {
   const [payload, setPayload] = useState(defautPayload);
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [isCheck, setIsCheck] = useState([]);
+  const [sortOrder, setSortOrder] = useState("asc"); // A-Z mặc định
 
   const token = useSelector((state) => state.user.token);
 
@@ -78,6 +80,20 @@ export default function BrandTable() {
     setIsModalOpen(true);
     setIsEdit(true);
     setPayload({ _id, title });
+  };
+
+  const handleSort = () => {
+    const newOrder = sortOrder === "asc" ? "desc" : "asc";
+    setSortOrder(newOrder);
+
+    setData((prevData) => {
+      const sortedData = [...prevData].sort((a, b) => {
+        return newOrder === "asc"
+          ? a.title.localeCompare(b.title)
+          : b.title.localeCompare(a.title);
+      });
+      return sortedData;
+    });
   };
 
   const handleDelete = async (cid) => {
@@ -209,21 +225,26 @@ export default function BrandTable() {
               <thead className="bg-gray-50">
                 <tr>
                   <th className="w-[5%] py-3 pl-4">
-                    <div className="flex h-5 items-center">
-                      <input
-                        type="checkbox"
-                        className="rounded border-gray-200 text-blue-600 focus:ring-blue-500"
-                        onChange={handleSelectAll}
-                        checked={isCheckAll}
-                      />
-                      <label className="sr-only">Checkbox</label>
-                    </div>
+                    <input
+                      type="checkbox"
+                      className="rounded border-gray-200 text-blue-600 focus:ring-blue-500"
+                      onChange={handleSelectAll}
+                      checked={isCheckAll}
+                    />
                   </th>
                   <th className="hidden w-[20%] px-4 py-3 text-left text-xs font-bold uppercase text-gray-500 sm:table-cell">
                     ID
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-bold uppercase text-gray-500">
+                  <th
+                    className="flex cursor-pointer items-center gap-2 px-4 py-3 text-left text-xs font-bold uppercase text-gray-500"
+                    onClick={handleSort}
+                  >
                     Title
+                    {sortOrder === "asc" ? (
+                      <FaSortAlphaDown />
+                    ) : (
+                      <FaSortAlphaDownAlt />
+                    )}
                   </th>
                   <th className="hidden w-[10%] px-4 py-3 text-left text-xs font-bold uppercase text-gray-500 sm:table-cell">
                     Count
@@ -237,15 +258,12 @@ export default function BrandTable() {
                 {data?.map((item) => (
                   <tr key={item._id} className="hover:bg-gray-100">
                     <td className="py-3 pl-4">
-                      <div className="flex h-5 items-center">
-                        <input
-                          type="checkbox"
-                          className="rounded border-gray-200 text-blue-600 focus:ring-blue-500"
-                          checked={isCheck.includes(item._id)}
-                          onChange={() => handleClickCheckBox(item._id)}
-                        />
-                        <label className="sr-only">Checkbox</label>
-                      </div>
+                      <input
+                        type="checkbox"
+                        className="rounded border-gray-200 text-blue-600 focus:ring-blue-500"
+                        checked={isCheck.includes(item._id)}
+                        onChange={() => handleClickCheckBox(item._id)}
+                      />
                     </td>
                     <td className="hidden break-words px-4 py-3 text-sm text-gray-800 sm:table-cell">
                       {item._id}
