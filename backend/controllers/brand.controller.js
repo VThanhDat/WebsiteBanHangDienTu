@@ -10,27 +10,71 @@ const createNewBrand = asyncHandler(async (req, res) => {
   });
 });
 
-// Get a single category by ID
-const getBrand = asyncHandler(async (req, res) => {
-  const { bcid } = req.params;
-  const response = await Brand.findById(bcid);
-
-  return res.status(200).json({
-    success: response ? true : false,
-    productBrand: response
-      ? response
-      : `Cannot find product brand with ID: ${bcid}`,
-  });
-});
-
 // Get all categories
 const getBrands = asyncHandler(async (req, res) => {
-  const response = await Brand.find().select("title _id");
+  if (req.query?.title) {
+    const response = await Brand.aggregate([
+      {
+        $match: {
+          title: {
+            $regex: req.query.title,
+            $options: "i",
+          },
+        },
+      },
+      {
+        $lookup: {
+          from: "products",
+          localField: "_id",
+          foreignField: "brand",
+          as: "productCount",
+        },
+      },
+      {
+        $project: {
+          title: 1,
+          productCount: { $size: "$productCount" },
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+      {
+        $sort: { createdAt: -1 },
+      },
+    ]);
 
-  return res.status(200).json({
-    success: response ? true : false,
-    brands: response?.length ? response : "No product brands found",
-  });
+    return res.status(200).json({
+      success: response ? true : false,
+      brands: response ? response : "Can not get brands",
+    });
+  } else {
+    const response = await Brand.aggregate([
+      {
+        $lookup: {
+          from: "products",
+          localField: "_id",
+          foreignField: "brand",
+          as: "productCount",
+        },
+      },
+      {
+        $project: {
+          title: 1,
+          productCount: { $size: "$productCount" },
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+      {
+        $sort: { createdAt: -1 },
+      },
+    ]);
+
+    return res.status(200).json({
+      success: response ? true : false,
+      brands: response ? response : "Can not get brands",
+    });
+  }
 });
 
 // Update a category by ID
@@ -42,9 +86,7 @@ const updateBrand = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    updatedProductCategory: response
-      ? response
-      : `Cannot update product brand with ID: ${bcid}`,
+    updatedBrand: response ? response : "Can not update brand",
   });
 });
 
@@ -55,14 +97,25 @@ const deleteBrand = asyncHandler(async (req, res) => {
 
   return res.status(200).json({
     success: response ? true : false,
-    deletedProductBrand: response ? response : `Cannot delete product brand`,
+    deletedBrand: response ? response : "Can not delete brand",
+  });
+});
+
+// Delete multiple brands by ID
+const deleteManyBrands = asyncHandler(async (req, res) => {
+  const { _ids } = req.body;
+  const response = await Brand.deleteMany({ _id: { $in: _ids } });
+
+  return res.status(200).json({
+    success: response ? true : false,
+    deletedBrand: response ? response : "Can not delete brands",
   });
 });
 
 module.exports = {
   createNewBrand,
-  getBrand,
   getBrands,
   updateBrand,
   deleteBrand,
+  deleteManyBrands,
 };

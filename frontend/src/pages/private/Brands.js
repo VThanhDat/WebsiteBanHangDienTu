@@ -1,9 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import BrandTable from "./components/Table/BrandTable";
 const Brands = () => {
-  return (
-    <div>Brands</div>
-  )
-}
+  return <BrandTable />;
+};
 
-export default Brands
+export default Brands;

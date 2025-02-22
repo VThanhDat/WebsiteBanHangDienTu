@@ -17,11 +17,6 @@ const {
 const sidebarItem = [
   { icon: <RxDashboard />, title: "Dasboard", path: `/${path.DASHBOARD}` },
   {
-    icon: <RiProductHuntLine />,
-    title: "Products",
-    path: `/${path.PRODUCTS_ADMIN}`,
-  },
-  {
     icon: <SiBrandfolder />,
     title: "Brands",
     path: `/${path.BRANDS}`,
@@ -31,6 +26,11 @@ const sidebarItem = [
     icon: <AiOutlineShoppingCart />,
     title: "Categories",
     path: `/${path.CATEGOGIES}`,
+  },
+  {
+    icon: <RiProductHuntLine />,
+    title: "Products",
+    path: `/${path.PRODUCTS_ADMIN}`,
   },
   {
     icon: <RxAvatar />,
