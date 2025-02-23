@@ -1,7 +1,11 @@
 import React from "react";
 import BrandTable from "./components/Table/BrandTable";
 const Brands = () => {
-  return <BrandTable />;
+  return (
+    <div>
+      <BrandTable />
+    </div>
+  );
 };
 
 export default Brands;

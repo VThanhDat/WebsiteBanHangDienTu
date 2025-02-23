@@ -28,3 +28,5 @@ export { default as Votebar } from "./Votebar";
 export { default as VoteOption } from "./VoteOption";
 export { default as Modal } from "./Modal";
 export { default as Comment } from "./Comment";
+export { default as InputSelect } from "./InputSelect";
+export { default as InputFile } from "./InputFile";

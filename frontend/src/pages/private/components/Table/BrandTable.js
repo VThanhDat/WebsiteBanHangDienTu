@@ -96,7 +96,8 @@ export default function BrandTable() {
     });
   };
 
-  const handleDelete = async (cid) => {
+  const handleDelete = async (bcid) => {
+    console.log("Deleting brand with ID:", bcid); // Debug xem ID có đúng không
     let isSuccess = false;
     await Swal.fire({
       title: "Are you sure?",
@@ -108,7 +109,7 @@ export default function BrandTable() {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await apiDeleteBrand(token, cid);
+        const response = await apiDeleteBrand(token, bcid);
         if (response?.success) {
           await Swal.fire("Success!", response.mes, "success").then(() => {
             isSuccess = true;

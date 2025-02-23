@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const ctrls = require("../controllers/blog.controller");
 const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
-const uploader = require("../configs/cloudinary.config");
+const uploader = require("../middlewares/cloudinary.blog");
 
 router.get("/", ctrls.getBlogs);
 router.post("/", [verifyAccessToken, isAdmin], ctrls.createNewBlog);

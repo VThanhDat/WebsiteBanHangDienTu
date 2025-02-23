@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import CategoryTable from "./components/Table/CategoryTable";
 
 const Categories = () => {
   return (
-    <div>Categories</div>
-  )
-}
+    <div>
+      <CategoryTable />
+    </div>
+  );
+};
 
-export default Categories
+export default Categories;
