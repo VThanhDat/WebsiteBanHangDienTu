@@ -10,20 +10,29 @@ const InputFile = ({
   invalidFields,
   multiple = false,
   setInvalidFields = () => {},
+  setDeletedImages = () => {},
 }) => {
-  // Xử lý khi người dùng chọn ảnh
   const changeHandler = (e) => {
     const selectedFiles = Array.from(e.target.files);
+    console.log("Selected files:", selectedFiles); // Debug
     setValue((prev) => ({
       ...prev,
-      [nameKey]: [...(prev[nameKey] || []), ...selectedFiles],
+      [nameKey]: [...(prev[nameKey] || []), ...selectedFiles], // Cập nhật selectedFiles
     }));
   };
 
-  // Xử lý khi xóa ảnh
   const handleRemoveImage = (index) => {
+    const removedImage = images[index];
     const newImages = images.filter((_, i) => i !== index);
-    setValue((prev) => ({ ...prev, [nameKey]: newImages }));
+    console.log("Removing image:", removedImage, "New images:", newImages); // Debug
+    setValue((prev) => ({
+      ...prev,
+      [nameKey]: newImages,
+    }));
+
+    if (typeof removedImage === "string") {
+      setDeletedImages((prev) => [...prev, removedImage]);
+    }
   };
 
   return (
@@ -39,40 +48,47 @@ const InputFile = ({
         multiple={multiple}
       />
 
-      {/* Hiển thị thông báo lỗi */}
       {invalidFields?.some((field) => field.name === nameKey) && (
         <small className="italic text-red-500">
           {invalidFields.find((field) => field.name === nameKey).mes}
         </small>
       )}
 
-      {/* Hiển thị danh sách ảnh đã chọn */}
       <div className="mt-3 flex flex-wrap gap-2">
         {!!images?.length && (
           <SortableImage
             images={images}
             setImages={(newImages) =>
-              setValue((prev) => ({ ...prev, [nameKey]: newImages }))
+              setValue((prev) => ({
+                ...prev,
+                [nameKey]: newImages,
+              }))
             }
           />
         )}
 
         {images?.length > 0 &&
-          images?.map((image, index) => (
-            <div key={index} className="relative h-24 w-24">
-              <img
-                src={URL.createObjectURL(image)}
-                alt="preview"
-                className="h-full w-full rounded-md object-cover shadow-sm"
-              />
-              <button
-                onClick={() => handleRemoveImage(index)}
-                className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs text-white shadow-md hover:bg-red-700"
-              >
-                ✕
-              </button>
-            </div>
-          ))}
+          images?.map((image, index) => {
+            const imageUrl =
+              image instanceof File ? URL.createObjectURL(image) : image;
+            console.log("Image:", image, "Image URL:", imageUrl); // Debug
+            return (
+              <div key={index} className="relative h-24 w-24">
+                <img
+                  src={imageUrl}
+                  alt="preview"
+                  className="h-full w-full rounded-md object-cover shadow-sm"
+                  onError={(e) => console.log("Image load error:", e)} // Debug lỗi tải ảnh
+                />
+                <button
+                  onClick={() => handleRemoveImage(index)}
+                  className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs text-white shadow-md hover:bg-red-700"
+                >
+                  ✕
+                </button>
+              </div>
+            );
+          })}
       </div>
     </div>
   );

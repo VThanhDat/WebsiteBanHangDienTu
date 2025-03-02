@@ -5,7 +5,7 @@ const {
   generateRegisterToken,
 } = require("../middlewares/jwt");
 const jwt = require("jsonwebtoken");
-const sendMail = require("../ultils/sendMail");
+const sendMail = require("../utils/sendMail");
 const crypto = require("crypto");
 const User = require("../models/user.model");
 

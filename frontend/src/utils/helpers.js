@@ -87,3 +87,17 @@ export const capitalize = (str) => {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(" ");
 };
+
+export const reducedArray = (arr) => {
+  const reducedArray = [
+    ...arr.reduce((map, obj) => {
+      if (map.has(obj.label)) {
+        map.get(obj.label).push(...obj.variants);
+      } else {
+        map.set(obj.label, obj.variants);
+      }
+      return map;
+    }, new Map()),
+  ].map(([label, variants]) => ({ label, variants }));
+  return reducedArray;
+};

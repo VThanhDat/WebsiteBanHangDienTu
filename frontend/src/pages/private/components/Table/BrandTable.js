@@ -97,7 +97,6 @@ export default function BrandTable() {
   };
 
   const handleDelete = async (bcid) => {
-    console.log("Deleting brand with ID:", bcid); // Debug xem ID có đúng không
     let isSuccess = false;
     await Swal.fire({
       title: "Are you sure?",

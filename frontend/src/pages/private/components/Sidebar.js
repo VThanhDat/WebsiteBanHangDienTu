@@ -32,6 +32,8 @@ const sidebarItem = [
     title: "Products",
     path: `/${path.PRODUCTS_ADMIN}`,
   },
+  { icon: <AiOutlineStar />, title: "Ratings", path: `/${path.RATINGS}` },
+  { icon: <RiCoupon2Line />, title: "Coupons", path: `/${path.COUPONS}` },
   {
     icon: <RxAvatar />,
     title: "Users",
@@ -42,8 +44,6 @@ const sidebarItem = [
     title: "Orders",
     path: `/${path.ORDERS}`,
   },
-  { icon: <AiOutlineStar />, title: "Ratings", path: `/${path.RATINGS}` },
-  { icon: <RiCoupon2Line />, title: "Coupons", path: `/${path.COUPONS}` },
 ];
 
 const Sidebar = () => {
