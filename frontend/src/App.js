@@ -106,7 +106,7 @@ function App() {
             <Route path={`/${path.CATEGOGIES}`} element={<Categories />} />
             <Route path={`/${path.ORDERS}`} element={<Orders />} />
             <Route path={`/${path.RATINGS}`} element={<RatingsAdmin />} />
-            <Route path={`/${path.COUPONS}`} element={<Coupons />} />
+            <Route path={`/${path.ADMIN_COUPONS}`} element={<Coupons />} />
           </Route>
         )}
       </Routes>

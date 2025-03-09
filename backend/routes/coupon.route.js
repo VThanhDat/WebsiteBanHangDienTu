@@ -4,8 +4,17 @@ const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
 
 router.get("/", ctrls.getCoupons);
 router.post("/", [verifyAccessToken, isAdmin], ctrls.createNewCoupon);
-router.get("/:cpid", ctrls.getCoupon);
-router.put("/:cpid", [verifyAccessToken, isAdmin], ctrls.updateCoupon);
-router.delete("/:cpid", [verifyAccessToken, isAdmin], ctrls.deleteCoupon);
+router.put("/update/:cpid", [verifyAccessToken, isAdmin], ctrls.updateCoupon);
+router.delete(
+  "/delete/:cpid",
+  [verifyAccessToken, isAdmin],
+  ctrls.deleteCoupon
+);
+router.delete(
+  "/deletemany",
+  verifyAccessToken,
+  isAdmin,
+  ctrls.deleteManyCoupons
+);
 
 module.exports = router;

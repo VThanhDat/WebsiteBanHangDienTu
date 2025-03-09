@@ -33,7 +33,7 @@ const sidebarItem = [
     path: `/${path.PRODUCTS_ADMIN}`,
   },
   { icon: <AiOutlineStar />, title: "Ratings", path: `/${path.RATINGS}` },
-  { icon: <RiCoupon2Line />, title: "Coupons", path: `/${path.COUPONS}` },
+  { icon: <RiCoupon2Line />, title: "Coupons", path: `/${path.ADMIN_COUPONS}` },
   {
     icon: <RxAvatar />,
     title: "Users",

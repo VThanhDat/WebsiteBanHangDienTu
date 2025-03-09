@@ -87,3 +87,27 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* Tùy chỉnh DatePicker để trông giống input thường */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #d1d5db; /* Màu viền */
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151; /* Màu chữ */
+  outline: none;
+}
+
+.react-datepicker__input-container input::placeholder {
+  color: #9ca3af; /* Màu placeholder */
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #6366f1; /* Viền xanh khi focus */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); /* Hiệu ứng focus */
+}

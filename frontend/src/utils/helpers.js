@@ -47,7 +47,7 @@ export const validate = (payload = {}, setInvalidFields) => {
 
     switch (field[0]) {
       case "email":
-        const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         if (!field[1].match(regex)) {
           // eslint-disable-next-line no-loop-func
           invalidCount++;
@@ -100,4 +100,29 @@ export const reducedArray = (arr) => {
     }, new Map()),
   ].map(([label, variants]) => ({ label, variants }));
   return reducedArray;
+};
+
+export const compareObjects = (obj1, obj2) => {
+  // Check the number of properties in both objects
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+
+  // Compare each property of the two objects
+  for (let key of keys1) {
+    if (!obj2.hasOwnProperty(key) || obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+export const formatAddress = (json) => {
+  if (!json) return;
+  const obj = JSON.parse(json);
+  return `${obj?.address}, ward ${obj?.ward}, district ${obj?.district}, ${obj?.city}`;
 };

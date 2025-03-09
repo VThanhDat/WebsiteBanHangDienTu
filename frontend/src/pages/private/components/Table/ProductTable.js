@@ -307,7 +307,7 @@ const ProductTable = () => {
   }, []);
 
   useEffect(() => {
-    fetchProducts();
+    fetchProducts(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, limitItem]);
 
   return (
