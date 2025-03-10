@@ -29,6 +29,7 @@ import {
   Account,
   Profile,
   Address,
+  ChangePassword,
   Orders as ProfileOrders,
 } from "./pages/public/Account";
 import User from "./pages/private/Users";
@@ -87,6 +88,10 @@ function App() {
               element={<ProfileOrders />}
             />
             <Route path={`/${path.ACCOUNT_ADDRESS}`} element={<Address />} />
+            <Route
+              path={`/${path.ACCOUNT_PASSWORD}`}
+              element={<ChangePassword />}
+            />
           </Route>
         </Route>
         <Route path={path.RESET_PASSWORD} element={<ResetPassword />} />

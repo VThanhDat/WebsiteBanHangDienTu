@@ -47,3 +47,14 @@ export const apiDeleteManyUsers = (token, data) =>
     headers: { Authorization: `Bearer ${token}` },
     data,
   });
+
+export const apiUploadAvatar = (token, uid, data) =>
+  axios({
+    url: `/user/uploadavatar/${uid}`,
+    method: "put",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    },
+    data,
+  });

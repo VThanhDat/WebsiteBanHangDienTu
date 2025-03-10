@@ -19,9 +19,9 @@ const path = {
 
   ACCOUNT: "account",
   ACCOUNT_PROFILE: "account/profile",
-  ACCOUNT_RATINGS: "account/ratings",
   ACCOUNT_ORDERS: "account/orders",
   ACCOUNT_ADDRESS: "account/address",
+  ACCOUNT_PASSWORD: "account/password",
 
   ADMIN: "admin",
   DASHBOARD: "admin/dashboard",

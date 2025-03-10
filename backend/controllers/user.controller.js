@@ -1,6 +1,7 @@
 const User = require("../models/user.model");
 const Product = require("../models/product.model");
 const asyncHandler = require("express-async-handler");
+const cloudinary = require("cloudinary").v2;
 
 const getUsers = asyncHandler(async (req, res) => {
   const queries = { ...req.query };
@@ -202,6 +203,35 @@ const updateCart = asyncHandler(async (req, res) => {
   }
 });
 
+// Upload image Category
+const uploadAvatar = asyncHandler(async (req, res) => {
+  const { uid } = req.params;
+  if (!req.file) return res.status(400).json({ mes: "Missing input(s)" });
+
+  // Tìm user hiện tại để xóa ảnh cũ
+  const user = await User.findById(uid);
+  if (!user) return res.status(404).json({ mes: "User not found" });
+
+  // Nếu user đã có avatar trước đó => Xóa ảnh cũ trên Cloudinary
+  if (user.avatar) {
+    try {
+      const publicId = user.avatar.split("/").slice(-1)[0].split(".")[0];
+      await cloudinary.uploader.destroy(publicId);
+    } catch (error) {
+      console.error("Error deleting old avatar:", error);
+    }
+  }
+
+  // Cập nhật avatar mới
+  user.avatar = req.file.path;
+  await user.save();
+
+  return res.status(200).json({
+    status: true,
+    updatedAvatar: user.avatar,
+  });
+});
+
 const createUserAddress = asyncHandler(async (req, res) => {});
 
 module.exports = {
@@ -212,4 +242,5 @@ module.exports = {
   updateUserAddress,
   updateCart,
   deleteManyUsers,
+  uploadAvatar,
 };

@@ -46,6 +46,7 @@ import {
   AiOutlineSearch,
   AiOutlineArrowUp,
   AiOutlineEdit,
+  AiOutlineUser,
 } from "react-icons/ai";
 
 const icons = {
@@ -95,6 +96,7 @@ const icons = {
   CiDiscount1,
   FaFacebookMessenger,
   FaArrowLeftLong,
+  AiOutlineUser,
 };
 
 export default icons;
