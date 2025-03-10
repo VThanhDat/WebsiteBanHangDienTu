@@ -82,29 +82,49 @@ const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password)
     return res.status(400).json({
-      sucess: false,
+      success: false,
       mes: "Missing inputs",
     });
-  // plain object
+
+  // Tìm user theo email
   const response = await User.findOne({ email });
-  if (response && (await response.isCorrectPassword(password))) {
+
+  if (!response) {
+    throw new Error("Invalid credentials!");
+  }
+
+  // Kiểm tra nếu tài khoản bị khóa
+  if (response.isBlocked) {
+    return res.status(403).json({
+      success: false,
+      mes: "Your account has been blocked. Please contact support.",
+    });
+  }
+
+  // Kiểm tra mật khẩu
+  if (await response.isCorrectPassword(password)) {
     // Tách password và role ra khỏi response
     const { password, role, refreshToken, ...userData } = response.toObject();
+
     // Tạo access token
     const accessToken = generateAccessToken(response._id, role);
+
     // Tạo refresh token
     const newRefreshToken = generateRefreshToken(response._id);
+
     // Lưu refresh token vào database
     await User.findByIdAndUpdate(
       response._id,
       { refreshToken: newRefreshToken },
       { new: true }
     );
+
     // Lưu refresh token vào cookie
     res.cookie("refreshToken", newRefreshToken, {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
+
     return res.status(200).json({
       success: true,
       accessToken,
@@ -114,6 +134,7 @@ const login = asyncHandler(async (req, res) => {
     throw new Error("Invalid credentials!");
   }
 });
+
 const getCurrent = asyncHandler(async (req, res) => {
   const { _id } = req.user;
   const user = await User.findById({ _id })

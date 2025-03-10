@@ -1,15 +1,71 @@
 const User = require("../models/user.model");
 const Product = require("../models/product.model");
-
 const asyncHandler = require("express-async-handler");
 
 const getUsers = asyncHandler(async (req, res) => {
-  const response = await User.find().select("-refreshToken -password -role");
-  return res.status(200).json({
-    success: response ? true : false,
-    users: response,
-  });
+  const queries = { ...req.query };
+  const excludeFields = ["limit", "sort", "page", "fields"];
+  excludeFields.forEach((el) => delete queries[el]);
+  // Format operator Mongoose
+  let queryString = JSON.stringify(queries);
+  queryString = queryString.replace(
+    /\b(gte|gt|lt|lte)\b/g,
+    (matchedEl) => `$${matchedEl}`
+  );
+  const formattedQueries = JSON.parse(queryString);
+  //Filtering
+  if (queries?.firstName)
+    formattedQueries.firstName = {
+      $regex: queries.firstName,
+      $options: "i",
+    };
+  if (queries?.lastName)
+    formattedQueries.lastName = {
+      $regex: queries.lastName,
+      $options: "i",
+    };
+  if (queries?.email)
+    formattedQueries.email = {
+      $regex: queries.email,
+      $options: "i",
+    };
+  if (queries?.phone)
+    formattedQueries.phone = {
+      $regex: queries.phone,
+      $options: "i",
+    };
+  let queryCommand = User.find(formattedQueries);
+
+  //Sorting
+  if (req.query.sort) {
+    const sortBy = req.query.sort.split(",").join(" ");
+    queryCommand.sort(sortBy);
+  }
+  //Fields limiting
+  if (req.query.fields) {
+    const fields = req.query.fields.split(",").join(" ");
+    queryCommand.select(fields);
+  }
+  //Pagination
+  const page = +req.query.page || 1;
+  const limit = +req.query.limit || process.env.LIMIT_PRODUCTS;
+  const skip = (page - 1) * limit;
+  //Execute query
+  queryCommand
+    .skip(skip)
+    .limit(limit)
+    .select("-password -refreshToken")
+    .exec()
+    .then(async (response) => {
+      const counts = await User.find(formattedQueries).countDocuments();
+      return res.status(200).json({
+        success: response ? true : false,
+        counts,
+        users: response ? response : "Can not get users.",
+      });
+    });
 });
+
 const deleteUser = asyncHandler(async (req, res) => {
   const { _id } = req.query;
   if (!_id) throw new Error("Missing inputs");
@@ -21,29 +77,59 @@ const deleteUser = asyncHandler(async (req, res) => {
       : "No user delete",
   });
 });
+
+const deleteManyUsers = asyncHandler(async (req, res) => {
+  const { _ids } = req.body;
+  const deletedUser = await User.deleteMany({ _id: { $in: _ids } });
+  return res.status(200).json({
+    success: deletedUser ? true : false,
+    deletedUser: deletedUser ? deletedUser : "Can not delete users",
+  });
+});
+
 const updateUser = asyncHandler(async (req, res) => {
-  //
   const { _id } = req.user;
-  if (!_id || Object.keys(req.body).length === 0)
-    throw new Error("Missing inputs");
-  const response = await User.findByIdAndUpdate(_id, req.body, {
-    new: true,
-  }).select("-password -role -refreshToken");
+  const { firstName, lastName, phone, password } = req.body;
+  const response = await User.findByIdAndUpdate(
+    _id,
+    { firstName, lastName, phone, password },
+    {
+      new: true,
+    }
+  ).select("-password");
   return res.status(200).json({
     success: response ? true : false,
     updatedUser: response ? response : "Some thing went wrong",
   });
 });
+
 const updateUserByAdmin = asyncHandler(async (req, res) => {
-  //
   const { uid } = req.params;
+
   if (Object.keys(req.body).length === 0) throw new Error("Missing inputs");
+
+  // Chỉ admin mới có quyền chỉnh sửa role
+  if (req.user.role !== "admin") {
+    return res.status(403).json({ success: false, mes: "Permission denied" });
+  }
+
+  const user = await User.findById(uid);
+  if (!user) throw new Error("User not found");
+
+  // Ngăn hạ cấp từ admin xuống user
+  if (user.role === "admin" && req.body.role === "user") {
+    return res
+      .status(403)
+      .json({ success: false, mes: "Cannot downgrade an admin to user" });
+  }
+
   const response = await User.findByIdAndUpdate(uid, req.body, {
     new: true,
-  }).select("-password -role -refreshToken");
+  }).select("-password -refreshToken");
+
   return res.status(200).json({
     success: response ? true : false,
-    updatedUser: response ? response : "Some thing went wrong",
+    updatedUser: response ? response : "Something went wrong",
   });
 });
 
@@ -125,4 +211,5 @@ module.exports = {
   updateUserByAdmin,
   updateUserAddress,
   updateCart,
+  deleteManyUsers,
 };

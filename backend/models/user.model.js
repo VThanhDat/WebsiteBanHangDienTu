@@ -31,6 +31,7 @@ var userSchema = new mongoose.Schema(
     role: {
       type: String,
       default: "user",
+      enum: ["admin", "user"],
     },
     address: {
       type: [String], // Định nghĩa address là một mảng các chuỗi
@@ -43,7 +44,6 @@ var userSchema = new mongoose.Schema(
         variant: [{ label: String, variant: String }],
       },
     ],
-    address: String,
     wishlist: [{ type: mongoose.Types.ObjectId, ref: "Product" }],
     isBlocked: {
       type: Boolean,

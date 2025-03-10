@@ -121,8 +121,23 @@ export const compareObjects = (obj1, obj2) => {
   return true;
 };
 
-export const formatAddress = (json) => {
-  if (!json) return;
-  const obj = JSON.parse(json);
-  return `${obj?.address}, ward ${obj?.ward}, district ${obj?.district}, ${obj?.city}`;
+export const formatAddress = (input) => {
+  if (!input) return "Invalid address data";
+
+  let addresses;
+
+  if (typeof input === "string") {
+    try {
+      addresses = JSON.parse(input);
+    } catch (error) {
+      return "Invalid address format";
+    }
+  } else if (Array.isArray(input)) {
+    addresses = input;
+  } else {
+    return "Invalid address data";
+  }
+
+  // Thêm "Địa chỉ 1:", "Địa chỉ 2:" vào mỗi phần tử
+  return addresses.map((addr) => `- ${addr}`).join("<br/>"); // Xuống dòng trong HTML
 };
