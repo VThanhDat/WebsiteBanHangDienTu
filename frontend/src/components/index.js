@@ -31,3 +31,4 @@ export { default as Comment } from "./Comment";
 export { default as InputSelect } from "./InputSelect";
 export { default as InputFile } from "./InputFile";
 export { default as InputDynamic } from "./InputDynamic";
+export { default as MoveTopButton } from "./MoveTopButton";

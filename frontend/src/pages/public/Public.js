@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import BreadCrumb from "../../components/BreadCrumb";
 import { Header, Navigation, TopHeader, Footer } from "../../components";
+import MoveTopButton from "../../components/MoveTopButton";
 
 const Public = () => {
   const { pathname } = useLocation();
@@ -18,6 +19,7 @@ const Public = () => {
         </div>
       </div>
       <Footer />
+      <MoveTopButton />
     </div>
   );
 };
