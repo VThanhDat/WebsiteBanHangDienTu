@@ -7,6 +7,15 @@ export const apiUpdateUserAddress = (token, data) =>
     headers: { Authorization: `Bearer ${token}` },
     data,
   });
+
+export const apiChangePassword = (token, data) =>
+  axios({
+    url: "/user/change-password",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
 export const apiUpdateUserInformation = (token, data) =>
   axios({
     url: "/user/current",

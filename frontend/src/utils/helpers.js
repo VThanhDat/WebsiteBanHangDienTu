@@ -141,3 +141,8 @@ export const formatAddress = (input) => {
   // Thêm "Địa chỉ 1:", "Địa chỉ 2:" vào mỗi phần tử
   return addresses.map((addr) => `- ${addr}`).join("<br/>"); // Xuống dòng trong HTML
 };
+
+export const compareArrays = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) return false;
+  return arr1.every((value, index) => value === arr2[index]);
+};

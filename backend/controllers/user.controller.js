@@ -2,6 +2,7 @@ const User = require("../models/user.model");
 const Product = require("../models/product.model");
 const asyncHandler = require("express-async-handler");
 const cloudinary = require("cloudinary").v2;
+const bcrypt = require("bcrypt");
 
 const getUsers = asyncHandler(async (req, res) => {
   const queries = { ...req.query };
@@ -136,17 +137,32 @@ const updateUserByAdmin = asyncHandler(async (req, res) => {
 
 const updateUserAddress = asyncHandler(async (req, res) => {
   const { _id } = req.user;
-  if (!req.body.address) throw new Error("Missing input(s)");
+  const { address, removedAddresses } = req.body;
+
+  if (!Array.isArray(address)) throw new Error("Invalid address format");
+
+  const user = await User.findById(_id);
+  if (!user) throw new Error("User not found");
+
+  // Nếu có địa chỉ bị xóa, thực hiện $pull trước
+  if (Array.isArray(removedAddresses) && removedAddresses.length > 0) {
+    await User.findByIdAndUpdate(
+      _id,
+      { $pull: { address: { $in: removedAddresses } } },
+      { new: true }
+    );
+  }
+
+  // Sau đó cập nhật danh sách address mới (tránh xung đột)
   const response = await User.findByIdAndUpdate(
     _id,
-    { $push: { address: req.body.address } },
-    {
-      new: true,
-    }
+    { $set: { address } },
+    { new: true }
   ).select("-password -refreshToken -role");
+
   return res.status(200).json({
-    success: response ? true : false,
-    updatedUser: response ? response : "No user address updated",
+    success: !!response,
+    updatedUser: response || "No user address updated",
   });
 });
 
@@ -232,7 +248,31 @@ const uploadAvatar = asyncHandler(async (req, res) => {
   });
 });
 
-const createUserAddress = asyncHandler(async (req, res) => {});
+// Change password
+const changePassword = asyncHandler(async (req, res) => {
+  const { oldPassword, newPassword } = req.body;
+  const { _id } = req.user;
+
+  if (!oldPassword || !newPassword) {
+    return res.status(400).json({ mes: "Missing inputs!" });
+  }
+
+  const user = await User.findById(_id);
+  if (!user) {
+    return res.status(404).json({ mes: "User does not exist!" });
+  }
+
+  const isMatch = await bcrypt.compare(oldPassword, user.password);
+  if (!isMatch) {
+    return res.status(400).json({ mes: "Old password is incorrect!" });
+  }
+
+  user.password = newPassword; 
+
+  await user.save();
+
+  res.status(200).json({ mes: "Password changed successfully!" });
+});
 
 module.exports = {
   getUsers,
@@ -243,4 +283,5 @@ module.exports = {
   updateCart,
   deleteManyUsers,
   uploadAvatar,
+  changePassword,
 };

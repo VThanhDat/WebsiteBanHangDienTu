@@ -39,6 +39,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Checkout from "./pages/public/Checkout";
 import { Modal } from "./components";
 import { getCurrent } from "./store/user/asyncThunk";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,6 +48,9 @@ function App() {
   const token = useSelector((state) => state.user.token);
   const { decodedToken, isExpired } = useJwt(token);
   const { isShowModal, modalChildren } = useSelector((state) => state.app);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     dispatch(getCategories());
   }, []);
@@ -54,6 +58,12 @@ function App() {
   useEffect(() => {
     dispatch(getCurrent(token));
   }, [token, dispatch]);
+
+  useEffect(() => {
+    if (!isLoggedIn && location.pathname.startsWith("/account")) {
+      navigate("/login");
+    }
+  }, [isLoggedIn, location.pathname, navigate]);
 
   return (
     <div className="relative font-main">

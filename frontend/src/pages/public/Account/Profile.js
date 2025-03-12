@@ -80,8 +80,6 @@ const Profile = () => {
         PROFILE
       </h3>
       <div className="py-4 text-lg font-medium">
-        <h4 className="mb-5">ACCOUNT INFORMATION</h4>
-
         {/* Avatar + Form */}
         <div className="flex items-center gap-6 max-md:flex-col">
           {/* Avatar */}

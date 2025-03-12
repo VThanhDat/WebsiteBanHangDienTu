@@ -6,7 +6,7 @@ const uploader = require("../middlewares/cloudinary.user");
 router.put("/cart", [verifyAccessToken], ctrls.updateCart);
 router.put("/address", [verifyAccessToken], ctrls.updateUserAddress);
 router.put("/current", [verifyAccessToken], ctrls.updateUser);
-
+router.put("/change-password", [verifyAccessToken], ctrls.changePassword);
 //[ADMIN]
 router.get("/", [verifyAccessToken, isAdmin], ctrls.getUsers);
 router.delete("/delete", [verifyAccessToken, isAdmin], ctrls.deleteUser);
