@@ -23,7 +23,6 @@ export { default as Filter } from "./Filter";
 export { default as SortBy } from "./SortBy";
 export { default as CustomSelect } from "./CustomSelect";
 export { default as Pagination } from "./Pagination";
-export { default as Ratings } from "./Ratings";
 export { default as Votebar } from "./Votebar";
 export { default as VoteOption } from "./VoteOption";
 export { default as Modal } from "./Modal";

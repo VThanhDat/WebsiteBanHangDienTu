@@ -24,6 +24,23 @@ export const apiUpdateUserInformation = (token, data) =>
     data,
   });
 
+// WISHLIST
+export const apiAddWishList = (token, data) =>
+  axios({
+    url: "/user/addwishlist",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
+export const apiRemoveWishList = (token, data) =>
+  axios({
+    url: "/user/removewishlist",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
 //ADMIN
 export const apiGetUsers = (token, params) =>
   axios({

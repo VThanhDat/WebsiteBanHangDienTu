@@ -7,6 +7,8 @@ router.put("/cart", [verifyAccessToken], ctrls.updateCart);
 router.put("/address", [verifyAccessToken], ctrls.updateUserAddress);
 router.put("/current", [verifyAccessToken], ctrls.updateUser);
 router.put("/change-password", [verifyAccessToken], ctrls.changePassword);
+router.put("/addwishlist", [verifyAccessToken], ctrls.updateWishList);
+router.put("/removewishlist", [verifyAccessToken], ctrls.removeWishList);
 //[ADMIN]
 router.get("/", [verifyAccessToken, isAdmin], ctrls.getUsers);
 router.delete("/delete", [verifyAccessToken, isAdmin], ctrls.deleteUser);

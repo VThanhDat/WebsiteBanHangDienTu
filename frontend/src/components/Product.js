@@ -1,15 +1,29 @@
 import React from "react";
 import { formatMoney, renderStarFromNumber } from "../utils/helpers";
-import { Link } from "react-router-dom";
 import labelNew from "../assets/new.png";
 import labelTrending from "../assets/trending.png";
 import SelectOption from "./SelectOption";
 import icons from "../utils/icons";
 import path from "../utils/path";
+import { Link } from "react-router-dom";
+import { apiAddWishList } from "../apis";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrent } from "../store/user/asyncThunk";
 
 const { BsFillCartFill, AiOutlineMenu, BsFillSuitHeartFill } = icons;
 
 const Product = ({ productData, isNew, isHasLabel = true }) => {
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.user.token);
+
+  const handleAddWishList = async (wid) => {
+    const response = await apiAddWishList(token, { wid });
+    if (response?.success) {
+      dispatch(getCurrent(token));
+    }
+    return response?.success;
+  };
+
   return (
     <div className="w-full px-[10px] text-base">
       <div
@@ -22,9 +36,13 @@ const Product = ({ productData, isNew, isHasLabel = true }) => {
               icon={<BsFillCartFill />}
               productId={productData?._id}
             />
-            <SelectOption icon={<AiOutlineMenu />} />
+            <SelectOption
+              icon={<AiOutlineMenu />}
+              path={`/${path.DETAIL_PRODUCT}/${productData?.slug}`}
+            />
             <SelectOption
               icon={<BsFillSuitHeartFill />}
+              onClick={handleAddWishList}
               productId={productData?._id}
             />
           </div>

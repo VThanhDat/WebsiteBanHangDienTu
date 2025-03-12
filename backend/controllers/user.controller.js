@@ -267,11 +267,54 @@ const changePassword = asyncHandler(async (req, res) => {
     return res.status(400).json({ mes: "Old password is incorrect!" });
   }
 
-  user.password = newPassword; 
+  user.password = newPassword;
 
   await user.save();
 
   res.status(200).json({ mes: "Password changed successfully!" });
+});
+
+const updateWishList = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const user = await User.findById(_id);
+
+  if (!user?.wishlist?.find((el) => el.toString() === req.body.wid)) {
+    const response = await User.findByIdAndUpdate(
+      _id,
+      {
+        $push: {
+          wishlist: req.body.wid,
+        },
+      },
+      { new: true }
+    ).select("-password -refreshToken -role");
+    return res.status(200).json({
+      success: response ? true : false,
+      updatedUser: response ? response : "Something went wrong",
+    });
+  } else {
+    return res.status(200).json({ success: true, user });
+  }
+});
+
+const removeWishList = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const user = await User.findById(_id);
+  if (user?.wishlist?.find((el) => el.toString() === req.body.wid)) {
+    const response = await User.findByIdAndUpdate(
+      _id,
+      { $pull: { wishlist: req.body.wid } },
+      {
+        new: true,
+      }
+    ).select("-password -refreshToken -role");
+    return res.status(200).json({
+      success: response ? true : false,
+      updatedUser: response ? response : "Something went wrong",
+    });
+  } else {
+    throw new Error("Do not found this item on wishlist");
+  }
 });
 
 module.exports = {
@@ -284,4 +327,6 @@ module.exports = {
   deleteManyUsers,
   uploadAvatar,
   changePassword,
+  updateWishList,
+  removeWishList,
 };
