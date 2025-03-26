@@ -67,10 +67,17 @@ const Header = () => {
           </span>
           <span>Online Support 24/7</span>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-2 border-r px-6 hover:cursor-pointer hover:text-main max-md:ml-3 max-md:px-3">
+        <Link
+          to={`/${path.CART}`}
+          className="flex flex-wrap items-center justify-center gap-2 border-r px-6 hover:cursor-pointer hover:text-main max-md:ml-3 max-md:px-3"
+        >
           <BsFillBagFill color="red" size={20} />
-          <span className="text-sm">0 item(s)</span>
-        </div>
+          <span className="text-sm">
+            {currentUser?.cart?.length > 1
+              ? `${currentUser?.cart?.length} items`
+              : `${currentUser?.cart?.length || "0"} item`}
+          </span>
+        </Link>
         <div className="relative flex items-center justify-center px-6 text-sm max-md:px-3">
           <div>
             <FaFacebookMessenger className="cursor-pointer" size={24} />

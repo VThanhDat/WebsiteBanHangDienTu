@@ -24,6 +24,39 @@ export const apiUpdateUserInformation = (token, data) =>
     data,
   });
 
+// CART
+export const apiAddToCart = (token, data) =>
+  axios({
+    url: "/user/updatecart",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
+export const apiRemoveFromCart = (token, data) =>
+  axios({
+    url: "/user/removefromcart",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
+export const apiUpdateCart = (token, data) =>
+  axios({
+    url: "/user/updatecart",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
+export const apiClearCart = (token, data) =>
+  axios({
+    url: "/user/clearcart",
+    method: "put",
+    headers: { Authorization: `Bearer ${token}` },
+    data,
+  });
+
 // WISHLIST
 export const apiAddWishList = (token, data) =>
   axios({

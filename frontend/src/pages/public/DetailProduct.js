@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import Swal from "sweetalert2";
-import { apiGetProduct, apiGetProducts } from "../../apis";
+import { apiAddToCart, apiGetProduct, apiGetProducts } from "../../apis";
 import { Button } from "../../components";
 import DetailDescription from "../../components/DetailDescription";
 import InputNumberProduct from "../../components/InputNumberProduct";
@@ -69,6 +69,27 @@ const DetailProduct = () => {
   const [payload, setPayload] = useState([{ label: "", variant: "" }]);
   const [relatedProducts, setRelatedProducts] = useState(null);
   const [update, setUpdate] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const token = useSelector((state) => state.user.token);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
+  const checkIsLoggedIn = async () => {
+    if (!isLoggedIn) {
+      await Swal.fire({
+        title: "Please login!",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Go login",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate(`/${path.LOGIN}`);
+        }
+      });
+    }
+  };
 
   const fetchProducts = async () => {
     const response = await apiGetProducts({ category });
@@ -103,6 +124,22 @@ const DetailProduct = () => {
 
   const handleChangeImage = (link) => {
     setImageActive(link);
+  };
+
+  const handleAddToCart = async (pid) => {
+    await checkIsLoggedIn();
+    const response = await apiAddToCart(token, {
+      pid,
+      quantity: quantity,
+      variant: payload?.map(({ label, variant }) => ({
+        label,
+        variant: variant.variant,
+      })),
+    });
+    if (response?.success) {
+      dispatch(getCurrent(token));
+    }
+    return response?.success;
   };
 
   useEffect(() => {
@@ -206,7 +243,14 @@ const DetailProduct = () => {
 
                 {/* Button Add to Cart */}
                 <div className="mt-4">
-                  <Button name="ADD TO CART" hasIconSuccess={true} />
+                  <Button
+                    name="ADD TO CART"
+                    handleClick={async () => {
+                      await handleAddToCart(product?._id);
+                      return true;
+                    }}
+                    hasIconSuccess={true}
+                  />
                 </div>
               </div>
               {/* Information */}
@@ -244,7 +288,7 @@ const DetailProduct = () => {
             ratings={product?.ratings} // Truyền cả mảng, không phải độ dài
             nameProduct={product?.title}
             pid={product?._id}
-            rerender={rerender} 
+            rerender={rerender}
           />
           <div className="my-8">
             <h3 className="mb-5 border-b-2 border-main text-[20px] font-semibold uppercase">

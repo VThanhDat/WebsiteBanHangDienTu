@@ -41,6 +41,28 @@ const MoveTopButton = () => {
       >
         <AiOutlineArrowUp size={28} />
       </button>
+
+      <Link
+        className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-main text-white shadow-xl"
+        onClick={scrollToTop}
+        to={`/${path.WISHLIST}`}
+      >
+        <BsFillSuitHeartFill size={28} />
+        <div className="absolute right-[-8px] top-[-8px] aspect-square w-[30px] rounded-full border border-main bg-white text-center text-lg font-semibold text-main">
+          {currentUser?.wishlist?.length || "0"}
+        </div>
+      </Link>
+
+      <Link
+        className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-main text-white shadow-xl"
+        onClick={scrollToTop}
+        to={`/${path.CART}`}
+      >
+        <AiOutlineShoppingCart size={28} />
+        <div className="absolute right-[-8px] top-[-8px] aspect-square w-[30px] rounded-full border border-main bg-white text-center text-lg font-semibold text-main">
+          {currentUser?.cart?.length || "0"}
+        </div>
+      </Link>
     </div>
   );
 };

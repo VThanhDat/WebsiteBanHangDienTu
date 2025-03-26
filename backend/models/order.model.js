@@ -35,6 +35,11 @@ var orderSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    paymentMethod: {
+      type: String,
+      required: true,
+      enum: ["Payment COD", "Payment PayPal"],
+    },
     orderBy: {
       type: mongoose.Types.ObjectId,
       ref: "User",

@@ -3,6 +3,7 @@ const Product = require("../models/product.model");
 const asyncHandler = require("express-async-handler");
 const cloudinary = require("cloudinary").v2;
 const bcrypt = require("bcrypt");
+const { arraysEqual } = require("../utils/helper");
 
 const getUsers = asyncHandler(async (req, res) => {
   const queries = { ...req.query };
@@ -166,48 +167,59 @@ const updateUserAddress = asyncHandler(async (req, res) => {
   });
 });
 
+// Update cart
 const updateCart = asyncHandler(async (req, res) => {
   const { _id } = req.user;
-  const { pid, quantity, color } = req.body;
-  if (!pid || !quantity || !color) throw new Error("Missing input(s)");
-  const user = await User.findById(_id).select("cart");
-  const alreadyProduct = user?.cart?.find(
-    (el) => el.product.toString() === pid
-  );
-  if (alreadyProduct) {
-    if (alreadyProduct.color === color) {
-      const response = await User.updateOne(
-        { cart: { $elemMatch: alreadyProduct } },
-        { $set: { "cart.$.quantity": quantity } },
-        {
-          new: true,
-        }
-      );
-      return res.status(200).json({
-        success: response ? true : false,
-        updatedUser: response ? response : "Something went wrong",
-      });
-    } else {
-      const response = await User.findByIdAndUpdate(
-        _id,
-        {
-          $push: {
-            cart: { product: pid, quantity, color },
-          },
-        },
-        { new: true }
-      );
-      return res.status(200).json({
-        success: response ? true : false,
-        updatedUser: response ? response : "Something went wrong",
-      });
-    }
+  const { pid, quantity, variant } = req.body;
+  if (!pid || !quantity) throw new Error("Missing input(s)");
+  let variantNoId;
+  if (!variant?.length) {
+    const product = await Product.findById(pid).select("variants");
+    const defautVariant = product.variants?.map(({ label, variants }) => ({
+      label,
+      variant: variants[0].variant,
+    }));
+    variantNoId = defautVariant;
+  } else {
+    variantNoId = variant.map(({ label, variant }) => ({
+      label,
+      variant,
+    }));
+  }
+
+  const user = await User.findById(_id).select("cart").populate("cart");
+
+  const alreadyProductVariantInCart = user?.cart?.find((item) => {
+    return (
+      item.product.toString() === pid &&
+      arraysEqual(
+        variantNoId,
+        item.variant.map(({ label, variant }) => ({
+          label,
+          variant,
+        }))
+      )
+    );
+  });
+
+  if (alreadyProductVariantInCart) {
+    const response = await User.updateOne(
+      { cart: { $elemMatch: alreadyProductVariantInCart } },
+      { $set: { "cart.$.quantity": quantity } },
+      {
+        new: true,
+      }
+    );
+    return res.status(200).json({
+      success: response ? true : false,
+      updatedUser: response ? response : "Something went wrong",
+    });
   } else {
     const response = await User.findByIdAndUpdate(
       _id,
       {
         $push: {
-          cart: { product: pid, quantity, color },
+          cart: { product: pid, quantity, variant: variantNoId },
         },
       },
       { new: true }
@@ -216,6 +228,41 @@ const updateCart = asyncHandler(async (req, res) => {
       success: response ? true : false,
       updatedUser: response ? response : "Something went wrong",
     });
+  }
+});
+
+// clear cart
+const clearCart = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const { cids } = req.body;
+  const user = await User.findByIdAndUpdate(_id, {
+    $pull: { cart: { _id: { $in: cids } } },
+  });
+
+  return res.status(200).json({
+    success: user ? true : false,
+  });
+});
+
+// Remove From Cart
+const removeFromCart = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const user = await User.findById(_id);
+
+  if (user?.cart?.find((el) => el._id.toString() === req.body.cid)) {
+    const response = await User.findByIdAndUpdate(
+      _id,
+      { $pull: { cart: { _id: req.body.cid } } },
+      {
+        new: true,
+      }
+    ).select("-password -refreshToken -role");
+    return res.status(200).json({
+      success: response ? true : false,
+      updatedUser: response ? response : "Something went wrong",
+    });
+  } else {
+    throw new Error("Do not found this item in cart");
   }
 });
 
@@ -324,6 +371,8 @@ module.exports = {
   updateUserByAdmin,
   updateUserAddress,
   updateCart,
+  clearCart,
+  removeFromCart,
   deleteManyUsers,
   uploadAvatar,
   changePassword,
