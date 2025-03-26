@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import BreadCrumb from "../../components/BreadCrumb";
+import BreadCrumb from "../../components/common/BreadCrumb";
 import path from "../../utils/path";
 import { Header, Sidebar } from "./components";
 

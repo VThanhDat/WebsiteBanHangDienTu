@@ -7,7 +7,7 @@ import { capitalize, formatMoney } from "../../utils/helpers";
 import emptyCart from "../../assets/empty-cart.png";
 import path from "../../utils/path";
 import icons from "../../utils/icons";
-import InputNumberCart from "../../components/InputNumberCart";
+import InputNumberCart from "../../components/inputs/InputNumberCart";
 import { getCurrent } from "../../store/user/asyncThunk";
 
 const { AiOutlineArrowRight, AiOutlineLoading } = icons;

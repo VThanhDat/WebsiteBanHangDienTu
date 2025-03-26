@@ -14,13 +14,13 @@ import {
   apiUpdateImageProduct,
   apiDeleteProductImage,
 } from "../../../../apis";
-import Button from "../../../../components/Button";
-import InputField from "../../../../components/InputField";
+import Button from "../../../../components/buttons/Button";
+import InputField from "../../../../components/inputs/InputField";
 import { formatMoney, reducedArray } from "../../../../utils/helpers";
-import InputSelect from "../../../../components/InputSelect";
-import InputDynamic from "../../../../components/InputDynamic";
-import InputFieldValue from "../../../../components/InputVariants";
-import InputFile from "../../../../components/InputFile";
+import InputSelect from "../../../../components/inputs/InputSelect";
+import InputDynamic from "../../../../components/inputs/InputDynamic";
+import InputFieldValue from "../../../../components/inputs/InputVariants";
+import InputFile from "../../../../components/inputs/InputFile";
 import SearchBox from "../SearchBox";
 import DeleteButton from "../DeleteButton";
 import Modal from "../Modal";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import icons from "../../../utils/icons";
-import CustomSelect from "../../../components/CustomSelect";
+import CustomSelect from "../../../components/common/CustomSelect";
 
 const { AiOutlineSearch, AiOutlineLoading } = icons;
 

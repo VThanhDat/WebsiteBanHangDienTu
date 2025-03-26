@@ -1,5 +1,5 @@
 import React from "react";
-import FAQBox from "../../components/FAQBox";
+import FAQBox from "../../components/footer/FAQBox";
 
 const faqs = [
   {

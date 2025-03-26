@@ -2,9 +2,9 @@ import React, { memo, useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { apiGetProducts } from "../../apis";
 import { Product } from "../../components";
-import Filter from "../../components/Filter";
-import Pagination from "../../components/Pagination";
-import SortBy from "../../components/SortBy";
+import Filter from "../../components/search/Filter";
+import Pagination from "../../components/pagination/Pagination";
+import SortBy from "../../components/search/SortBy";
 import noProductFoundImg from "../../assets/no-product.jpg";
 import icons from "../../utils/icons";
 

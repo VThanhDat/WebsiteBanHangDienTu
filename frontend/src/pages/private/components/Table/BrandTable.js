@@ -7,7 +7,7 @@ import {
   apiEditBrand,
   apiDeleteManyBrands,
 } from "../../../../apis";
-import Button from "../../../../components/Button";
+import Button from "../../../../components/buttons/Button";
 import SearchBox from "../SearchBox";
 import DeleteButton from "../DeleteButton";
 import Swal from "sweetalert2";
@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 import RefreshButton from "../RefreshButton";
 import EditButton from "../EditButton";
 import Modal from "../Modal";
-import InputField from "../../../../components/InputField";
+import InputField from "../../../../components/inputs/InputField";
 
 const defautPayload = {
   _id: "",

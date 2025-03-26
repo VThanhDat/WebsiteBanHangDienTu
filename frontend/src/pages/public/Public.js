@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import BreadCrumb from "../../components/BreadCrumb";
+import BreadCrumb from "../../components/common/BreadCrumb";
 import { Header, Navigation, TopHeader, Footer } from "../../components";
-import MoveTopButton from "../../components/MoveTopButton";
+import MoveTopButton from "../../components/footer/MoveTopButton";
 
 const Public = () => {
   const { pathname } = useLocation();

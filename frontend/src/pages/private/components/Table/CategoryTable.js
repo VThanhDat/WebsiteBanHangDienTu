@@ -9,7 +9,7 @@ import {
   apiGetBrands,
   apiUpdateImageCategory,
 } from "../../../../apis";
-import Button from "../../../../components/Button";
+import Button from "../../../../components/buttons/Button";
 import SearchBox from "../SearchBox";
 import DeleteButton from "../DeleteButton";
 import Swal from "sweetalert2";
@@ -17,9 +17,9 @@ import { useSelector } from "react-redux";
 import RefreshButton from "../RefreshButton";
 import EditButton from "../EditButton";
 import Modal from "../Modal";
-import InputField from "../../../../components/InputField";
-import InputSelect from "../../../../components/InputSelect";
-import InputFile from "../../../../components/InputFile";
+import InputField from "../../../../components/inputs/InputField";
+import InputSelect from "../../../../components/inputs/InputSelect";
+import InputFile from "../../../../components/inputs/InputFile";
 
 const defaultPayload = {
   _id: "",
