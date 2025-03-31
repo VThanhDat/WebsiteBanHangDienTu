@@ -16,6 +16,7 @@ const path = {
 
   CART: "cart",
   CHECKOUT: "cart/checkout",
+  PAYMENTSUCCESS: "/payment/success",
 
   ACCOUNT: "account",
   ACCOUNT_PROFILE: "account/profile",

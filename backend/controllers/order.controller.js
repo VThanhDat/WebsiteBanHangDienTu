@@ -2,18 +2,20 @@ const Order = require("../models/order.model");
 const User = require("../models/user.model");
 const Product = require("../models/product.model");
 const Coupon = require("../models/coupon.model");
+const { createMomoPayment } = require("../utils/paymentMoMo");
+
 const asyncHandler = require("express-async-handler");
 
 const createOrder = asyncHandler(async (req, res) => {
   const { _id } = req.user;
-  const { coupon, phone, address, products } = req.body;
-  if (!phone || !address || !products || !products.length)
-    throw new Error("Missing input(s)");
-  let selectedCoupon;
+  const { coupon, phone, address, products, paymentMethod } = req.body;
 
+  if (!phone || !address || !products || !products.length || !paymentMethod)
+    throw new Error("Missing input(s)");
+
+  let selectedCoupon;
   if (coupon) {
     selectedCoupon = await Coupon.findById(coupon);
-
     if (!selectedCoupon) throw new Error("Coupon does not exist");
   }
 
@@ -21,34 +23,78 @@ const createOrder = asyncHandler(async (req, res) => {
     (sum, item) => +item.product.price * +item.quantity + sum,
     0
   );
-
   const shippingFee = Math.round(total * 0.02);
 
-  const createData = {
-    products,
-    total,
-    phone,
-    address,
-    orderBy: _id,
-  };
   if (coupon) {
     total =
       total - Math.round((total * +selectedCoupon?.discount) / 100) || total;
-    createData.coupon = coupon;
   }
 
   total = total + shippingFee;
-  createData.total = total;
 
-  const rs = await Order.create(createData);
-  //Update Product Quantity
-  if (rs) {
-    promises = products.map(async (el) => {
+  if (paymentMethod === "offline") {
+    const createData = {
+      products,
+      total,
+      phone,
+      address,
+      orderBy: _id,
+      paymentMethod,
+      status: "Pending",
+    };
+
+    if (coupon) createData.coupon = coupon;
+
+    const rs = await Order.create(createData);
+
+    if (rs) {
+      const updatePromises = products.map(async (el) => {
+        const pid = el?.product._id;
+        const quantity = el?.quantity;
+        const variant = el?.variant;
+        const product = await Product.findById(pid);
+
+        for (const variantItem of variant) {
+          product.variants
+            .find(
+              (el) => el.label.toLowerCase() === variantItem.label.toLowerCase()
+            )
+            .variants.find(
+              (el) =>
+                el.variant.toLowerCase() === variantItem.variant.toLowerCase()
+            ).quantity -= quantity;
+        }
+        return product.save();
+      });
+
+      await Promise.all(updatePromises);
+    }
+
+    return res.status(200).json({ success: !!rs, rs });
+  } else if (paymentMethod === "momo") {
+    // 🔹 Tạo đơn hàng với trạng thái "Pending"
+    const order = await Order.create({
+      products,
+      total,
+      phone,
+      address,
+      orderBy: _id,
+      paymentMethod,
+      status: "Pending",
+    });
+
+    if (coupon) {
+      order.coupon = coupon;
+      await order.save();
+    }
+    // 🔹 Trừ số lượng sản phẩm trong giỏ hàng
+    const updatePromises = products.map(async (el) => {
       const pid = el?.product._id;
       const quantity = el?.quantity;
       const variant = el?.variant;
       const product = await Product.findById(pid);
-      for (variantItem of variant)
+
+      for (const variantItem of variant) {
         product.variants
           .find(
             (el) => el.label.toLowerCase() === variantItem.label.toLowerCase()
@@ -57,15 +103,56 @@ const createOrder = asyncHandler(async (req, res) => {
             (el) =>
               el.variant.toLowerCase() === variantItem.variant.toLowerCase()
           ).quantity -= quantity;
+      }
       return product.save();
     });
-    await Promise.all(promises);
+
+    await Promise.all(updatePromises);
+
+    // 🔹 Gửi yêu cầu thanh toán MoMo
+    const momoResponse = await createMomoPayment(order);
+
+    if (momoResponse.resultCode === 0) {
+      // 🔹 Trả về link thanh toán MoMo cho FE để redirect người dùng
+      return res.status(200).json({
+        success: true,
+        orderId: order._id,
+        paymentUrl: momoResponse.payUrl, // FE redirect người dùng đến đây
+      });
+    } else {
+      // Nếu thanh toán thất bại, xóa đơn hàng để tránh đơn hàng bị bỏ lại
+      await Order.findByIdAndDelete(order._id);
+      throw new Error("Can not create payment link");
+    }
+  }
+});
+
+const verifyMomoPayment = asyncHandler(async (req, res) => {
+  const { orderId, resultCode } = req.body;
+
+  if (!orderId) {
+    return res.status(400).json({ success: false, message: "Missing orderId" });
   }
 
-  return res.status(200).json({
-    success: rs ? true : false,
-    rs: rs ? rs : "Can not create new order",
-  });
+  if (resultCode === 0) {
+    const order = await Order.findByIdAndUpdate(
+      orderId,
+      { status: "Paid" },
+      { new: true }
+    );
+
+    if (!order) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Order not found" });
+    }
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Payment successful", order });
+  }
+
+  return res.status(400).json({ success: false, message: "Payment failed" });
 });
 
 const updateStatus = asyncHandler(async (req, res) => {
@@ -267,4 +354,5 @@ module.exports = {
   getUserOrders,
   userCancelOrders,
   getOrders,
+  verifyMomoPayment,
 };

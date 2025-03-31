@@ -32,3 +32,4 @@ export { default as InputFile } from "./inputs/InputFile";
 export { default as InputDynamic } from "./inputs/InputDynamic";
 export { default as MoveTopButton } from "./footer/MoveTopButton";
 export { default as InputNumberCart } from "./inputs/InputNumberCart";
+export { default as InputAddress } from "./inputs/InputAddress";

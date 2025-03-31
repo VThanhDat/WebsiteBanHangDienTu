@@ -12,14 +12,15 @@ var orderSchema = new mongoose.Schema(
     ],
     status: {
       type: String,
-      default: "Processing",
+      default: "Pending",
       enum: [
         "Cancelled",
-        "Accepted",
+        "Paid",
         "Shipping",
-        "Processing",
+        "Awaiting Shipment",
+        "Pending",
         "Returning",
-        "Success",
+        "Delivered",
       ],
     },
     total: Number,
@@ -38,7 +39,6 @@ var orderSchema = new mongoose.Schema(
     paymentMethod: {
       type: String,
       required: true,
-      enum: ["Payment COD", "Payment PayPal"],
     },
     orderBy: {
       type: mongoose.Types.ObjectId,

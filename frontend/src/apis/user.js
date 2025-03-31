@@ -1,5 +1,13 @@
 import axios from "../axios";
 
+export const apiGetUserAddress = (token, params) =>
+  axios({
+    url: "/user/user-address",
+    method: "get",
+    headers: { Authorization: `Bearer ${token}` },
+    params,
+  });
+
 export const apiUpdateUserAddress = (token, data) =>
   axios({
     url: "/user/address",

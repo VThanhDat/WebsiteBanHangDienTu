@@ -10,3 +10,4 @@ export { default as AuthRegister } from "./AuthRegister";
 export { default as ResetPassword } from "./ResetPassword";
 export { default as WishList } from "./WishList";
 export { default as Cart } from "./Cart";
+export { default as PaymentSuccess } from "./PaymentSuccess";

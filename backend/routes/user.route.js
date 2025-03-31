@@ -3,6 +3,7 @@ const ctrls = require("../controllers/user.controller");
 const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
 const uploader = require("../middlewares/cloudinary.user");
 
+router.get("/user-address", [verifyAccessToken], ctrls.getUserAddress);
 router.put("/cart", [verifyAccessToken], ctrls.updateCart);
 router.put("/current", [verifyAccessToken], ctrls.updateUser);
 router.put("/address", [verifyAccessToken], ctrls.updateUserAddress);

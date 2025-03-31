@@ -14,6 +14,7 @@ import {
   ResetPassword,
   WishList,
   Cart,
+  PaymentSuccess,
 } from "./pages/public";
 import {
   Admin,
@@ -91,6 +92,7 @@ function App() {
           <Route path={path.WISHLIST} element={<WishList />} />
           <Route path={path.CART} element={<Cart />} />
           <Route path={`/${path.CHECKOUT}`} element={<Checkout />} />
+          <Route path={path.PAYMENTSUCCESS} element={<PaymentSuccess />} />
           <Route path={path.ACCOUNT} element={<Account />}>
             <Route path={`/${path.ACCOUNT_PROFILE}`} element={<Profile />} />
             <Route

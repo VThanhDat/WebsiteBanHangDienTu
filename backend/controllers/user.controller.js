@@ -69,6 +69,18 @@ const getUsers = asyncHandler(async (req, res) => {
     });
 });
 
+const getUserAddress = asyncHandler(async (req, res) => {
+  const { _id } = req.user; // Lấy ID từ token
+  if (!_id) throw new Error("Unauthorized");
+
+  const response = await User.findById(_id).select("address"); // Chỉ lấy trường "address"
+
+  return res.status(200).json({
+    success: response ? true : false,
+    userAddress: response ? response : "No user address found",
+  });
+});
+
 const deleteUser = asyncHandler(async (req, res) => {
   const { _id } = req.query;
   if (!_id) throw new Error("Missing inputs");
@@ -366,6 +378,7 @@ const removeWishList = asyncHandler(async (req, res) => {
 
 module.exports = {
   getUsers,
+  getUserAddress,
   deleteUser,
   updateUser,
   updateUserByAdmin,

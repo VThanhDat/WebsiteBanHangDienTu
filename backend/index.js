@@ -14,7 +14,6 @@ app.use(
     credentials: true,
   })
 );
-console.log("Client: " + process.env.CLIENT_URL);
 app.use(cookieParser(process.env.COOKIE_PARSER));
 
 const port = process.env.PORT || 8080;
