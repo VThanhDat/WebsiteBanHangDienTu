@@ -247,15 +247,12 @@ const ProductTable = () => {
 
     const handleUpdateImagesProduct = async (_id) => {
       if (deletedImages.length > 0) {
-        console.log("Deleting images:", deletedImages);
         const deleteResults = await Promise.all(
           deletedImages.map(async (imageUrl) => {
             const result = await apiDeleteProductImage(token, _id, imageUrl);
-            console.log(`Delete result for ${imageUrl}:`, result);
             return result;
           }),
         );
-        console.log("All delete results:", deleteResults);
       }
 
       const uploaders = selectedFiles?.map((file) => {

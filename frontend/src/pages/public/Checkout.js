@@ -398,7 +398,7 @@ const Checkout = () => {
                   formatMoney(
                     Math.round((subTotal * selectedCoupon?.discount) / 100),
                   )
-                : 0}{" "}
+                : 0}
               VND
             </span>
           </div>

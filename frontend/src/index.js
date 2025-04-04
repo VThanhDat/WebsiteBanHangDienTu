@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PersistGate } from "redux-persist/integration/react";
+import "react-toastify/dist/ReactToastify.css";
 
 const container = document.getElementById("root");
 const root = createRoot(container);

@@ -16,8 +16,8 @@ var orderSchema = new mongoose.Schema(
       enum: [
         "Cancelled",
         "Paid",
-        "Shipping",
-        "Awaiting Shipment",
+        "Delivering",
+        "Waiting",
         "Pending",
         "Returning",
         "Delivered",

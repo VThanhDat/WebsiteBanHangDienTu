@@ -7,6 +7,7 @@ router.post("/", verifyAccessToken, ctrls.createOrder);
 router.get("/", verifyAccessToken, ctrls.getUserOrders);
 router.post("/momo-ipn", ctrls.verifyMomoPayment); // Xử lý IPN từ MoMo
 router.get("/admin", verifyAccessToken, isAdmin, ctrls.getOrders);
+router.get("/order-detail/:oid", verifyAccessToken, isAdmin, ctrls.getOneOrder);
 router.put("/status/:oid", verifyAccessToken, isAdmin, ctrls.updateStatus);
 router.put("/:oid", verifyAccessToken, ctrls.userCancelOrders);
 

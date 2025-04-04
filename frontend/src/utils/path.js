@@ -30,6 +30,7 @@ const path = {
   BRANDS: "admin/brands",
   CATEGOGIES: "admin/categories",
   ORDERS: "admin/orders",
+  ORDER_DETAIL: "admin/order-detail",
   RATINGS: "admin/ratings",
   ADMIN_COUPONS: "admin/coupons",
   USERS: "admin/users",

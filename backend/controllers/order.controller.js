@@ -155,118 +155,6 @@ const verifyMomoPayment = asyncHandler(async (req, res) => {
   return res.status(400).json({ success: false, message: "Payment failed" });
 });
 
-const updateStatus = asyncHandler(async (req, res) => {
-  const { oid } = req.params;
-  const { status } = req.body;
-  if (!status) throw new Error("Missing status");
-  const response = await Order.findByIdAndUpdate(
-    oid,
-    { status },
-    { new: true }
-  );
-  if (response && response?.status === "Cancelled") {
-    promises = response.products.map(async (el) => {
-      const pid = el?.product._id;
-      const quantity = el?.quantity;
-      const variant = el?.variant;
-      const product = await Product.findById(pid);
-      for (variantItem of variant)
-        product.variants
-          .find(
-            (el) => el.label.toLowerCase() === variantItem.label.toLowerCase()
-          )
-          .variants.find(
-            (el) =>
-              el.variant.toLowerCase() === variantItem.variant.toLowerCase()
-          ).quantity += quantity;
-      return product.save();
-    });
-    Promise.all(promises);
-  }
-
-  if (response && response?.status === "Success") {
-    promises = response.products.map(async (el) => {
-      const pid = el?.product._id;
-      const quantity = el?.quantity;
-      const product = await Product.findById(pid);
-      product.sold += +quantity;
-      return product.save();
-    });
-    Promise.all(promises);
-  }
-
-  return res.status(200).json({
-    success: response ? true : false,
-    rs: response ? response : "Can not update status",
-  });
-});
-
-const getUserOrders = asyncHandler(async (req, res) => {
-  const { _id } = req.user;
-  let queries = { orderBy: _id };
-  const { status } = req.query;
-  if (status) queries = { status, orderBy: _id };
-  const response = await Order.find(queries)
-    .populate("coupon")
-    .populate({
-      path: "products.product",
-      populate: {
-        path: "ratings.postedBy",
-        match: { _id },
-        select: "_id",
-      },
-    })
-    .select("-orderBy")
-    .sort("-updatedAt");
-
-  return res.status(200).json({
-    success: response ? true : false,
-    userOrders: response ? response : "Can not get user orders",
-  });
-});
-
-const userCancelOrders = asyncHandler(async (req, res) => {
-  const { _id } = req.user;
-  const { oid } = req.params;
-  if (!oid) throw new Error("Missing order id");
-  const cancelOrder = await Order.findById(oid);
-  // if (!cancelOrder || cancelOrder?.status !== "Processing")
-  //     throw new Error("Can not cancel order");
-  queries = { _id: oid, orderBy: _id };
-  const response = await Order.findOneAndUpdate(
-    queries,
-    { status: "Cancelled" },
-    { new: true }
-  )
-    .populate("coupon")
-    .populate("products.product")
-    .select("-orderBy");
-
-  if (response) {
-    promises = response.products.map(async (el) => {
-      const pid = el?.product._id;
-      const quantity = el?.quantity;
-      const variant = el?.variant;
-      const product = await Product.findById(pid);
-      for (variantItem of variant)
-        product.variants
-          .find(
-            (el) => el.label.toLowerCase() === variantItem.label.toLowerCase()
-          )
-          .variants.find(
-            (el) =>
-              el.variant.toLowerCase() === variantItem.variant.toLowerCase()
-          ).quantity += quantity;
-      return product.save();
-    });
-    Promise.all(promises);
-  }
-  return res.status(200).json({
-    success: response ? true : false,
-    userOrders: response ? response : "Can not update status",
-  });
-});
-
 const getOrders = asyncHandler(async (req, res) => {
   const queries = { ...req.query };
   const excludeFields = ["limit", "sort", "page", "fields"];
@@ -312,6 +200,14 @@ const getOrders = asyncHandler(async (req, res) => {
       $regex: queries.status,
       $options: "i",
     };
+
+  if (queries?.paymentMethod) {
+    formattedQueries.paymentMethod = {
+      $regex: queries.paymentMethod,
+      $options: "i",
+    };
+  }
+
   let queryCommand = Order.find(formattedQueries);
   //Sorting
   if (req.query.sort) {
@@ -335,7 +231,7 @@ const getOrders = asyncHandler(async (req, res) => {
     .populate("coupon")
     .populate("orderBy")
     .select(
-      "Orderby.firstName Orderby.lastName Orderby.email products phone address status coupon _id, createdAt"
+      "Orderby.firstName Orderby.lastName Orderby.email products phone paymentMethod address status coupon  _id, createdAt"
     )
     .exec()
     .then(async (response) => {
@@ -343,16 +239,137 @@ const getOrders = asyncHandler(async (req, res) => {
       return res.status(200).json({
         success: response ? true : false,
         counts,
-        orders: response ? response : "Can not get products.",
+        orders: response ? response : "Can not get orders.",
       });
     });
 });
 
+const getOneOrder = asyncHandler(async (req, res) => {
+  const { oid } = req.params;
+
+  const order = await Order.findById(oid)
+    .populate("products.product")
+    .populate("coupon")
+    .populate("orderBy")
+    .select(
+      "Orderby.firstName Orderby.lastName Orderby.email products phone paymentMethod address status coupon"
+    );
+
+  return res.status(200).json({
+    success: order ? true : false,
+    order: order ? order : "Can not get order",
+  });
+});
+
+const getUserOrders = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  let queries = { orderBy: _id };
+  const { status } = req.query;
+  if (status) queries = { status, orderBy: _id };
+  const response = await Order.find(queries)
+    .populate("coupon")
+    .populate({
+      path: "products.product",
+      populate: {
+        path: "ratings.postedBy",
+        match: { _id },
+        select: "_id",
+      },
+    })
+    .select("-orderBy")
+    .sort("-updatedAt");
+
+  return res.status(200).json({
+    success: response ? true : false,
+    userOrders: response ? response : "Can not get user orders",
+  });
+});
+
+const updateStatus = asyncHandler(async (req, res) => {
+  const { oid } = req.params;
+  let { status } = req.body;
+
+  if (!status) throw new Error("Missing status");
+
+  // Map "Confirm" thành "Waiting"
+  if (status === "Confirm") status = "Waiting";
+
+  // Nếu trạng thái là "Send", đổi thành "Delivering"
+  if (status === "Send") status = "Delivering";
+
+  if (status === "Success") status = "Delivered";
+
+  const response = await Order.findByIdAndUpdate(
+    oid,
+    { status },
+    { new: true }
+  );
+
+  if (response && response?.status === "Delivered") {
+    const promises = response.products.map(async (el) => {
+      const pid = el?.product._id;
+      const quantity = el?.quantity;
+      const product = await Product.findById(pid);
+      product.sold += +quantity;
+      return product.save();
+    });
+
+    await Promise.all(promises);
+  }
+
+  return res.status(200).json({
+    success: response ? true : false,
+    rs: response ? response : "Can not update status",
+  });
+});
+
+const userCancelOrders = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const { oid } = req.params;
+  if (!oid) throw new Error("Missing order id");
+  const cancelOrder = await Order.findById(oid);
+
+  queries = { _id: oid, orderBy: _id };
+  const response = await Order.findOneAndUpdate(
+    queries,
+    { status: "Cancelled" },
+    { new: true }
+  )
+    .populate("coupon")
+    .populate("products.product")
+    .select("-orderBy");
+
+  if (response) {
+    promises = response.products.map(async (el) => {
+      const pid = el?.product._id;
+      const quantity = el?.quantity;
+      const variant = el?.variant;
+      const product = await Product.findById(pid);
+      for (variantItem of variant)
+        product.variants
+          .find(
+            (el) => el.label.toLowerCase() === variantItem.label.toLowerCase()
+          )
+          .variants.find(
+            (el) =>
+              el.variant.toLowerCase() === variantItem.variant.toLowerCase()
+          ).quantity += quantity;
+      return product.save();
+    });
+    Promise.all(promises);
+  }
+  return res.status(200).json({
+    success: response ? true : false,
+    userOrders: response ? response : "Can not update status",
+  });
+});
+
 module.exports = {
   createOrder,
-  updateStatus,
-  getUserOrders,
-  userCancelOrders,
-  getOrders,
   verifyMomoPayment,
+  getOrders,
+  getOneOrder,
+  getUserOrders,
+  updateStatus,
+  userCancelOrders,
 };

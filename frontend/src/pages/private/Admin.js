@@ -9,6 +9,8 @@ const Admin = () => {
   const navigate = useNavigate();
   const [isHideSideBar, setIsHideSideBar] = useState(true);
 
+  const cleanPathname = pathname.replace(/\/[0-9a-fA-F]{24}$/, ""); // Xóa ObjectId 24 ký tự
+
   useEffect(() => {
     if (pathname === `/${path.ADMIN}`) navigate(`/${path.DASHBOARD}`);
   }, []);
@@ -21,7 +23,7 @@ const Admin = () => {
           setIsHideSideBar={setIsHideSideBar}
         />
         <div className="w-[calc(100vw -300px)] h-[calc(100vh-76px)] flex-grow-0 overflow-x-hidden overflow-y-scroll bg-[#F1F5F9] p-7">
-          <BreadCrumb pathname={pathname} />
+          <BreadCrumb pathname={cleanPathname} />
           <Outlet />
         </div>
       </div>

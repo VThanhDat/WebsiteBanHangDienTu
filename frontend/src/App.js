@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 import { Route, Routes } from "react-router-dom";
 import { useJwt } from "react-jwt";
 import {
@@ -23,6 +24,7 @@ import {
   Brands,
   Categories,
   Orders,
+  OrderDetail,
   Ratings as RatingsAdmin,
   Coupons,
 } from "./pages/private";
@@ -122,11 +124,16 @@ function App() {
             <Route path={`/${path.USERS}`} element={<User />} />
             <Route path={`/${path.CATEGOGIES}`} element={<Categories />} />
             <Route path={`/${path.ORDERS}`} element={<Orders />} />
+            <Route
+              path={`/${path.ORDER_DETAIL}/:oid`}
+              element={<OrderDetail />}
+            />
             <Route path={`/${path.RATINGS}`} element={<RatingsAdmin />} />
             <Route path={`/${path.ADMIN_COUPONS}`} element={<Coupons />} />
           </Route>
         )}
       </Routes>
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 }
