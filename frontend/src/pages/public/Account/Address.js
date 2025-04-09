@@ -70,7 +70,7 @@ const Address = () => {
   }, [isSameAddress]);
 
   return (
-    <div>
+    <div className="pl-5 pr-[72px]">
       <h3 className="flex h-[48px] items-center text-xl font-semibold">
         ADDRESS
       </h3>

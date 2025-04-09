@@ -85,7 +85,7 @@ const Account = () => {
         </div>
       </div>
 
-      <div className="flex-5 border border-l-0 pl-5 pr-[72px] text-gray-700 max-md:border-l max-md:border-t-0 max-md:pr-5">
+      <div className="flex-5 border border-l-0 text-gray-700 max-md:border-l max-md:border-t-0">
         <Outlet />
       </div>
     </div>

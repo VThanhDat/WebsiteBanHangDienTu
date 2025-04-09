@@ -5,7 +5,6 @@ import { apiGetOneOrder, apiUpdateStatusOrder } from "../../../../apis/order";
 import { formatMoney } from "../../../../utils/helpers";
 import { Button } from "../../../../components";
 import icons from "../../../../utils/icons";
-import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
 const { CiDiscount1 } = icons;
@@ -160,7 +159,7 @@ const OrderDetailTable = () => {
               <h3 className="mr-4 text-lg font-medium">Payment method:</h3>
 
               <div className="flex flex-wrap gap-2">
-                <button className="rounded border border-green-500 bg-white px-4 py-2 text-green-500">
+                <button className="rounded border border-green-500 bg-white px-4 py-2 uppercase text-green-500">
                   {data?.paymentMethod}
                 </button>
               </div>

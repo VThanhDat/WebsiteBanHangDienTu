@@ -171,7 +171,7 @@ const OrderTable = () => {
                     <td className="break-words py-4 pl-3 text-sm text-gray-800">
                       {item?.address}
                     </td>
-                    <td className="break-words py-4 pl-3 text-sm text-gray-800">
+                    <td className="break-words py-4 pl-3 text-sm uppercase text-gray-800">
                       {item?.paymentMethod}
                     </td>
                     <td className="break-words py-4 pl-3 text-sm text-gray-800">

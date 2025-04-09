@@ -38,7 +38,7 @@ const Checkout = () => {
   const [isDisableButtonOrder, setisDisableButtonOrder] = useState(true);
   const [isChange, setIsChange] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedMethod, setSelectedMethod] = useState("offline");
+  const [selectedMethod, setSelectedMethod] = useState("cod");
   const [selectedSubMethod, setSelectedSubMethod] = useState("");
 
   const handleMethodSelect = (method) => {
@@ -422,11 +422,11 @@ const Checkout = () => {
 
                 <button
                   className={`rounded border px-4 py-2 ${
-                    selectedMethod === "offline"
+                    selectedMethod === "cod"
                       ? "border-green-500 bg-white text-green-500"
                       : "border-gray-300 bg-white text-gray-700 hover:border-gray-400"
                   } transition-colors duration-200`}
-                  onClick={() => handleMethodSelect("offline")}
+                  onClick={() => handleMethodSelect("cod")}
                 >
                   Payment COD
                 </button>

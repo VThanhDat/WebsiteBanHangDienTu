@@ -19,7 +19,6 @@ var orderSchema = new mongoose.Schema(
         "Delivering",
         "Waiting",
         "Pending",
-        "Returning",
         "Delivered",
       ],
     },

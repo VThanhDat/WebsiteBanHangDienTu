@@ -32,7 +32,7 @@ const createOrder = asyncHandler(async (req, res) => {
 
   total = total + shippingFee;
 
-  if (paymentMethod === "offline") {
+  if (paymentMethod === "cod") {
     const createData = {
       products,
       total,
@@ -326,10 +326,10 @@ const updateStatus = asyncHandler(async (req, res) => {
 const userCancelOrders = asyncHandler(async (req, res) => {
   const { _id } = req.user;
   const { oid } = req.params;
-  if (!oid) throw new Error("Missing order id");
-  const cancelOrder = await Order.findById(oid);
 
-  queries = { _id: oid, orderBy: _id };
+  if (!oid) throw new Error("Missing order id");
+
+  const queries = { _id: oid, orderBy: _id };
   const response = await Order.findOneAndUpdate(
     queries,
     { status: "Cancelled" },
@@ -340,27 +340,37 @@ const userCancelOrders = asyncHandler(async (req, res) => {
     .select("-orderBy");
 
   if (response) {
-    promises = response.products.map(async (el) => {
+    const promises = response.products.map(async (el) => {
       const pid = el?.product._id;
       const quantity = el?.quantity;
       const variant = el?.variant;
+
       const product = await Product.findById(pid);
-      for (variantItem of variant)
-        product.variants
-          .find(
-            (el) => el.label.toLowerCase() === variantItem.label.toLowerCase()
-          )
-          .variants.find(
-            (el) =>
-              el.variant.toLowerCase() === variantItem.variant.toLowerCase()
-          ).quantity += quantity;
+      if (!product) return;
+
+      for (const variantItem of variant) {
+        const labelGroup = product.variants.find(
+          (v) => v.label?.toLowerCase() === variantItem.label?.toLowerCase()
+        );
+
+        const actualVariant = labelGroup?.variants.find(
+          (v) => v.variant?.toLowerCase() === variantItem.variant?.toLowerCase()
+        );
+
+        if (actualVariant) {
+          actualVariant.quantity += quantity;
+        }
+      }
+
       return product.save();
     });
-    Promise.all(promises);
+
+    await Promise.all(promises);
   }
+
   return res.status(200).json({
-    success: response ? true : false,
-    userOrders: response ? response : "Can not update status",
+    success: !!response,
+    userOrders: response || "Can not update status",
   });
 });
 
