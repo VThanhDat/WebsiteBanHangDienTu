@@ -27,7 +27,7 @@ const TopHeader = () => {
         </span>
         {isLoggedIn && current ? (
           <div className="flex items-center gap-4">
-            <span className="text-base font-medium">
+            <span className="hidden text-base font-medium md:inline">
               {`Welcome, ${current?.firstName} ${current?.lastName}`}
             </span>
             <span
