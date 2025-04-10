@@ -72,15 +72,15 @@ const OrderDetailTable = () => {
     <div className="mb-10 flex-col">
       <div className="border bg-white p-4 shadow-sm">
         <h2 className="mb-3 text-lg font-semibold">Delivery address</h2>
-        <div className="flex items-center justify-between">
-          <div className="flex w-full items-center gap-4">
-            <span className="flex-none font-medium">
-              {data?.orderBy.firstName} {data?.orderBy.lastName} (+
-              {data?.phone})
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+          <div className="mb-2 w-full lg:mb-0">
+            <span className="font-medium">
+              {data?.orderBy.firstName} {data?.orderBy.lastName} (+{data?.phone}
+              )
             </span>
           </div>
-          <div className="flex flex-none items-center gap-2 text-sm">
-            <span className="text-gray-500">{data?.address}</span>
+          <div className="w-full lg:text-right">
+            <span className="text-sm text-gray-500">{data?.address}</span>
           </div>
         </div>
       </div>

@@ -1,15 +1,16 @@
+// Header.jsx
 import React from "react";
 import icons from "../../../utils/icons";
 
 const { BsBell, RxAvatar, AiOutlineMenu } = icons;
 
-const Header = ({ isHideSideBar, setIsHideSideBar }) => {
+const Header = ({ toggleSidebar, showSidebar }) => {
   return (
-    <div className="flex h-[76px] w-full items-center justify-between border-b p-[28px]">
+    <div className="flex h-[76px] w-full items-center justify-between border-b p-4 md:p-[28px]">
       <div>
         <div
           className="mr-2 flex h-10 w-10 items-center justify-center rounded-md border hover:cursor-pointer hover:bg-gray-200"
-          onClick={() => setIsHideSideBar(!isHideSideBar)}
+          onClick={toggleSidebar}
         >
           <AiOutlineMenu />
         </div>

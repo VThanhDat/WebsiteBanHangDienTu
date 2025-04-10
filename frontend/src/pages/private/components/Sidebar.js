@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
@@ -14,14 +15,14 @@ const {
   SiBrandfolder,
   RxAvatar,
 } = icons;
+
 const sidebarItem = [
-  { icon: <RxDashboard />, title: "Dasboard", path: `/${path.DASHBOARD}` },
+  { icon: <RxDashboard />, title: "Dashboard", path: `/${path.DASHBOARD}` },
   {
     icon: <SiBrandfolder />,
     title: "Brands",
     path: `/${path.BRANDS}`,
   },
-
   {
     icon: <AiOutlineShoppingCart />,
     title: "Categories",
@@ -46,25 +47,40 @@ const sidebarItem = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ isCollapsed = false }) => {
   return (
-    <div className="w-[300px] flex-shrink-0 border-r">
-      <Link to="/" className="flex h-[76px] border-b p-5">
-        <img src={logo} alt="" className="w-full object-contain" />
-      </Link>
-      <div className="p-5">
+    <div
+      className={`flex-shrink-0 border-r transition-all duration-300 ${
+        isCollapsed ? "w-16" : "w-60 lg:w-72"
+      }`}
+    >
+      {/* Logo chỉ hiển thị khi không thu gọn sidebar */}
+      {!isCollapsed && (
+        <Link to="/" className="flex h-[76px] border-b p-5">
+          <img src={logo} alt="" className="w-full object-contain" />
+        </Link>
+      )}
+
+      <div className={`${isCollapsed ? "pt-4" : "p-3"}`}>
         {sidebarItem?.map((item, index) => (
           <NavLink
             to={item.path}
             key={index}
             className={({ isActive }) =>
               isActive
-                ? "mb-2 flex h-[44px] items-center rounded-md font-medium text-main hover:cursor-pointer hover:bg-gray-200"
-                : "mb-2 flex h-[44px] items-center rounded-md font-medium hover:cursor-pointer hover:bg-gray-200"
+                ? `mb-2 flex h-[44px] items-center rounded-md font-medium text-main hover:cursor-pointer hover:bg-gray-200 ${
+                    isCollapsed ? "justify-center" : "px-3"
+                  }`
+                : `mb-2 flex h-[44px] items-center rounded-md font-medium hover:cursor-pointer hover:bg-gray-200 ${
+                    isCollapsed ? "justify-center" : "px-3"
+                  }`
             }
+            title={item.title}
           >
-            <span className="pr-2">{item.icon}</span>
-            <span>{item.title}</span>
+            <span className={isCollapsed ? "text-xl" : "pr-2 text-lg"}>
+              {item.icon}
+            </span>
+            {!isCollapsed && <span>{item.title}</span>}
           </NavLink>
         ))}
       </div>
