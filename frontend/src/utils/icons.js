@@ -7,6 +7,7 @@ import {
   BsFillCartFill,
   BsBell,
 } from "react-icons/bs";
+import { FiMessageSquare } from "react-icons/fi";
 import { FaUserCircle, FaCheck, FaFacebookMessenger } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import {
@@ -97,6 +98,7 @@ const icons = {
   FaFacebookMessenger,
   FaArrowLeftLong,
   AiOutlineUser,
+  FiMessageSquare,
 };
 
 export default icons;

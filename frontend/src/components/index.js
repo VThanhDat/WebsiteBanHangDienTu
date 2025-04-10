@@ -33,3 +33,4 @@ export { default as InputDynamic } from "./inputs/InputDynamic";
 export { default as MoveTopButton } from "./footer/MoveTopButton";
 export { default as InputNumberCart } from "./inputs/InputNumberCart";
 export { default as InputAddress } from "./inputs/InputAddress";
+export { default as ChatPage } from "./footer/ChatPage";

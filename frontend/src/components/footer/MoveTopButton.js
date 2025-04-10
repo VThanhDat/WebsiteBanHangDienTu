@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import icons from "../../utils/icons";
 import path from "../../utils/path";
+import ChatPage from "./ChatPage";
 
 const { BsFillSuitHeartFill, AiOutlineShoppingCart, AiOutlineArrowUp } = icons;
 
@@ -30,40 +31,47 @@ const MoveTopButton = () => {
   }, []);
 
   return (
-    <div
-      className={`${
-        !isVisible && "hidden"
-      } fixed bottom-[20px] right-[20px] flex flex-col gap-4`}
-    >
-      <button
-        onClick={scrollToTop}
-        className="flex h-[60px] w-[60px] items-center justify-center rounded-full border border-main bg-white text-main shadow-xl"
+    <>
+      <div
+        className={`${
+          !isVisible && "hidden"
+        } fixed bottom-[95px] right-[20px] flex flex-col gap-4`}
       >
-        <AiOutlineArrowUp size={28} />
-      </button>
+        <button
+          onClick={scrollToTop}
+          className="flex h-[60px] w-[60px] items-center justify-center rounded-full border border-main bg-white text-main shadow-xl"
+        >
+          <AiOutlineArrowUp size={28} />
+        </button>
 
-      <Link
-        className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-main text-white shadow-xl"
-        onClick={scrollToTop}
-        to={`/${path.WISHLIST}`}
-      >
-        <BsFillSuitHeartFill size={28} />
-        <div className="absolute right-[-8px] top-[-8px] aspect-square w-[30px] rounded-full border border-main bg-white text-center text-lg font-semibold text-main">
-          {currentUser?.wishlist?.length || "0"}
-        </div>
-      </Link>
+        <Link
+          className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-main text-white shadow-xl"
+          onClick={scrollToTop}
+          to={`/${path.WISHLIST}`}
+        >
+          <BsFillSuitHeartFill size={28} />
+          <div className="absolute right-[-8px] top-[-8px] aspect-square w-[30px] rounded-full border border-main bg-white text-center text-lg font-semibold text-main">
+            {currentUser?.wishlist?.length || "0"}
+          </div>
+        </Link>
 
-      <Link
-        className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-main text-white shadow-xl"
-        onClick={scrollToTop}
-        to={`/${path.CART}`}
-      >
-        <AiOutlineShoppingCart size={28} />
-        <div className="absolute right-[-8px] top-[-8px] aspect-square w-[30px] rounded-full border border-main bg-white text-center text-lg font-semibold text-main">
-          {currentUser?.cart?.length || "0"}
+        <Link
+          className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-main text-white shadow-xl"
+          onClick={scrollToTop}
+          to={`/${path.CART}`}
+        >
+          <AiOutlineShoppingCart size={28} />
+          <div className="absolute right-[-8px] top-[-8px] aspect-square w-[30px] rounded-full border border-main bg-white text-center text-lg font-semibold text-main">
+            {currentUser?.cart?.length || "0"}
+          </div>
+        </Link>
+      </div>
+      <div className="fixed bottom-[20px] right-[20px] z-50">
+        <div className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full shadow-xl">
+          <ChatPage />
         </div>
-      </Link>
-    </div>
+      </div>
+    </>
   );
 };
 
