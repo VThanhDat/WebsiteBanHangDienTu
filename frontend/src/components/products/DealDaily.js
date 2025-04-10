@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { apiGetProducts } from "../../apis/product";
+import { apiGetProducts } from "../../apis";
 import { formatMoney, renderStarFromNumber } from "../../utils/helpers";
 import icons from "../../utils/icons";
 import path from "../../utils/path";
@@ -11,12 +11,19 @@ const DealDaily = () => {
   const [dailydeal, setDailydeal] = useState(null);
   const fetchDailydeal = async () => {
     const response = await apiGetProducts({
-      limit: 1,
-      page: Math.round(Math.random() * 5),
-      totalRatings: 5,
+      limit: 5,
+      sort: "-totalRatings",
     });
-    if (response.success) setDailydeal(response.products[0]);
+    if (response.success && response.products.length > 0) {
+      const topRating = response.products[0].totalRatings;
+      const topRatedProducts = response.products.filter(
+        (p) => p.totalRatings === topRating,
+      );
+      const randomIndex = Math.floor(Math.random() * topRatedProducts.length);
+      setDailydeal(topRatedProducts[randomIndex]);
+    }
   };
+
   useEffect(() => {
     fetchDailydeal();
   }, []);
@@ -73,7 +80,6 @@ const DealDaily = () => {
         </>
       ) : (
         <span className="flex w-full flex-1 items-center justify-center">
-          {" "}
           <AiOutlineLoading className="mr-2 animate-spin" /> Daily deal is
           loading...
         </span>
