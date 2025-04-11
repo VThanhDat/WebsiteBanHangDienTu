@@ -1,6 +1,6 @@
 from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
-from typing import Optional, Dict, Annotated, List
+from typing import Optional, Dict, Annotated, List, Union
 from app.database.product_service import (
     get_product_by_title,
     get_product_by_slug,
@@ -49,7 +49,7 @@ class ProductSearchTool(BaseTool):
 
 # Input schema for creating orders
 class CreateOrderInput(BaseModel):
-    user_id: str = Field(..., description="The ID of the user placing the order")
+    user_id: Union[str, None] = Field(None, description="The ID of the user placing the order")
     products: List[Dict] = Field(
         ...,
         description="List of products with their quantities and variants. Each product dict should contain 'slug' (str), 'quantity' (int), and optional 'variant' (list of {'label': str, 'variant': str})",
@@ -78,13 +78,26 @@ class CreateOrderTool(BaseTool):
         payment_method: str,
         coupon: Optional[str] = None,
     ) -> Dict:
+        # Nếu không có user_id → báo cần đăng nhập
+        if not user_id:
+            return {
+                "error": "unauthorized",
+                "message": "Bạn cần đăng nhập để đặt hàng. Vui lòng đăng nhập tại http://localhost:3000/login"
+            }
+        
         # Validate user
         user = get_user_by_id(user_id)
         if not user:
-            return {"error": "User not found", "message": "Invalid user ID"}
+            return {
+                "error": "user_not_found",
+                "message": "Không tìm thấy người dùng. Vui lòng đăng nhập lại tại http://localhost:3000/login"
+            }
 
         if user.get("isBlocked", False):
-            return {"error": "User blocked", "message": "User is blocked and cannot place orders"}
+            return {
+                "error": "user_blocked",
+                "message": "Tài khoản của bạn đã bị khóa và không thể đặt hàng."
+            }
 
         # Validate products and stock
         order_products = []

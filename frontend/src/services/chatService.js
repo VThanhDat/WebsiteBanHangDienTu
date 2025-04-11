@@ -13,7 +13,7 @@ export const chatService = {
    * @param {function} onChunk - Callback xử lý khi nhận được phản hồi
    * @returns {Promise<string>} Phản hồi từ server
    */
-  sendMessage: async (message, sessionId, onChunk = (chunk) => {}) => {
+  sendMessage: async (message, sessionId, userId, onChunk = (chunk) => {}) => {
     try {
       const response = await fetch(`${API_URL}/api/v1/chat/chat`, {
         method: "POST",
@@ -23,6 +23,7 @@ export const chatService = {
         body: JSON.stringify({
           question: message,
           thread_id: sessionId,
+          user_id: userId,
         }),
       });
 
@@ -50,11 +51,13 @@ export const chatService = {
   sendMessageStream: async (
     message, // Nội dung tin nhắn từ người dùng
     sessionId, // ID của phiên chat hiện tại
+    userId, // ID của người dùng (thêm mới)
     onToken = (token) => {}, // Callback được gọi mỗi khi nhận được token mới
     onError = (error) => {}, // Callback xử lý lỗi
   ) => {
     try {
       // Gửi request POST đến API endpoint
+      console.log("Sending userId to backend:", userId);
       const response = await fetch(`${API_URL}/api/v1/chat/chat/stream`, {
         method: "POST",
         headers: {
@@ -64,6 +67,7 @@ export const chatService = {
         body: JSON.stringify({
           question: message,
           thread_id: sessionId,
+          user_id: userId, // Thêm ID người dùng vào request
         }),
       });
 

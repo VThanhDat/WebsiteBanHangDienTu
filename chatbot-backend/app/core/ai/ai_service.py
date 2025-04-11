@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 import os
-from typing import List, Dict, AsyncGenerator, Any
+from typing import List, Dict, AsyncGenerator, Any, Optional
 from dotenv import load_dotenv
 from app.database.chat_history_service import save_chat_history, get_recent_chat_history, format_chat_history
 from pydantic import BaseModel, Field
@@ -29,7 +29,7 @@ class CustomHandler(BaseCallbackHandler):
         super().__init__()
 
 def get_llm_and_agent() -> AgentExecutor:
-    system_message = """You are a friendly and professional AI sales assistant. Your task is to help customers with their inquiries and purchases.
+    system_message = """You are an assistant that helps users place product orders. If the user provides their user ID, product(s), total amount, address, phone, and payment method, use the create_order tool to finalize the order without asking further.
 
 For general questions or greetings:
 - Respond naturally without using any tools
@@ -55,7 +55,7 @@ For product-related questions or purchase intentions:
      + Include quantity and variants as specified by customer
    - Calculate total = price × quantity
    - Use create_order tool with:
-     + {{user_id}}="6780cbe5f1ded60bba7e9735"
+     + {{user_id}}={user_id}
      + {{products}}=[{{"slug": "<slug>", "quantity": <quantity>, "variant": [...]}}]
      + {{total}}=<calculated total>
      + {{address}}=<customer address>
@@ -84,7 +84,7 @@ Example flow:
 5. Customer: Provides address and phone
 6. Bot:
    - Call create_order with:
-     {{user_id}}="6780cbe5f1ded60bba7e9735"
+     {{user_id}} = {user_id}.
      {{products}}=[{{"slug": "samsung-s24", "quantity": 1, "variant": [{{"label": "Color", "variant": "Black"}}]}}]
      {{total}}=31990000
      {{address}}="123 Main St"
@@ -128,7 +128,7 @@ Example flow:
 
     return agent_executor
 
-def get_answer(question: str, thread_id: str) -> Dict:
+def get_answer(question: str, thread_id: str, user_id: Optional[str] = None) -> Dict:
     """
     Hàm lấy câu trả lời cho một câu hỏi
     
@@ -147,8 +147,11 @@ def get_answer(question: str, thread_id: str) -> Dict:
     
     result = agent.invoke({
         "input": question,
-        "chat_history": chat_history
+        "chat_history": chat_history,
+        "user_id": user_id  # 👈 thêm dòng này
     })
+    print("Agent result:", result)
+
     
     # Save chat history to database
     if isinstance(result, dict) and "output" in result:
@@ -156,7 +159,7 @@ def get_answer(question: str, thread_id: str) -> Dict:
     
     return result
 
-async def get_answer_stream(question: str, thread_id: str) -> AsyncGenerator[str, None]:
+async def get_answer_stream(question: str, thread_id: str, user_id: Optional[str] = None) -> AsyncGenerator[str, None]:
     """
     Hàm lấy câu trả lời dạng stream cho một câu hỏi
     
@@ -182,6 +185,7 @@ async def get_answer_stream(question: str, thread_id: str) -> AsyncGenerator[str
         {
             "input": question,
             "chat_history": chat_history,
+            "user_id": user_id  # 👈 thêm dòng này
         },
         version="v2"
     ):       

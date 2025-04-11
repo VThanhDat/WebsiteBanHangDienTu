@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { chatService } from "../../services/chatService";
 import ChatMessage from "./ChatMessage";
 import { v4 as uuidv4 } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
 
 // Styled components
 const ChatContainer = styled.div`
@@ -106,6 +107,9 @@ function ChatBox() {
   const [threadId] = useState(uuidv4());
   const streamedMessageRef = useRef("");
 
+  const dispatch = useDispatch();
+  const { current: currentUser } = useSelector((state) => state.user);
+
   const handleSubmit = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -122,6 +126,7 @@ function ChatBox() {
       await chatService.sendMessageStream(
         userMessage,
         threadId,
+        currentUser?._id,
         (token) => {
           if (token.startsWith("http")) {
             setMessages((prev) => {

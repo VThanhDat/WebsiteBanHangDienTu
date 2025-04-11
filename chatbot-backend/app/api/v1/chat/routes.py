@@ -27,6 +27,8 @@ logger = logging.getLogger(__name__)
 class ChatRequest(BaseModel):
     question: str
     thread_id: str
+    user_id: str | None = None  
+
 
 class ChatResponse(BaseModel):
     answer: str
@@ -36,7 +38,7 @@ class ChatResponse(BaseModel):
 async def chat(request: ChatRequest):
     try:
         logger.info(f"Received question: {request.question} for thread: {request.thread_id}")
-        result = get_answer(request.question, request.thread_id)
+        result = get_answer(request.question, request.thread_id, request.user_id)
         logger.info(f"Got result: {result}")
         
         if not isinstance(result, dict) or "output" not in result:
@@ -50,9 +52,9 @@ async def chat(request: ChatRequest):
             detail=f"Internal server error: {str(e)}"
         )
 
-async def event_generator(question: str, thread_id: str) -> AsyncGenerator[str, None]:
+async def event_generator(question: str, thread_id: str, user_id: str | None) -> AsyncGenerator[str, None]:
     try:
-        async for chunk in get_answer_stream(question, thread_id):
+        async for chunk in get_answer_stream(question, thread_id, user_id):
             if chunk:  # Only yield if there's content
                 yield f"data: {json.dumps({'content': chunk})}\n\n"
     except Exception as e:
@@ -62,6 +64,6 @@ async def event_generator(question: str, thread_id: str) -> AsyncGenerator[str, 
 @router.post("/chat/stream")
 async def chat_stream(request: ChatRequest):
     return StreamingResponse(
-        event_generator(request.question, request.thread_id),
+        event_generator(request.question, request.thread_id, request.user_id),
         media_type="text/event-stream"
-    ) 
+    )
