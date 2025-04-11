@@ -78,6 +78,16 @@ class CreateOrderTool(BaseTool):
         payment_method: str,
         coupon: Optional[str] = None,
     ) -> Dict:
+           # In dữ liệu đầu vào
+        print("=== CreateOrderTool Received ===")
+        print(f"user_id: {user_id}")
+        print(f"products: {products}")
+        print(f"total: {total}")
+        print(f"address: {address}")
+        print(f"phone: {phone}")
+        print(f"payment_method: {payment_method}")
+        print(f"coupon: {coupon}")
+        print("=================================")
         # Validate user
         user = get_user_by_id(user_id)
         if not user:
@@ -223,13 +233,19 @@ class CreateOrderTool(BaseTool):
             for vg in product["variants"]
         }
 
+        print(f"Product variants: {product_variants}")
+        print(f"Selected variants: {selected_variants}")
+
         for sv in selected_variants:
             label = sv.get("label", "").upper()
             variant = sv.get("variant", "").upper()
+            print(f"Checking label: {label}, variant: {variant}")
 
             if label not in product_variants:
+                print(f"Label {label} not found in product variants")
                 return False
             if variant not in product_variants[label]:
+                print(f"Variant {variant} not found in product variants for label {label}")
                 return False
 
         return True

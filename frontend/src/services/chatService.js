@@ -1,3 +1,6 @@
+// import axios from "axios";
+const API_URL = "http://localhost:8030";
+
 /**
  * Service xử lý các tương tác chat với backend
  */
@@ -12,19 +15,16 @@ export const chatService = {
    */
   sendMessage: async (message, sessionId, onChunk = (chunk) => {}) => {
     try {
-      const response = await fetch(
-        `${process.env.CHATBOT_API_URL}/api/v1/chat/chat`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            question: message,
-            thread_id: sessionId,
-          }),
+      const response = await fetch(`${API_URL}/api/v1/chat/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          question: message,
+          thread_id: sessionId,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -55,20 +55,17 @@ export const chatService = {
   ) => {
     try {
       // Gửi request POST đến API endpoint
-      const response = await fetch(
-        `${process.env.CHATBOT_API_URL}/api/v1/chat/chat/stream`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          // Đóng gói dữ liệu gửi đi
-          body: JSON.stringify({
-            question: message,
-            thread_id: sessionId,
-          }),
+      const response = await fetch(`${API_URL}/api/v1/chat/chat/stream`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        // Đóng gói dữ liệu gửi đi
+        body: JSON.stringify({
+          question: message,
+          thread_id: sessionId,
+        }),
+      });
 
       // Kiểm tra response status, ném lỗi nếu không thành công
       if (!response.ok) {
