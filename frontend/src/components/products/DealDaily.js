@@ -55,7 +55,7 @@ const DealDaily = () => {
               />
             </Link>
             <Link
-              to={`${path.DETAIL_PRODUCT}/${dailydeal?._id}`}
+              to={`${path.DETAIL_PRODUCT}/${dailydeal?.slug}`}
               className="line-clamp-1 text-center hover:text-main"
             >
               {dailydeal?.title}
