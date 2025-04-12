@@ -10,7 +10,7 @@ router.put("/address", [verifyAccessToken], ctrls.updateUserAddress);
 router.put("/updatecart", [verifyAccessToken], ctrls.updateCart);
 router.put("/clearcart", [verifyAccessToken], ctrls.clearCart);
 router.put("/removefromcart", [verifyAccessToken], ctrls.removeFromCart);
-router.put("/change-password", [verifyAccessToken], ctrls.changePassword);
+router.patch("/change-password", [verifyAccessToken], ctrls.changePassword);
 router.put("/addwishlist", [verifyAccessToken], ctrls.updateWishList);
 router.put("/removewishlist", [verifyAccessToken], ctrls.removeWishList);
 //[ADMIN]

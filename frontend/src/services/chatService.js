@@ -57,7 +57,6 @@ export const chatService = {
   ) => {
     try {
       // Gửi request POST đến API endpoint
-      console.log("Sending userId to backend:", userId);
       const response = await fetch(`${API_URL}/api/v1/chat/chat/stream`, {
         method: "POST",
         headers: {

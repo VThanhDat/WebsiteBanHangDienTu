@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, InputField } from "../../../components";
 import { apiChangePassword } from "../../../apis";
 import { getCurrent } from "../../../store/user/asyncThunk";
+import { toast } from "react-toastify";
 
 const ChangePassword = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,6 @@ const ChangePassword = () => {
     confirmPassword: "",
   });
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   // Kiểm tra nếu các trường còn trống thì disable button
   const isDisabled =
@@ -22,37 +22,39 @@ const ChangePassword = () => {
     !payload.confirmPassword;
 
   const handleChangePassword = async () => {
+    let isSuccess = false;
+
     if (payload.newPassword !== payload.confirmPassword) {
-      setError("New password and confirm password do not match.");
+      toast.error("New password and confirm password do not match.");
       return;
     }
 
     if (isDisabled) {
-      setError("All fields are required!");
+      toast.error("All fields are required!");
       return;
     }
-
-    setIsLoading(true);
-    setError("");
-
     try {
       const response = await apiChangePassword(token, {
         oldPassword: payload.currentPassword, // Đổi tên biến theo yêu cầu backend
         newPassword: payload.newPassword,
       });
-
-      if (response?.data?.success) {
+      if (response?.success) {
         dispatch(getCurrent(token));
         setPayload({
           currentPassword: "",
           newPassword: "",
           confirmPassword: "",
         });
+        toast.success("Password changed successfully!");
+        isSuccess = true;
+      } else {
+        toast.error("Failed to change password.");
       }
     } catch (error) {
       setError(error.response?.data?.message || "Failed to change password.");
     }
-    setIsLoading(false);
+
+    return isSuccess;
   };
 
   return (
@@ -109,10 +111,10 @@ const ChangePassword = () => {
 
           {/* Nút đổi mật khẩu */}
           <Button
-            name={isLoading ? "Changing..." : "Change Password"}
+            name={"Change Password"}
             rounded
             handleClick={handleChangePassword}
-            disabled={isLoading || isDisabled}
+            disabled={isDisabled}
           />
         </div>
       </div>

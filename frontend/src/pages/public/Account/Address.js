@@ -4,6 +4,7 @@ import { apiUpdateUserAddress } from "../../../apis";
 import { Button } from "../../../components";
 import { getCurrent } from "../../../store/user/asyncThunk";
 import { compareArrays } from "utils/helpers";
+import { toast } from "react-toastify";
 
 const Address = () => {
   const dispatch = useDispatch();
@@ -11,55 +12,106 @@ const Address = () => {
   const token = useSelector((state) => state.user.token);
 
   const [address, setAddress] = useState([]);
-  const [removedAddresses, setRemovedAddresses] = useState([]);
+  const [addedAddresses, setAddedAddresses] = useState([]); // Lưu các địa chỉ thêm mới
+  const [removedAddresses, setRemovedAddresses] = useState([]); // Lưu các địa chỉ đã xóa
   const [isDisableButtonSave, setIsDisableButtonSave] = useState(true);
 
-  // Update state khi currentUser thay đổi
+  // Cập nhật khi currentUser thay đổi
   useEffect(() => {
     if (currentUser) {
       setAddress(currentUser.address || []);
-      setRemovedAddresses([]);
+      setAddedAddresses([]); // Reset lại khi có dữ liệu mới
+      setRemovedAddresses([]); // Reset lại khi có dữ liệu mới
     }
   }, [currentUser]);
 
-  const handleChangeAddress = useCallback((index, value) => {
-    setAddress((prev) => {
-      const newAddress = [...prev];
-      newAddress[index] = value;
-      return newAddress;
-    });
-  }, []);
+  // Xử lý thay đổi địa chỉ
+  const handleChangeAddress = useCallback(
+    (index, value) => {
+      const trimmedValue = value.trim();
+      const isDuplicate = address.some(
+        (addr, i) => i !== index && addr.trim() === trimmedValue,
+      );
 
+      if (isDuplicate) {
+        toast.warning("This address already exists.");
+        return;
+      }
+
+      setAddress((prev) => {
+        const newAddress = [...prev];
+        newAddress[index] = value;
+        return newAddress;
+      });
+    },
+    [address],
+  );
+
+  // Xử lý xóa địa chỉ
   const handleRemoveAddress = useCallback(
     (index) => {
-      setRemovedAddresses((prev) => [...prev, address[index]]);
+      const addrToRemove = address[index];
+      setRemovedAddresses((prev) => [...prev, addrToRemove]);
       setAddress((prev) => prev.filter((_, i) => i !== index));
     },
     [address],
   );
 
+  // Thêm địa chỉ mới
   const handleAddAddress = useCallback(() => {
     setAddress((prev) => [...prev, ""]);
-  }, []);
+    setAddedAddresses((prev) => [...prev, ""]); // Đánh dấu địa chỉ thêm vào
+  }, [address]);
 
+  // Lưu địa chỉ và hiển thị thông báo khi bấm Save
   const handleSaveChange = async () => {
-    const response = await apiUpdateUserAddress(token, {
-      address,
-      removedAddresses,
-    });
+    let isSuccess = false;
+    let toastMessage = "";
 
-    if (response?.data?.updatedUser) {
-      const updatedAddress = response.data.updatedUser.address;
-      setAddress(updatedAddress);
-      setRemovedAddresses([]);
+    try {
+      const filteredAddress = address.filter((addr) => addr.trim() !== "");
 
-      if (!compareArrays(currentUser.address, updatedAddress)) {
-        dispatch(getCurrent(token));
+      const response = await apiUpdateUserAddress(token, {
+        address: filteredAddress,
+        removedAddresses,
+      });
+
+      if (response?.success && response?.updatedUser) {
+        const updatedAddress = response.updatedUser.address;
+        setAddress(updatedAddress);
+        setRemovedAddresses([]);
+
+        // Kiểm tra hành động và thông báo tương ứng
+        if (addedAddresses.length > 0) {
+          toastMessage = "New address added!";
+        } else if (removedAddresses.length > 0) {
+          toastMessage = "Address removed successfully!";
+        } else {
+          toastMessage = "No changes made!";
+        }
+
+        // Chỉ hiển thị thông báo khi có thay đổi
+        if (toastMessage) {
+          toast.success(toastMessage);
+        }
+
+        if (!compareArrays(currentUser.address, updatedAddress)) {
+          dispatch(getCurrent(token));
+        }
+
+        isSuccess = true;
+      } else {
+        toast.error("Unable to save address. Please try again.");
       }
-      return true;
+    } catch (error) {
+      console.error("Error updating address:", error);
+      toast.error("An error occurred while saving the address.");
     }
+
+    return isSuccess;
   };
 
+  // Kiểm tra xem có thay đổi gì so với địa chỉ hiện tại
   const isSameAddress = useMemo(() => {
     if (!currentUser?.address) return true;
     return compareArrays(currentUser.address, address);

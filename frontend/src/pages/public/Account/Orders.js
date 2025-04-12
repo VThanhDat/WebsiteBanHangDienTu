@@ -28,7 +28,6 @@ const Orders = () => {
 
   const fetchUserOrders = async (statusSelected) => {
     const response = await apiUserOrders(token, { status: statusSelected });
-    console.log(response);
     if (response?.success) {
       setData(response.userOrders);
     }

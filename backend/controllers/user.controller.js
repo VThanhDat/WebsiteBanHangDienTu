@@ -330,7 +330,10 @@ const changePassword = asyncHandler(async (req, res) => {
 
   await user.save();
 
-  res.status(200).json({ mes: "Password changed successfully!" });
+  res.status(200).json({
+    success: user ? true : false,
+    mes: "Password changed successfully!",
+  });
 });
 
 const updateWishList = asyncHandler(async (req, res) => {
