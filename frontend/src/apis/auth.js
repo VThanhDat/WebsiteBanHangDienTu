@@ -34,6 +34,7 @@ export const apiResetPassword = (data) =>
   axios({
     url: "/auth/resetpassword",
     method: "put",
+    data,
   });
 
 export const apiGetCurrent = (token) =>
