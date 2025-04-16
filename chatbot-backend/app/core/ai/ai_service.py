@@ -148,10 +148,8 @@ def get_answer(question: str, thread_id: str, user_id: Optional[str] = None) -> 
     result = agent.invoke({
         "input": question,
         "chat_history": chat_history,
-        "user_id": user_id  # 👈 thêm dòng này
+        "user_id": user_id  
     })
-    print("Agent result:", result)
-
     
     # Save chat history to database
     if isinstance(result, dict) and "output" in result:
@@ -185,7 +183,7 @@ async def get_answer_stream(question: str, thread_id: str, user_id: Optional[str
         {
             "input": question,
             "chat_history": chat_history,
-            "user_id": user_id  # 👈 thêm dòng này
+            "user_id": user_id 
         },
         version="v2"
     ):       
