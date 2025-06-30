@@ -12,20 +12,27 @@ const { promises } = require("fs");
 
 const createProduct = asyncHandler(async (req, res) => {
   if (Object.keys(req.body).length === 0) throw new Error("Missing inputs");
-  if (req.body && req.body.title) req.body.slug = slugify(req.body.title);
-  const { variants } = req.body;
 
-  // Check total of variant wether on not equal
-  const quantitiesEachVariant = variants.map((el) =>
-    el.variants.reduce((total, el) => total + el.quantity, 0)
-  );
-  if (!quantitiesEachVariant?.every((el) => el === quantitiesEachVariant[0])) {
-    throw new Error("Total of variants have to be equal");
+  // Tự động tạo slug từ title nếu có
+  if (req.body && req.body.title) {
+    req.body.slug = slugify(req.body.title);
   }
+
+  // Lấy tổng lớn nhất để set quantity
+  const { variants } = req.body;
+  if (variants?.length) {
+    const quantitiesEachVariant = variants.map((el) =>
+      el.variants.reduce((total, item) => total + item.quantity, 0)
+    );
+    const quantity = Math.max(...quantitiesEachVariant);
+    req.body.quantity = +quantity;
+  }
+
   const newProduct = await Product.create(req.body);
+
   return res.status(200).json({
-    success: newProduct ? true : false,
-    createdProduct: newProduct ? newProduct : "Cannot create new product",
+    success: !!newProduct,
+    createdProduct: newProduct || "Cannot create new product",
   });
 });
 
@@ -183,19 +190,20 @@ const getProducts = asyncHandler(async (req, res) => {
 
 const updateProduct = asyncHandler(async (req, res) => {
   const { pid } = req.params;
+
+  // Nếu có title thì tự động tạo slug nếu slug chưa có
   if (req.body && req.body.title) {
     if (!req.body?.slug) req.body.slug = slugify(req.body.title);
   }
 
-  //Check total of variant wether on not equal
   const { variants } = req.body;
-  const quantitiesEachVariant = variants.map((el) =>
-    el.variants.reduce((total, el) => (total += el.quantity), 0)
-  );
-  if (!quantitiesEachVariant?.every((el) => el === quantitiesEachVariant[0]))
-    throw new Error("Total of variants have to be equal");
-  const quantity = Math.max(...quantitiesEachVariant);
-  if (quantity) req.body.quantity = +quantity;
+  if (variants?.length) {
+    const quantitiesEachVariant = variants.map((el) =>
+      el.variants.reduce((total, item) => total + item.quantity, 0)
+    );
+    const quantity = Math.max(...quantitiesEachVariant);
+    req.body.quantity = +quantity;
+  }
 
   const beforeUpdated = await Product.findById(pid);
   let updatedProduct = await Product.findByIdAndUpdate(pid, req.body, {
@@ -207,9 +215,9 @@ const updateProduct = asyncHandler(async (req, res) => {
       beforeUpdated.images,
       updatedProduct.images
     );
+
     if (pendingRemoveFromCloudImgs.length) {
-      // Khai báo biến cục bộ thay vì gán vào promises
-      const deletePromises = pendingRemoveFromCloudImgs?.map((imageURL) => {
+      const deletePromises = pendingRemoveFromCloudImgs.map((imageURL) => {
         return cloudinary.uploader.destroy(
           imageURL.split("/").slice(-2).join("/").split(".")[0]
         );
@@ -220,16 +228,15 @@ const updateProduct = asyncHandler(async (req, res) => {
         updatedProduct = await Product.findByIdAndUpdate(
           pid,
           { thumb: updatedProduct.images[0] },
-          {
-            new: true,
-          }
+          { new: true }
         );
       }
     }
   }
+
   return res.status(200).json({
-    success: updatedProduct ? true : false,
-    updateProduct: updatedProduct ? updatedProduct : "Something went wrong",
+    success: !!updatedProduct,
+    updateProduct: updatedProduct || "Something went wrong",
   });
 });
 
