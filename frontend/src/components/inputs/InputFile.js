@@ -1,5 +1,4 @@
 import React from "react";
-import SortableImage from "../../pages/private/components/SortableImage";
 
 const InputFile = ({
   images,
@@ -14,7 +13,6 @@ const InputFile = ({
 }) => {
   const changeHandler = (e) => {
     const selectedFiles = Array.from(e.target.files);
-    console.log("Selected files:", selectedFiles); // Debug
     setValue((prev) => ({
       ...prev,
       [nameKey]: [...(prev[nameKey] || []), ...selectedFiles], // Cập nhật selectedFiles
@@ -24,7 +22,6 @@ const InputFile = ({
   const handleRemoveImage = (index) => {
     const removedImage = images[index];
     const newImages = images.filter((_, i) => i !== index);
-    console.log("Removing image:", removedImage, "New images:", newImages); // Debug
     setValue((prev) => ({
       ...prev,
       [nameKey]: newImages,
@@ -39,7 +36,7 @@ const InputFile = ({
     <div className="mb-4 w-full text-sm text-gray-700">
       {title && <label className="font-medium">{title}</label>}
       <input
-        accept="image/png, image/gif, image/jpeg"
+        accept="image/png, image/gif, image/jpeg, image/webp"
         type={type || "text"}
         className="mt-2 w-full rounded-md border px-4 py-2 text-sm placeholder-gray-400 focus:ring-2 focus:ring-blue-500"
         placeholder={title}
@@ -55,23 +52,10 @@ const InputFile = ({
       )}
 
       <div className="mt-3 flex flex-wrap gap-2">
-        {!!images?.length && (
-          <SortableImage
-            images={images}
-            setImages={(newImages) =>
-              setValue((prev) => ({
-                ...prev,
-                [nameKey]: newImages,
-              }))
-            }
-          />
-        )}
-
         {images?.length > 0 &&
           images?.map((image, index) => {
             const imageUrl =
               image instanceof File ? URL.createObjectURL(image) : image;
-            console.log("Image:", image, "Image URL:", imageUrl); // Debug
             return (
               <div key={index} className="relative h-24 w-24">
                 <img
