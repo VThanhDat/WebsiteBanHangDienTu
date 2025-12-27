@@ -3,12 +3,10 @@
     "category": ["Home", "Smartphone"],
     "name": "XIAOMI MI 5",
     "brand": "XIAOMI",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1024x1024.jpg?v=1491404851",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822730/xiaomi-mi-5-1-400x460-400x460-300x300_q59tuz.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1024x1024.jpg?v=1491404851",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1024x1024.jpg?v=1491404851",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1024x1024.jpg?v=1491404851",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1024x1024.jpg?v=1491404851"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822731/mi-5-gold_2_rzzal5.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822732/mi-5-black_1_2_1_tns1tl.webp"
     ],
     "price": "7.193.888,26 VND",
     "description": [
@@ -48,11 +46,9 @@
     "category": ["Home", "Smartphone"],
     "name": "VIVO V5",
     "brand": "VIVO",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-1_31cc1c0e-ac34-4c8e-946a-a5e30acf6b1a_1024x1024.jpg?v=1491404855",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822804/v5-gold_1_bbehin.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-1_31cc1c0e-ac34-4c8e-946a-a5e30acf6b1a_1024x1024.jpg?v=1491404855",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/vivo-v5-1_1024x1024.jpg?v=1491404855",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/vivo-v5-2_1024x1024.jpg?v=1491404855"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822805/vivo-v5-1-600x600_adsrth.jpg"
     ],
     "price": "5.896.629,72 VND",
     "description": [
@@ -84,12 +80,9 @@
     "category": ["Home", "Smartphone"],
     "name": "SONY XPERIA XA",
     "brand": "SONY",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/xperia-xa-white-D1-hero-image-35f68ba1669ba23b989e7519e4a1660d_1024x1024.jpg?v=1491404881",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822870/sony-xperia-xa-pp-300x300_xokspi.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/xperia-xa-white-D1-hero-image-35f68ba1669ba23b989e7519e4a1660d_1024x1024.jpg?v=1491404881",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/sony-xperia-xz_1024x1024.jpg?v=1491404881",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/gsmarena_015_1024x1024.jpg?v=1491404881",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/sony-xperia-xz1_1024x1024.jpg?v=1491404881"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822871/sony-xperia-xa-ultra-hh-600x600_taz1uw.jpg"
     ],
     "price": "16.699.255,37 VND",
     "description": [
@@ -125,12 +118,9 @@
     "category": ["Home", "Smartphone"],
     "name": "SAMSUNG GALAXY S7",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-s7-and-s7-edge-unveiled-with-refined-design-performance-boost-500729-4_1024x1024.jpg?v=1491404832",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822956/Samsung_Galaxy_S7_and_S7_Edge_agxsmo.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-s7-and-s7-edge-unveiled-with-refined-design-performance-boost-500729-4_1024x1024.jpg?v=1491404832",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung_galaxys7_heroCard_foreground_1024x1024.png?v=1491404832",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-s6_1024x1024.png?v=1491404832",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-s6-edge-plus-black-sapphire-spin.0001_1024x1024.png?v=1491404832"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822957/samsung-galaxy-s7-vang_dkkawt.jpg"
     ],
     "price": "21.204.280,48 VND",
     "description": [
@@ -162,12 +152,9 @@
     "category": ["Home", "Smartphone"],
     "name": "SAMSUNG GALAXY J7 PRIME",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-1_1024x1024.jpg?v=1491404895",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823075/samsung-galaxy-j7-prime-hh-600x600_vtdqvw.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-1_1024x1024.jpg?v=1491404895",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-j7-prime-1_1024x1024.jpg?v=1491404895",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-j7-prime-2_1024x1024.jpg?v=1491404895",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-j7-prime-3_1024x1024.jpg?v=1491404895"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823076/j7-prime-blue_i4wzx9.webp"
     ],
     "price": "9.848.786,83 VND",
     "description": [
@@ -203,13 +190,9 @@
     "category": ["Home", "Smartphone"],
     "name": "LG G5",
     "brand": "LG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/modular-type-1600x840_G5_M01C_1024x1024.jpg?v=1491404872",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823180/lg-g5-se-h845-duos-gold_rrpif2.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/modular-type-1600x840_G5_M01C_1024x1024.jpg?v=1491404872",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lg-g5-3_1024x1024.jpg?v=1491404872",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lg-g5-01_1024x1024.jpg?v=1491404872",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lg-g5-1_1024x1024.jpg?v=1491404872",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lg-g5-02_1024x1024.jpg?v=1491404872"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823181/lg-g5-se-3_vgyesc.jpg"
     ],
     "price": "13.916.046,14 VND",
     "description": [
@@ -234,15 +217,11 @@
   },
   {
     "category": ["Home", "Smartphone"],
-    "name": "IPHONE 7",
+    "name": "IPHONE 17",
     "brand": "IPHONE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/iphone_1024x1024.jpg?v=1491404827",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823344/1644285630_wvmkjt.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/iphone_1024x1024.jpg?v=1491404827",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/1_83bd7ced-da1e-4701-afac-cc3c61ea1a51_1024x1024.jpg?v=1491404827",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/2_1024x1024.jpg?v=1491404827",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/3_1024x1024.jpg?v=1491404827",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/4_1024x1024.jpg?v=1491404827"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823345/iphone-17-pro-cam-thumb-600x600_mwxcrz.jpg"
     ],
     "price": "21.204.280,48 VND",
     "description": [
@@ -278,11 +257,9 @@
     "category": ["Home", "Smartphone"],
     "name": "HTC 10",
     "brand": "HTC",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/HTC-10-1_1024x1024.jpg?v=1491404875",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822559/htc10_2_km8qvj.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/HTC-10-1_1024x1024.jpg?v=1491404875",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/htc-10-5_1024x1024.jpg?v=1491404875",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/htc-10-r_1024x1024.jpg?v=1491404875"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822559/htc10_nui0db.jpg"
     ],
     "price": "12.194.230,27 VND",
     "description": [
@@ -323,15 +300,10 @@
     "category": ["Home", "Smartphone"],
     "name": "GOOGLE PIXEL",
     "brand": "GOOGLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/u3_1024x1024.jpg?v=1491404903",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822397/dien-thoai-google-pixel-9_jhd5zc.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/u3_1024x1024.jpg?v=1491404903",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/u2_1024x1024.jpg?v=1491404903",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/google-pixel-04_1024x1024.jpg?v=1491404903",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/google-pixel-02_1024x1024.jpg?v=1491404903",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/google-pixel-03_1024x1024.jpg?v=1491404903",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/gsmarena_020_1024x1024.jpg?v=1491404903",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/gsmarena_023_1024x1024.jpg?v=1491404903"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822442/google-pixel-9-1_pmei7x.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766822442/Google-Pixel-9-hong_gxtyzi.webp"
     ],
     "price": "19.678.232,71 VND",
     "description": [
@@ -367,13 +339,9 @@
     "category": ["Home", "Tablet"],
     "name": "XIAOMI MI PAD 3",
     "brand": "XIAOMI",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-1_1_1024x1024.jpg?v=1491404888",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823796/xiaomi-redmi-pad-2-pro-1_1_syzmnl.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-1_1_1024x1024.jpg?v=1491404888",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/SS6_1024x1024.jpg?v=1491404888",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/xiaomi-redmi-note-3-1_1024x1024.jpg?v=1491404888",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/xiaomi-redmi-note-3-2_1024x1024.jpg?v=1491404888",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/xiaomi-redmi-note-3-3_1024x1024.jpg?v=1491404889"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823797/mi-pad-3-1_600x649_pprqd9.jpg"
     ],
     "price": "$175.99",
     "description": [
@@ -413,13 +381,9 @@
     "category": ["Home", "Tablet"],
     "name": "SONY XPERIA Z4 TABLET LTE",
     "brand": "SONY",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-11_1024x1024.jpg?v=1491404927",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823873/sony-xperia-z4-tablet-300-nowatermark-300x300_szfapm.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-11_1024x1024.jpg?v=1491404927",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/sony-xperia-z4-tablet-1_1024x1024.jpg?v=1491404927",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/sony-xperia-z4-tablet-1_1221094a-62fa-48fe-92bf-24290926cc56_1024x1024.jpg?v=1491404927",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/sony-xperia-z4-tablet-2_1024x1024.jpg?v=1491404927",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/sony-xperia-z4-tablet-2_dbebeed1-de5c-4bff-9c53-8aa708c32ca5_1024x1024.jpg?v=1491404927"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766823875/xperia-z4-tablet-1-201532154928_wlvocd.jpg"
     ],
     "price": "16.486.976,70 VND",
     "description": [
@@ -451,11 +415,9 @@
     "category": ["Home", "Tablet"],
     "name": "SAMSUNG GALAXY TAB S 8.4 LTE",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/ss8_1024x1024.jpg?v=1491404867",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766824042/may-tinh-bang-samsuncl_lhi0oh.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/ss8_1024x1024.jpg?v=1491404867",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-tab-s-84-1_1024x1024.jpg?v=1491404867",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/samsung-galaxy-tab-s-84-3_1024x1024.jpg?v=1491404867"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766824044/images_wsznq8.jpg"
     ],
     "price": "13.184.392,33 VND",
     "description": [
@@ -491,10 +453,9 @@
     "category": ["Home", "Tablet"],
     "name": "LG G PAD III 10.1 FHD",
     "brand": "LG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-2_1024x1024.jpg?v=1491404930",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766824897/3934918_LG_G_Pad_III_10.1_FHD_LTE-1_p54msi.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-2_1024x1024.jpg?v=1491404930",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-3_1024x1024.jpg?v=1491404930"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766824899/lg-g-pad-iii_hrrieg.jpg"
     ],
     "price": "8.703.425,47 VND",
     "description": [
@@ -521,12 +482,9 @@
     "category": ["Home", "Tablet"],
     "name": "LENOVO YOGA TAB 3 PLUS",
     "brand": "LENOVO",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/ss3_1024x1024.jpg?v=1491404819",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825102/images_1_sjal3d.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/ss3_1024x1024.jpg?v=1491404819",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lenovo-yoga-tab3-plus_1024x1024.jpg?v=1491404819",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lenovo-yoga-tab3-plus1_1024x1024.jpg?v=1491404819",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/lenovo-yoga-tab3-plus2_1024x1024.jpg?v=1491404819"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825104/2016_9_1_636083280020458943_lenovo-yoga-tab-3-plus-official_xahilu.webp"
     ],
     "price": "11.769.672,93 VND",
     "description": [
@@ -553,12 +511,9 @@
     "category": ["Home", "Tablet"],
     "name": "HUAWEI MEDIAPAD T1 7.0",
     "brand": "HUAWEI",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/ss4_1024x1024.jpg?v=1491404838",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825158/mediapad-t1-7-0-pro_1_d9ubm4.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/ss4_1024x1024.jpg?v=1491404838",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/huawei-mediapad-t1-70-1_1024x1024.jpg?v=1491404838",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/huawei-mediapad-t1-70-2_1024x1024.jpg?v=1491404838",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/huawei-mediapad-t1-70-11_1024x1024.jpg?v=1491404838"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825160/huawei-mediapad-t1-701u-bac-2-750x500_cyku0d.png"
     ],
     "price": "2.335.065,37 VND",
     "description": [
@@ -585,11 +540,9 @@
     "category": ["Home", "Tablet"],
     "name": "ASUS ZENPAD 3 8.0 Z581KL",
     "brand": "ASUS",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/ss9_1024x1024.jpg?v=1491404859",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825255/images_2_uwnazs.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/ss9_1024x1024.jpg?v=1491404859",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/asus-zenpad-3-80-z581kl-1_1024x1024.jpg?v=1491404859",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/asus-zenpad-3-80-z581kl-2_1024x1024.jpg?v=1491404859"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825257/asuszenpad_800x450_cxigys.jpg"
     ],
     "price": "6.604.225,29 VND",
     "description": [
@@ -616,13 +569,9 @@
     "category": ["Home", "Tablet"],
     "name": "APPLE IPAD PRO",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/ss5_1024x1024.jpg?v=1491404844",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825384/ipad-mini-6_1__fxa9tg.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/ss5_1024x1024.jpg?v=1491404844",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-ipad-pro-2_1024x1024.jpg?v=1491404844",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-ipad-pro-3_1024x1024.jpg?v=1491404844",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-ipad-pro-4_1024x1024.jpg?v=1491404844",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-ipad-pro-5_1024x1024.jpg?v=1491404844"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825386/frame_100_1_2__2_2_jquara.webp"
     ],
     "price": "33.021.126,44 VND",
     "description": [
@@ -658,12 +607,9 @@
     "category": ["Home", "Tablet"],
     "name": "APPLE IPAD AIR 2",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/SS7_1_1024x1024.jpg?v=1491404862",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825486/ipad-air-2-silver_1_5_lubvmr.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/SS7_1_1024x1024.jpg?v=1491404862",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/SS7_1024x1024.jpg?v=1491404862",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-ipad-air-2-3_1024x1024.jpg?v=1491404862",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-ipad-air-2-4_1024x1024.jpg?v=1491404862"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825488/ipad-air-2-cellular-13-300x300_kt8cra.jpg"
     ],
     "price": "8.467.560,28 VND",
     "description": [
@@ -699,11 +645,9 @@
     "category": ["Home", "Laptop"],
     "name": "LENOVO IDEAPAD 110",
     "brand": "LENOVO",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_877559ca-7315-44b0-9f7f-f393bd0808bd_1024x1024.jpg?v=1491404790",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825579/10033933-LAPTOP-LENOVO-IDEAPAD-110-15IBR-_80T700AYVN_-01_rhdliu.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_877559ca-7315-44b0-9f7f-f393bd0808bd_1024x1024.jpg?v=1491404790",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_6f644814-23bf-4439-80ff-0b5d50baf196_1024x1024.jpg?v=1491404790",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_76a134cf-ab12-45ae-bf1d-54a1ec20982d_1024x1024.jpg?v=1491404790"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825581/t%E1%BA%A3i_xu%E1%BB%91ng_i6isn0.jpg"
     ],
     "price": "17.666.302,65 VND",
     "description": [
@@ -730,11 +674,9 @@
     "category": ["Home", "Laptop"],
     "name": "HP PROBOOK 450",
     "brand": "HP",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_6dbdaadc-bd0c-454b-b4c1-395b60a2e2a7_1024x1024.jpg?v=1491404782",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825706/hp-probook-450-g10-i5-9h1n5pt-glr-1-638622523986608967-750x500_b06ptd.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_6dbdaadc-bd0c-454b-b4c1-395b60a2e2a7_1024x1024.jpg?v=1491404782",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_b21a3aa8-86ed-4338-985d-0bfca8fea6e0_1024x1024.jpg?v=1491404782",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_86e4ff89-2434-4fe7-b758-49d789152900_1024x1024.jpg?v=1491404782"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825708/hp-probook-450-g10-i5-873d1pa-1-1-750x500_ydoraz.jpg"
     ],
     "price": "20.024.954,54 VND",
     "description": [
@@ -761,11 +703,9 @@
     "category": ["Home", "Laptop"],
     "name": "HP PAVILION 15 AU072TX",
     "brand": "HP",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/x2_1024x1024.jpg?v=1491404795",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825837/hp-pavilion-15-au072tx-i7-vang-450x300-450x300_poxu9d.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/x2_1024x1024.jpg?v=1491404795",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/x3_1024x1024.jpg?v=1491404795",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/x1_1024x1024.jpg?v=1491404795"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825835/hp-pavilion-15-au072tx-i7-mo-ta-chuc-nang_xbwbby.jpg"
     ],
     "price": "18.845.628,59 VND",
     "description": [
@@ -792,11 +732,9 @@
     "category": ["Home", "Laptop"],
     "name": "DELL INSPIRON 7460",
     "brand": "DELL",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_8ad649f4-de63-464c-a7d1-7573c1b53a2d_1024x1024.jpg?v=1491404804",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825966/5d88tm77-1054-dell-inspiron-7460-core-i5-7200u-ram-8gb-ssd-128gb-hdd-500gb-fhd_qbccla.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_8ad649f4-de63-464c-a7d1-7573c1b53a2d_1024x1024.jpg?v=1491404804",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_eda0eb59-ee79-4c50-b724-c9ed562d180b_1024x1024.jpg?v=1491404804",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_0267f8b8-d3ca-475f-a6f2-0a999f863a0a_1024x1024.jpg?v=1491404804"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766825968/dell-inspiron-7460-n4i5259w-vangdong-450x300-450x300_rimiji.png"
     ],
     "price": "21.204.280,48 VND",
     "description": [
@@ -823,11 +761,9 @@
     "category": ["Home", "Laptop"],
     "name": "ASUS ROG G752VM",
     "brand": "ASUS",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_33133681-0515-48fa-a6ee-fce4fc68afea_1024x1024.jpg?v=1491404807",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826020/Asus-ROG-G752VM-01_rhxi4c.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_33133681-0515-48fa-a6ee-fce4fc68afea_1024x1024.jpg?v=1491404807",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_f7b95ca1-d4cf-4b52-a22a-481db6b06c82_1024x1024.jpg?v=1491404807",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_59dcf671-2402-42e8-9c71-d1a262eca464_1024x1024.jpg?v=1491404807"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826022/asus-g752v-g752vy-gc245d-i7-6700hq-16g-128gssd-1-1-450x300_zm4ln5.jpg"
     ],
     "price": "7.052.369,15 VND",
     "description": [
@@ -857,13 +793,11 @@
   },
   {
     "category": ["Home", "Laptop"],
-    "name": "APPLE MACBOOK PRO 13\"",
+    "name": "APPLE MACBOOK PRO 13",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1_1024x1024.jpg?v=1491404800",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826116/mbp13touch-space-gallery2-202005-geo-us-a999e8e4-2feb-4cf3-8199-e14e103dbee5-cef0344f-2785-4f68-8023-c88229a23033-319b8ec0-bbf4-4f64-97c1-55bd32d47267-7c93235f-4e5e-45c8-a18a-368bd0e61957_sz1vzu.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1_1024x1024.jpg?v=1491404800",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1_4c7eeac9-df0b-4725-8a45-cb6c87b42eba_1024x1024.jpg?v=1491404800",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z5_1_1024x1024.jpg?v=1491404800"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826118/r3x2m0zr-143-macbook-pro-13-m1-8gb-256gb-like-new_zcyxei.jpg"
     ],
     "price": "35.356.191,82 VND",
     "description": [
@@ -890,11 +824,9 @@
     "category": ["Home", "Laptop"],
     "name": "APPLE MACBOOK AIR",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_4_1024x1024.jpg?v=1491404771",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826208/2022_7_21_637939946171340515_Macbook_Air_M1_2_izddaf.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_4_1024x1024.jpg?v=1491404771",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_4_1024x1024.jpg?v=1491404771",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_4_1024x1024.jpg?v=1491404771"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826209/text_ng_n_2__9_14_wtdiga.webp"
     ],
     "price": "28.067.957,48 VND",
     "description": [
@@ -921,11 +853,9 @@
     "category": ["Home", "Laptop"],
     "name": "ACER ASPIRE E5",
     "brand": "ACER",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_00d0ce5d-e30b-4a9a-bffd-357614f67b8d_1024x1024.jpg?v=1491404787",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826274/acer-aspire-e5-575g-i3-6100u-4gb-500gb-2gb-940m-wi-5-450x300-450x300_xtqtxw.png",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_00d0ce5d-e30b-4a9a-bffd-357614f67b8d_1024x1024.jpg?v=1491404787",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_bac0625f-a20a-431b-b73b-0ca2ec0e1495_1024x1024.jpg?v=1491404787",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_ab603453-7471-477c-a63d-987e838aca3b_1024x1024.jpg?v=1491404787"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826275/t%E1%BA%A3i_xu%E1%BB%91ng_1_nn1hjb.jpg"
     ],
     "price": "14.600.055,19 VND",
     "description": [
@@ -952,10 +882,10 @@
     "category": ["Home", "Camera"],
     "name": "USB SANDISK",
     "brand": "USB",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286894/ElectronicStore/product/bakizcxzv5eie0lqcgiy.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z5_1024x1024.jpg?v=1491404811"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/wktxgllk4mbbxhjegb0n.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/dxrsxtby6do2dohmc9l4.webp"
     ],
     "price": "164.869,77 VND",
     "description": [
@@ -983,8 +913,10 @@
     "category": ["Home", "Camera"],
     "name": "SENNHEISER EZX 80",
     "brand": "SENNHEISER",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_1024x1024.jpg?v=1491404910",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826343/images_3_iz9nzb.jpg",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826345/w260h260_bluetooth-sennheiser-ezx-80-1382607319_sh5hfb.jpg"
+    ],
     "price": "1.627.469,80 VND",
     "description": [
       "Long talk time – Up to 10 hours",
@@ -1011,12 +943,9 @@
     "category": ["Home", "Camera"],
     "name": "SAMSUNG GEAR VR",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826694/images_5_qxrcjz.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1_1024x1024.jpg?v=1491404913"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826695/images_4_z2czi7.jpg"
     ],
     "price": "2.335.065,37 VND",
     "description": [
@@ -1041,13 +970,9 @@
     "category": ["Home", "Camera"],
     "name": "MOTOROLA MOTO 360 (2ND GEN)",
     "brand": "MOTOROLA",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-1_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-2_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-3_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-4_1024x1024.jpg?v=1491404918"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826755/new-motorola-moto-360-2015_xepbef.jpg"
     ],
     "price": "8.255.045,75 VND",
     "description": [
@@ -1083,8 +1008,10 @@
     "category": ["Home", "Camera"],
     "name": "LOGITECH WIRELESS KEYBOARD MK240 NANO",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1024x1024.jpg?v=1491404809",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826864/combo-ban-phim-chuot-khong-day-logitech-mk240-8_1_cw1yhf.webp",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826867/18416-sp180291sp180291_tllaiv.jpg"
+    ],
     "price": "574.095,87 VND",
     "description": [
       "Dimensions: 139mm x 288mm x 21mm",
@@ -1108,11 +1035,10 @@
     "category": ["Home", "Camera"],
     "name": "LOGITECH MX ANYWHERE 2",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/rvs56w6sxdiu2ypwsosf.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_5229b270-7b1c-4b40-8100-204f96c43f88_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2ca9a51c-540d-4bbc-8be1-88dc83ccefa1_1024x1024.jpg?v=1491404814"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/bf09dcjaj62ytxasxv6s.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289940/ElectronicStore/product/idbswgjbjavmtrsvehny.webp"
     ],
     "price": "424.321,47 VND",
     "description": [
@@ -1144,11 +1070,10 @@
     "category": ["Home", "Camera"],
     "name": "JBL CHARGE 3",
     "brand": "JBL",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_2_1024x1024.jpg?v=1491404907"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/vd13jwpkwuoggwh08a4j.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp"
     ],
     "price": "3.183.000,72 VND",
     "description": [
@@ -1179,10 +1104,12 @@
     "category": ["Home", "Camera"],
     "name": "APPLE WATCH EDITION SERIES 2",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-watch2-edition-42mm2_1024x1024.jpg?v=1491404922"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/r4nzazfjdpgfgzyj9qse.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/fxak56wozpiw1fqrt4c3.webp"
     ],
     "price": "8.703.425,47 VND",
     "description": [
@@ -1222,10 +1149,10 @@
     "category": ["Home", "Printer"],
     "name": "USB SANDISK",
     "brand": "USB",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286894/ElectronicStore/product/bakizcxzv5eie0lqcgiy.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z5_1024x1024.jpg?v=1491404811"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/wktxgllk4mbbxhjegb0n.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/dxrsxtby6do2dohmc9l4.webp"
     ],
     "price": "164.869,77 VND",
     "description": [
@@ -1253,8 +1180,10 @@
     "category": ["Home", "Printer"],
     "name": "SENNHEISER EZX 80",
     "brand": "SENNHEISER",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_1024x1024.jpg?v=1491404910",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826343/images_3_iz9nzb.jpg",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826345/w260h260_bluetooth-sennheiser-ezx-80-1382607319_sh5hfb.jpg"
+    ],
     "price": "1.627.469,80 VND",
     "description": [
       "Long talk time – Up to 10 hours",
@@ -1281,12 +1210,9 @@
     "category": ["Home", "Printer"],
     "name": "SAMSUNG GEAR VR",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826694/images_5_qxrcjz.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1_1024x1024.jpg?v=1491404913"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826695/images_4_z2czi7.jpg"
     ],
     "price": "2.335.065,37 VND",
     "description": [
@@ -1311,13 +1237,9 @@
     "category": ["Home", "Printer"],
     "name": "MOTOROLA MOTO 360 (2ND GEN)",
     "brand": "MOTOROLA",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-1_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-2_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-3_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-4_1024x1024.jpg?v=1491404918"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826755/new-motorola-moto-360-2015_xepbef.jpg"
     ],
     "price": "8.255.045,75 VND",
     "description": [
@@ -1353,8 +1275,10 @@
     "category": ["Home", "Printer"],
     "name": "LOGITECH WIRELESS KEYBOARD MK240 NANO",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1024x1024.jpg?v=1491404809",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826864/combo-ban-phim-chuot-khong-day-logitech-mk240-8_1_cw1yhf.webp",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826867/18416-sp180291sp180291_tllaiv.jpg"
+    ],
     "price": "574.095,87 VND",
     "description": [
       "Dimensions: 139mm x 288mm x 21mm",
@@ -1378,11 +1302,10 @@
     "category": ["Home", "Printer"],
     "name": "LOGITECH MX ANYWHERE 2",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/rvs56w6sxdiu2ypwsosf.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_5229b270-7b1c-4b40-8100-204f96c43f88_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2ca9a51c-540d-4bbc-8be1-88dc83ccefa1_1024x1024.jpg?v=1491404814"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/bf09dcjaj62ytxasxv6s.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289940/ElectronicStore/product/idbswgjbjavmtrsvehny.webp"
     ],
     "price": "424.321,47 VND",
     "description": [
@@ -1414,11 +1337,10 @@
     "category": ["Home", "Printer"],
     "name": "JBL CHARGE 3",
     "brand": "JBL",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_2_1024x1024.jpg?v=1491404907"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/vd13jwpkwuoggwh08a4j.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp"
     ],
     "price": "3.183.000,72 VND",
     "description": [
@@ -1449,10 +1371,12 @@
     "category": ["Home", "Printer"],
     "name": "APPLE WATCH EDITION SERIES 2",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-watch2-edition-42mm2_1024x1024.jpg?v=1491404922"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/r4nzazfjdpgfgzyj9qse.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/fxak56wozpiw1fqrt4c3.webp"
     ],
     "price": "8.703.425,47 VND",
     "description": [
@@ -1492,10 +1416,10 @@
     "category": ["Home", "Speaker"],
     "name": "USB SANDISK",
     "brand": "USB",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286894/ElectronicStore/product/bakizcxzv5eie0lqcgiy.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z5_1024x1024.jpg?v=1491404811"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/wktxgllk4mbbxhjegb0n.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/dxrsxtby6do2dohmc9l4.webp"
     ],
     "price": "164.869,77 VND",
     "description": [
@@ -1523,8 +1447,10 @@
     "category": ["Home", "Speaker"],
     "name": "SENNHEISER EZX 80",
     "brand": "SENNHEISER",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_1024x1024.jpg?v=1491404910",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826343/images_3_iz9nzb.jpg",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826345/w260h260_bluetooth-sennheiser-ezx-80-1382607319_sh5hfb.jpg"
+    ],
     "price": "1.627.469,80 VND",
     "description": [
       "Long talk time – Up to 10 hours",
@@ -1551,12 +1477,9 @@
     "category": ["Home", "Speaker"],
     "name": "SAMSUNG GEAR VR",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826694/images_5_qxrcjz.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1_1024x1024.jpg?v=1491404913"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826695/images_4_z2czi7.jpg"
     ],
     "price": "2.335.065,37 VND",
     "description": [
@@ -1581,13 +1504,9 @@
     "category": ["Home", "Speaker"],
     "name": "MOTOROLA MOTO 360 (2ND GEN)",
     "brand": "MOTOROLA",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-1_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-2_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-3_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-4_1024x1024.jpg?v=1491404918"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826755/new-motorola-moto-360-2015_xepbef.jpg"
     ],
     "price": "8.255.045,75 VND",
     "description": [
@@ -1623,8 +1542,10 @@
     "category": ["Home", "Speaker"],
     "name": "LOGITECH WIRELESS KEYBOARD MK240 NANO",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1024x1024.jpg?v=1491404809",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826864/combo-ban-phim-chuot-khong-day-logitech-mk240-8_1_cw1yhf.webp",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826867/18416-sp180291sp180291_tllaiv.jpg"
+    ],
     "price": "574.095,87 VND",
     "description": [
       "Dimensions: 139mm x 288mm x 21mm",
@@ -1648,11 +1569,10 @@
     "category": ["Home", "Speaker"],
     "name": "LOGITECH MX ANYWHERE 2",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/rvs56w6sxdiu2ypwsosf.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_5229b270-7b1c-4b40-8100-204f96c43f88_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2ca9a51c-540d-4bbc-8be1-88dc83ccefa1_1024x1024.jpg?v=1491404814"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/bf09dcjaj62ytxasxv6s.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289940/ElectronicStore/product/idbswgjbjavmtrsvehny.webp"
     ],
     "price": "424.321,47 VND",
     "description": [
@@ -1684,11 +1604,10 @@
     "category": ["Home", "Speaker"],
     "name": "JBL CHARGE 3",
     "brand": "JBL",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_2_1024x1024.jpg?v=1491404907"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/vd13jwpkwuoggwh08a4j.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp"
     ],
     "price": "3.183.000,72 VND",
     "description": [
@@ -1719,10 +1638,12 @@
     "category": ["Home", "Speaker"],
     "name": "APPLE WATCH EDITION SERIES 2",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-watch2-edition-42mm2_1024x1024.jpg?v=1491404922"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/r4nzazfjdpgfgzyj9qse.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/fxak56wozpiw1fqrt4c3.webp"
     ],
     "price": "8.703.425,47 VND",
     "description": [
@@ -1762,12 +1683,9 @@
     "category": ["Home", "Accessories"],
     "name": "SAMSUNG GEAR VR",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826694/images_5_qxrcjz.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1_1024x1024.jpg?v=1491404913"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826695/images_4_z2czi7.jpg"
     ],
     "price": "2.335.065,37 VND",
     "description": [
@@ -1792,13 +1710,9 @@
     "category": ["Home", "Accessories"],
     "name": "MOTOROLA MOTO 360 (2ND GEN)",
     "brand": "MOTOROLA",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-1_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-2_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-3_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-4_1024x1024.jpg?v=1491404918"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826755/new-motorola-moto-360-2015_xepbef.jpg"
     ],
     "price": "8.255.045,75 VND",
     "description": [
@@ -1834,8 +1748,10 @@
     "category": ["Home", "Accessories"],
     "name": "LOGITECH WIRELESS KEYBOARD MK240 NANO",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1024x1024.jpg?v=1491404809",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826864/combo-ban-phim-chuot-khong-day-logitech-mk240-8_1_cw1yhf.webp",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826867/18416-sp180291sp180291_tllaiv.jpg"
+    ],
     "price": "574.095,87 VND",
     "description": [
       "Dimensions: 139mm x 288mm x 21mm",
@@ -1859,11 +1775,10 @@
     "category": ["Home", "Accessories"],
     "name": "LOGITECH MX ANYWHERE 2",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/rvs56w6sxdiu2ypwsosf.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_5229b270-7b1c-4b40-8100-204f96c43f88_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2ca9a51c-540d-4bbc-8be1-88dc83ccefa1_1024x1024.jpg?v=1491404814"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/bf09dcjaj62ytxasxv6s.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289940/ElectronicStore/product/idbswgjbjavmtrsvehny.webp"
     ],
     "price": "424.321,47 VND",
     "description": [
@@ -1895,11 +1810,10 @@
     "category": ["Home", "Accessories"],
     "name": "JBL CHARGE 3",
     "brand": "JBL",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_2_1024x1024.jpg?v=1491404907"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/vd13jwpkwuoggwh08a4j.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp"
     ],
     "price": "3.183.000,72 VND",
     "description": [
@@ -1930,10 +1844,12 @@
     "category": ["Home", "Accessories"],
     "name": "APPLE WATCH EDITION SERIES 2",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-watch2-edition-42mm2_1024x1024.jpg?v=1491404922"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/r4nzazfjdpgfgzyj9qse.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/fxak56wozpiw1fqrt4c3.webp"
     ],
     "price": "8.703.425,47 VND",
     "description": [
@@ -1973,10 +1889,10 @@
     "category": ["Home", "Accessories"],
     "name": "USB SANDISK",
     "brand": "USB",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286894/ElectronicStore/product/bakizcxzv5eie0lqcgiy.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z5_1024x1024.jpg?v=1491404811"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/wktxgllk4mbbxhjegb0n.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/dxrsxtby6do2dohmc9l4.webp"
     ],
     "price": "164.869,77 VND",
     "description": [
@@ -2004,8 +1920,10 @@
     "category": ["Home", "Accessories"],
     "name": "SENNHEISER EZX 80",
     "brand": "SENNHEISER",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_1024x1024.jpg?v=1491404910",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826343/images_3_iz9nzb.jpg",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826345/w260h260_bluetooth-sennheiser-ezx-80-1382607319_sh5hfb.jpg"
+    ],
     "price": "1.627.469,80 VND",
     "description": [
       "Long talk time – Up to 10 hours",
@@ -2032,10 +1950,10 @@
     "category": ["Home", "Television"],
     "name": "USB SANDISK",
     "brand": "USB",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286894/ElectronicStore/product/bakizcxzv5eie0lqcgiy.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1b6e3a93-aa84-4a15-8324-deab9b1d4711_1024x1024.jpg?v=1491404811",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z5_1024x1024.jpg?v=1491404811"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/wktxgllk4mbbxhjegb0n.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751286892/ElectronicStore/product/dxrsxtby6do2dohmc9l4.webp"
     ],
     "price": "164.869,77 VND",
     "description": [
@@ -2063,8 +1981,10 @@
     "category": ["Home", "Television"],
     "name": "SENNHEISER EZX 80",
     "brand": "SENNHEISER",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_2_1024x1024.jpg?v=1491404910",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826343/images_3_iz9nzb.jpg",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826345/w260h260_bluetooth-sennheiser-ezx-80-1382607319_sh5hfb.jpg"
+    ],
     "price": "1.627.469,80 VND",
     "description": [
       "Long talk time – Up to 10 hours",
@@ -2091,12 +2011,9 @@
     "category": ["Home", "Television"],
     "name": "SAMSUNG GEAR VR",
     "brand": "SAMSUNG",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826694/images_5_qxrcjz.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_1_1024x1024.jpg?v=1491404913",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_1_1024x1024.jpg?v=1491404913"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826695/images_4_z2czi7.jpg"
     ],
     "price": "2.335.065,37 VND",
     "description": [
@@ -2121,13 +2038,9 @@
     "category": ["Home", "Television"],
     "name": "MOTOROLA MOTO 360 (2ND GEN)",
     "brand": "MOTOROLA",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-189_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-1_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-2_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-3_1024x1024.jpg?v=1491404918",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/motorola-moto-360-2015-4_1024x1024.jpg?v=1491404918"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826755/new-motorola-moto-360-2015_xepbef.jpg"
     ],
     "price": "8.255.045,75 VND",
     "description": [
@@ -2163,8 +2076,10 @@
     "category": ["Home", "Television"],
     "name": "LOGITECH WIRELESS KEYBOARD MK240 NANO",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z6_1024x1024.jpg?v=1491404809",
-    "images": [],
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826864/combo-ban-phim-chuot-khong-day-logitech-mk240-8_1_cw1yhf.webp",
+    "images": [
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826867/18416-sp180291sp180291_tllaiv.jpg"
+    ],
     "price": "574.095,87 VND",
     "description": [
       "Dimensions: 139mm x 288mm x 21mm",
@@ -2188,11 +2103,10 @@
     "category": ["Home", "Television"],
     "name": "LOGITECH MX ANYWHERE 2",
     "brand": "LOGITECH",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/rvs56w6sxdiu2ypwsosf.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_5229b270-7b1c-4b40-8100-204f96c43f88_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z1_377a4aa6-df39-466b-8234-d7c2f6f4ca1a_1024x1024.jpg?v=1491404814",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2ca9a51c-540d-4bbc-8be1-88dc83ccefa1_1024x1024.jpg?v=1491404814"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289941/ElectronicStore/product/bf09dcjaj62ytxasxv6s.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751289940/ElectronicStore/product/idbswgjbjavmtrsvehny.webp"
     ],
     "price": "424.321,47 VND",
     "description": [
@@ -2224,11 +2138,10 @@
     "category": ["Home", "Television"],
     "name": "JBL CHARGE 3",
     "brand": "JBL",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z2_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z3_2_1024x1024.jpg?v=1491404907",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/z4_2_1024x1024.jpg?v=1491404907"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/vd13jwpkwuoggwh08a4j.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291332/ElectronicStore/product/bfoxcohok0seh6wkt9ce.webp"
     ],
     "price": "3.183.000,72 VND",
     "description": [
@@ -2259,10 +2172,12 @@
     "category": ["Home", "Television"],
     "name": "APPLE WATCH EDITION SERIES 2",
     "brand": "APPLE",
-    "thumb": "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
+    "thumb": "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp",
     "images": [
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/Untitled-123_1024x1024.jpg?v=1491404922",
-      "https://cdn.shopify.com/s/files/1/1903/4853/products/apple-watch2-edition-42mm2_1024x1024.jpg?v=1491404922"
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/r4nzazfjdpgfgzyj9qse.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/yer7whf2migb6joxthya.webp",
+      "https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291194/ElectronicStore/product/fxak56wozpiw1fqrt4c3.webp"
     ],
     "price": "8.703.425,47 VND",
     "description": [

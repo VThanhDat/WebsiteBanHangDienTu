@@ -59,7 +59,7 @@ const data = [
       "Sennheiser",
       "Samsung",
     ],
-    image: "https://cdn-amz.woka.io/images/I/51KZcUQIyiS.jpg",
+    image: "https://res.cloudinary.com/dhc3k3olh/image/upload/v1740302152/ElectronicStore/category/jzhvtyaesqzzpwcz4ets.jpg",
   },
   {
     cate: "Camera",

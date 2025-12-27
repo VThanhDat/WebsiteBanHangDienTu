@@ -52,3 +52,6 @@ htmlcov/
 # Production build
 /build
 /dist
+
+# assets
+assets/*.pdf
