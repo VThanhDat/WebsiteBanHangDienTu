@@ -86,7 +86,7 @@ const OrderDetailTable = () => {
       </div>
       <div className="flex flex-1 flex-col justify-between border border-l-0 bg-[#fafafa] p-[32px]">
         <div className="mb-5 max-h-[512px] overflow-y-scroll">
-          {data?.products.length ? (
+          {data?.products?.length > 0 ? (
             data?.products.map((item) => (
               <div
                 className="mb-3 mt-3 flex max-sm:flex-col max-sm:items-center"
@@ -104,7 +104,7 @@ const OrderDetailTable = () => {
                 </div>
                 <span className="flex flex-1 flex-col justify-center pl-5 max-sm:pl-0">
                   <span className="mb-2 text-base font-semibold text-gray-900 max-sm:text-center">
-                    {item.product.title}
+                    {item?.product?.title || "Unknown product"}
                   </span>
                   <span className="text-sm text-gray-700">
                     {item.variant.map((vari, index) => {
@@ -118,7 +118,7 @@ const OrderDetailTable = () => {
                   </span>
                 </span>
                 <span className="flex items-center justify-center pl-5 text-base font-medium text-gray-900 max-sm:pl-0">
-                  {formatMoney(item.product.price)} VND
+                  {formatMoney(item?.product?.price || 0)} VND
                 </span>
               </div>
             ))
@@ -131,16 +131,18 @@ const OrderDetailTable = () => {
           <div className="mb-2 flex">
             <span className="mr-4 text-lg font-medium">Coupon:</span>
             <div className="flex max-w-[450px] gap-3 overflow-x-scroll">
+              {data?.coupon && (
               <div
-                key={data?.coupon._id}
+                key={data.coupon._id}
                 className="rounded-lg border-2 border-main bg-white px-4 py-2 text-base font-medium hover:cursor-pointer hover:bg-gray-50"
               >
-                <span>{data?.coupon.title}</span>
-                <div className="flex items-center justify-end gap-1">
-                  <CiDiscount1 size={20} />
-                  <span>{`${data?.coupon.discount}%`}</span>
+                <span>{data?.coupon?.title || "No coupon"}</span>
+                  <div className="flex items-center justify-end gap-1">
+                    <CiDiscount1 size={20} />
+                    <span>{`${data?.coupon.discount}%`}</span>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
           <div className="max-w-3xl pb-4">
@@ -181,7 +183,7 @@ const OrderDetailTable = () => {
           <div className="mb-2 flex justify-between">
             <span className="text-lg font-medium">Discounts:</span>
             <span className="text-base font-medium">
-              {data?.coupon._id
+              {data?.coupon?._id
                 ? "-" +
                   formatMoney(
                     Math.round((subTotal * data?.coupon.discount) / 100),
@@ -193,7 +195,7 @@ const OrderDetailTable = () => {
           <div className="flex justify-between border-t py-3">
             <span className="text-lg font-semibold">TOTAL:</span>
             <span className="text-lg font-medium">
-              {data?.coupon._id
+              {data?.coupon?._id
                 ? formatMoney(
                     subTotal +
                       Math.round(subTotal * 0.02) -
