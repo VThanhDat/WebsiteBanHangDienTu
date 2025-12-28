@@ -64,20 +64,53 @@ class CreateOrderInput(BaseModel):
 class CreateOrderTool(BaseTool):
     name: Annotated[str, Field(description="Tool name")] = "create_order"
     description: Annotated[str, Field(description="Tool description")] = (
-        "Create a new order for multiple products with optional coupon and delivery details."
+        """Create a new order. 
+        
+        CRITICAL: You MUST provide ALL of these fields:
+        - user_id: User ID (provided by system)
+        - products: List of products [{"slug": "...", "quantity": 1, "variant": [...]}]
+        - total: Total amount in VND
+        - address: Delivery address
+        - phone: Contact phone number
+        - payment_method: Payment method (cod/banking/momo)
+        
+        DO NOT call this tool unless you have collected ALL required information from the customer.
+        If any field is missing, ASK the customer for it first.
+        """
     )
     args_schema: type[BaseModel] = CreateOrderInput
+    handle_validation_error: bool = True  # Quan trọng!
 
     def _run(
         self,
-        user_id: str,
-        products: List[Dict],
-        total: float,
-        address: str,
-        phone: str,
-        payment_method: str,
+        user_id: str = None,
+        products: List[Dict] = None,
+        total: float = None,
+        address: str = None,
+        phone: str = None,
+        payment_method: str = "cod",
         coupon: Optional[str] = None,
     ) -> Dict:
+        # Kiểm tra các field bắt buộc TRƯỚC
+        missing_fields = []
+        if not user_id:
+            missing_fields.append("user_id (cần đăng nhập)")
+        if not products or len(products) == 0:
+            missing_fields.append("products (sản phẩm)")
+        if total is None:
+            missing_fields.append("total (tổng tiền)")
+        if not address:
+            missing_fields.append("address (địa chỉ)")
+        if not phone:
+            missing_fields.append("phone (số điện thoại)")
+        
+        if missing_fields:
+            return {
+                "error": "missing_required_fields",
+                "message": f"Thiếu thông tin bắt buộc: {', '.join(missing_fields)}. Vui lòng hỏi khách hàng để thu thập đầy đủ thông tin trước khi tạo đơn hàng.",
+                "missing_fields": missing_fields
+            }
+        
         # Nếu không có user_id → báo cần đăng nhập
         if not user_id:
             return {
@@ -214,12 +247,12 @@ class CreateOrderTool(BaseTool):
 
     async def _arun(
         self,
-        user_id: str,
-        products: List[Dict],
-        total: float,
-        address: str,
-        phone: str,
-        payment_method: str,
+        user_id: str = None,
+        products: List[Dict] = None,
+        total: float = None,
+        address: str = None,
+        phone: str = None,
+        payment_method: str = "cod",
         coupon: Optional[str] = None,
     ) -> Dict:
         return await asyncio.to_thread(
