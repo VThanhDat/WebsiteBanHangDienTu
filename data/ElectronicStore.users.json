@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "69494ee2b1176866f7ae1805"
+  },
+  "firstName": "Admin",
+  "lastName": "System",
+  "email": "admin@gmail.com",
+  "phone": "0900000000",
+  "password": "$2b$10$RV1BX9Skbe0r/y/ZaQpM1uw9o3ZM9XaScQKVGU7xfyEaC4c3N92vm",
+  "role": "admin",
+  "address": [
+    "Hồ Chí Minh"
+  ],
+  "wishlist": [],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2025-12-22T14:00:02.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-28T14:42:37.243Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTQ5NGVlMmIxMTc2ODY2ZjdhZTE4MDUiLCJpYXQiOjE3NjY5MzI5NTcsImV4cCI6MTc2NzUzNzc1N30.jwlozoV_FJ-YoAyqItP6OtO47rQYPadTdw374m5Wt_E"
+},
+{
+  "_id": {
+    "$oid": "69494ee2b1176866f7ae1806"
+  },
+  "firstName": "User",
+  "lastName": "Normal",
+  "email": "user@gmail.com",
+  "phone": "0911111111",
+  "password": "$2b$10$RV1BX9Skbe0r/y/ZaQpM1uw9o3ZM9XaScQKVGU7xfyEaC4c3N92vm",
+  "role": "user",
+  "address": [
+    "TP.HCM",
+    "Can Tho"
+  ],
+  "wishlist": [
+    {
+      "$oid": "694fa6f94c8b3f5a773ee09b"
+    }
+  ],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2025-12-22T14:00:02.925Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T10:04:49.768Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTQ5NGVlMmIxMTc2ODY2ZjdhZTE4MDYiLCJpYXQiOjE3NjY4Mjk4ODksImV4cCI6MTc2NzQzNDY4OX0.eTIKvnGz4uXyG1a5rtKZSUg9xZwwRaaLDfmTz53_owM"
+},
+{
+  "_id": {
+    "$oid": "69513a7b97d693919949ab94"
+  },
+  "firstName": "Nguyễn",
+  "lastName": "A",
+  "email": "testtest@gmail.com",
+  "phone": "0393456244",
+  "password": "$2b$10$rP3KyKcIZi98mQl9Zolv4esncLNyyTrBNHobs4FGpJd3LOFpl.rIW",
+  "role": "user",
+  "address": [],
+  "wishlist": [],
+  "isBlocked": false,
+  "cart": [],
+  "createdAt": {
+    "$date": "2025-12-28T14:11:07.179Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-28T15:11:13.106Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTUxM2E3Yjk3ZDY5MzkxOTk0OWFiOTQiLCJpYXQiOjE3NjY5MzM3NTUsImV4cCI6MTc2NzUzODU1NX0.WBxYzVytNIAZX67Ii4yDhx1EYvqX1vE_UbD0VSIOAz4"
+}]

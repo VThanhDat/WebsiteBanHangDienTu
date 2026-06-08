@@ -1,0 +1,146 @@
+[{
+  "_id": {
+    "$oid": "694fa8db636d31b3bfe1f3bb"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "694fa6f94c8b3f5a773ee09b"
+      },
+      "quantity": 3,
+      "variant": [],
+      "_id": {
+        "$oid": "694fa87c636d31b3bfe1f37b"
+      }
+    }
+  ],
+  "status": "Cancelled",
+  "total": 7145299,
+  "address": "Can Tho",
+  "phone": "0911111111",
+  "paymentMethod": "momo",
+  "orderBy": {
+    "$oid": "69494ee2b1176866f7ae1806"
+  },
+  "createdAt": {
+    "$date": "2025-12-27T09:37:31.225Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T09:38:54.831Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694faf07636d31b3bfe1fc47"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "694fa6f94c8b3f5a773ee09b"
+      },
+      "quantity": 2,
+      "variant": [],
+      "_id": {
+        "$oid": "694faef0636d31b3bfe1fbbd"
+      }
+    }
+  ],
+  "status": "Delivering",
+  "total": 4296520,
+  "coupon": {
+    "$oid": "694fae76636d31b3bfe1f8af"
+  },
+  "address": "TP.HCM",
+  "phone": "0911111111",
+  "paymentMethod": "cod",
+  "orderBy": {
+    "$oid": "69494ee2b1176866f7ae1806"
+  },
+  "createdAt": {
+    "$date": "2025-12-27T10:03:51.669Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T10:04:27.343Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69514737b844379b21472351"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "694fa6f94c8b3f5a773ee04c"
+      },
+      "quantity": 1,
+      "variant": [
+        {
+          "label": "Color",
+          "variant": "Silver"
+        },
+        {
+          "label": "Traps",
+          "variant": "42MM"
+        }
+      ]
+    }
+  ],
+  "status": "Cancelled",
+  "total": 8255046,
+  "coupon": null,
+  "address": "Cần Thơ",
+  "phone": "012345678",
+  "paymentMethod": "cod",
+  "orderBy": {
+    "$oid": "69513a7b97d693919949ab94"
+  },
+  "created_at": {
+    "$date": "2025-12-28T22:05:27.477Z"
+  },
+  "updated_at": {
+    "$date": "2025-12-28T22:05:27.477Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-28T15:11:19.160Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514c4b34be2e6bb254fe95"
+  },
+  "products": [
+    {
+      "product": {
+        "$oid": "694fa6f94c8b3f5a773ee04c"
+      },
+      "quantity": 1,
+      "variant": [
+        {
+          "label": "Color",
+          "variant": "BLACK METAL"
+        },
+        {
+          "label": "Traps",
+          "variant": "42MM"
+        }
+      ]
+    }
+  ],
+  "status": "Pending",
+  "total": 8255046,
+  "coupon": null,
+  "address": "Ninh Kiều, Cần Thơ",
+  "phone": "012345678",
+  "paymentMethod": "cod",
+  "orderBy": {
+    "$oid": "69513a7b97d693919949ab94"
+  },
+  "created_at": {
+    "$date": "2025-12-28T22:27:07.504Z"
+  },
+  "updated_at": {
+    "$date": "2025-12-28T22:27:07.504Z"
+  }
+}]

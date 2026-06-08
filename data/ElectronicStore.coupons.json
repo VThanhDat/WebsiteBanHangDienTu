@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "694fae55636d31b3bfe1f8aa"
+  },
+  "title": "HAPPY 50",
+  "discount": 20,
+  "expiry": {
+    "$date": "2026-01-31T10:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-12-27T10:00:53.907Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T10:01:04.894Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "694fae76636d31b3bfe1f8af"
+  },
+  "title": "HAPPY 100",
+  "discount": 10,
+  "expiry": {
+    "$date": "2026-02-12T17:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2025-12-27T10:01:26.360Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-27T10:01:26.360Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,561 @@
+[{
+  "_id": {
+    "$oid": "69494b3297b63bc45454d410"
+  },
+  "thread_id": "c2c1bc0b-8a93-46d6-830c-4fc77ee7821f",
+  "question": "Hi",
+  "answer": "Hello! How can I assist you today?",
+  "created_at": {
+    "$date": "2025-12-22T20:44:18.288Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69494b3f97b63bc45454d413"
+  },
+  "thread_id": "c2c1bc0b-8a93-46d6-830c-4fc77ee7821f",
+  "question": "Tôi muốn mua điện thoại",
+  "answer": "Bạn đang tìm mua điện thoại nào? Hãy cho tôi biết tên hoặc loại điện thoại bạn muốn!",
+  "created_at": {
+    "$date": "2025-12-22T20:44:31.010Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "694952ab97b63bc45454d416"
+  },
+  "thread_id": "0345ead0-a5b7-429c-ae76-0aa9662a76d2",
+  "question": "Hi",
+  "answer": "Hello! How can I assist you today?",
+  "created_at": {
+    "$date": "2025-12-22T21:16:11.804Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "694faf7ec83520a3c3d06736"
+  },
+  "thread_id": "f3e747cb-051e-431e-8433-2b8235e84973",
+  "question": "Hi",
+  "answer": "Hello! How can I assist you today?",
+  "created_at": {
+    "$date": "2025-12-27T17:05:50.848Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513a9d3cab46445c124ad1"
+  },
+  "thread_id": "dd48efac-51f5-4706-85b0-c647332d4bcf",
+  "question": "Hi",
+  "answer": "Hello! How can I assist you today?",
+  "created_at": {
+    "$date": "2025-12-28T21:11:41.108Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513ab73cab46445c124ad4"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Hi",
+  "answer": "Hello! How can I assist you today?",
+  "created_at": {
+    "$date": "2025-12-28T21:12:07.548Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513acd3cab46445c124ad8"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Tôi muốn mua macbook ?",
+  "answer": "Tôi đã tìm thấy sản phẩm bạn muốn mua. Đây là thông tin về **APPLE MACBOOK PRO 13**:\n\n- **Giá**: 35,356,192 VND\n- **Bộ xử lý**: 2.0GHz Core i5\n- **Bộ nhớ**: DDR4 8GB 1866MHz\n- **Màn hình**: 13.3\" Retina (2560 x 1600 pixels)\n- **Đồ họa**: Intel Iris Graphics 540\n- **Lưu trữ**: SSD 256GB\n- **Camera**: HD Camera\n- **Kết nối**: 802.11 a/b/g/n/ac\n- **Pin**: lên đến 10 giờ\n- **Kích thước**: 212.4 x 304.1 x 14.9 mm\n- **Trọng lượng**: 1.37 kg\n\nBạn có muốn mua sản phẩm này không? Nếu có, vui lòng cho tôi biết số lượng bạn muốn mua và địa chỉ giao hàng cùng với số điện thoại của bạn nhé!",
+  "created_at": {
+    "$date": "2025-12-28T21:12:29.914Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513ae23cab46445c124adc"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Tôi muốn xem hình ảnh của sản phẩm",
+  "answer": "Dưới đây là hình ảnh của **APPLE MACBOOK PRO 13**:\n\n![APPLE MACBOOK PRO 13](https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826118/r3x2m0zr-143-macbook-pro-13-m1-8gb-256gb-like-new_zcyxei.jpg)\n\nNếu bạn muốn mua sản phẩm này, vui lòng cho tôi biết số lượng bạn muốn và địa chỉ giao hàng cùng với số điện thoại của bạn nhé!",
+  "created_at": {
+    "$date": "2025-12-28T21:12:50.829Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513b043cab46445c124ae0"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Tôi muốn mua thêm apple macbook air",
+  "answer": "Dưới đây là thông tin về **APPLE MACBOOK AIR**:\n\n- **Giá**: 28,067,957 VND\n- **Bộ xử lý**: Core i5 Broadwell\n- **Bộ nhớ**: DDR3L - 8 GB\n- **Màn hình**: 13.3\" (1440 x 900)\n- **Đồ họa**: Intel HD Graphics 6000\n- **Lưu trữ**: SSD 128 GB\n- **Camera**: 1.3 MP\n- **Kết nối**: 802.11 b/g/n\n- **Pin**: Lithium-polymer\n- **Kích thước**: 325 x 227 x 17 mm\n- **Trọng lượng**: 1.35 kg\n\n![APPLE MACBOOK AIR](https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826208/2022_7_21_637939946171340515_Macbook_Air_M1_2_izddaf.webp)\n\nBạn có muốn mua sản phẩm này không? Nếu có, vui lòng cho tôi biết số lượng bạn muốn mua và địa chỉ giao hàng cùng với số điện thoại của bạn nhé!",
+  "created_at": {
+    "$date": "2025-12-28T21:13:24.017Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513b143cab46445c124ae3"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Có thể so sánh 2 sản phẩm không ?",
+  "answer": "Dưới đây là sự so sánh giữa **APPLE MACBOOK PRO 13** và **APPLE MACBOOK AIR**:\n\n| Đặc điểm                | APPLE MACBOOK PRO 13                     | APPLE MACBOOK AIR                       |\n|-------------------------|------------------------------------------|-----------------------------------------|\n| **Giá**                 | 35,356,192 VND                          | 28,067,957 VND                         |\n| **Bộ xử lý**            | 2.0GHz Core i5                          | Core i5 Broadwell                       |\n| **Bộ nhớ**              | DDR4 8GB 1866MHz                        | DDR3L - 8 GB                           |\n| **Màn hình**            | 13.3\" Retina (2560 x 1600 pixels)      | 13.3\" (1440 x 900)                     |\n| **Đồ họa**              | Intel Iris Graphics 540                  | Intel HD Graphics 6000                 |\n| **Lưu trữ**             | SSD 256GB                               | SSD 128 GB                              |\n| **Camera**              | HD Camera                                | 1.3 MP                                  |\n| **Kết nối**             | 802.11 a/b/g/n/ac                       | 802.11 b/g/n                            |\n| **Pin**                 | Lên đến 10 giờ                          | Lithium-polymer                         |\n| **Kích thước**         | 212.4 x 304.1 x 14.9 mm                 | 325 x 227 x 17 mm                       |\n| **Trọng lượng**         | 1.37 kg                                 | 1.35 kg                                 |\n\n**Tóm tắt**:\n- **MacBook Pro 13** có hiệu suất cao hơn với màn hình Retina sắc nét hơn và dung lượng lưu trữ lớn hơn.\n- **MacBook Air** nhẹ hơn và có giá thành thấp hơn, phù hợp cho những ai cần một chiếc laptop di động và tiết kiệm chi phí.\n\nBạn có muốn mua một trong hai sản phẩm này không? Nếu có, vui lòng cho tôi biết số lượng bạn muốn mua và địa chỉ giao hàng cùng với số điện thoại của bạn nhé!",
+  "created_at": {
+    "$date": "2025-12-28T21:13:40.826Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69513b303cab46445c124ae6"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Tôi muốn mua apple macbook air",
+  "answer": "Bạn muốn mua **APPLE MACBOOK AIR**. Vui lòng cho tôi biết số lượng bạn muốn mua, địa chỉ giao hàng và số điện thoại của bạn nhé!",
+  "created_at": {
+    "$date": "2025-12-28T21:14:08.830Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951418281c132057afb404f"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Hi",
+  "answer": "Chào bạn! Bạn cần giúp gì hôm nay?",
+  "created_at": {
+    "$date": "2025-12-28T21:41:06.670Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951419781c132057afb4052"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Tôi muốn mua apple macbook air",
+  "answer": "Bạn muốn mua **APPLE MACBOOK AIR**. Vui lòng cho tôi biết:\n\n1. Số lượng bạn muốn mua?\n2. Địa chỉ giao hàng của bạn là gì?\n3. Số điện thoại liên hệ của bạn là gì?\n\nSau khi có đủ thông tin, tôi sẽ giúp bạn tạo đơn hàng!",
+  "created_at": {
+    "$date": "2025-12-28T21:41:27.096Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695141a881c132057afb4055"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Số lượng là 1, địa chỉ giao là cần thơ và số điện thoại là 012345678",
+  "answer": "Cảm ơn bạn đã cung cấp thông tin! \n\nTôi đã có:\n- **Sản phẩm**: APPLE MACBOOK AIR\n- **Số lượng**: 1\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n\nBây giờ, tôi sẽ tính tổng giá cho đơn hàng này. Giá của **APPLE MACBOOK AIR** là 28,067,957 VND. \n\nTổng giá cho 1 sản phẩm là: **28,067,957 VND**.\n\nBạn có muốn thanh toán bằng phương thức nào? (COD, Banking hay Momo, mặc định là COD)",
+  "created_at": {
+    "$date": "2025-12-28T21:41:44.044Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695141bb81c132057afb405e"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "COD",
+  "answer": "Có vẻ như tôi đã gặp một chút vấn đề với mã sản phẩm. Tuy nhiên, tôi đã tìm thấy thông tin chính xác về **APPLE MACBOOK AIR**. \n\nDưới đây là thông tin chi tiết:\n- **Giá**: 28,067,957 VND\n- **Bộ xử lý**: Core i5 Broadwell\n- **Bộ nhớ**: DDR3L - 8 GB\n- **Màn hình**: 13.3\" (1440 x 900)\n- **Đồ họa**: Intel HD Graphics 6000\n- **Lưu trữ**: SSD 128 GB\n- **Camera**: 1.3 MP\n- **Kết nối**: 802.11 b/g/n\n- **Pin**: Lithium-polymer\n- **Kích thước**: 325 x 227 x 17 mm\n- **Trọng lượng**: 1.35 kg\n\nBây giờ, tôi sẽ tạo đơn hàng cho bạn với thông tin sau:\n- **Sản phẩm**: APPLE MACBOOK AIR\n- **Số lượng**: 1\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nTôi sẽ tiến hành tạo đơn hàng ngay bây giờ!Rất tiếc, nhưng hiện tại **APPLE MACBOOK AIR** không còn hàng hoặc không đủ số lượng để đặt hàng. \n\nBạn có muốn xem sản phẩm khác hoặc có lựa chọn nào khác không? Hãy cho tôi biết!",
+  "created_at": {
+    "$date": "2025-12-28T21:42:03.267Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951426181c132057afb4062"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Thế còn sản phẩm MOTOROLA MOTO 360 (2ND GEN) không ?",
+  "answer": "Dưới đây là thông tin về **MOTOROLA MOTO 360 (2ND GEN)**:\n\n- **Giá**: 8,255,046 VND\n- **Kích thước**: 46 x 46 x 11.4 mm\n- **Trọng lượng**: Nhẹ\n- **Màn hình**: AMOLED 1.56 inches\n- **Độ phân giải**: 360 x 330\n- **Hệ điều hành**: Android Wear OS\n- **Chipset**: Snapdragon 400\n- **CPU**: Quad-core 1.2 GHz Cortex-A7\n- **Bộ nhớ trong**: 4 GB, 512 MB RAM\n- **Camera**: Không có\n\n**Các biến thể màu sắc**:\n- Đen da (BLACK LEATHER)\n- Đen kim loại (BLACK METAL)\n- Vàng hồng (ROSE GOLD)\n- Bạc (SILVER)\n\n**Kích thước**:\n- 42MM\n- 46MM\n\n![MOTOROLA MOTO 360 (2ND GEN)](https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg)\n\nBạn có muốn mua sản phẩm này không? Nếu có, vui lòng cho tôi biết:\n1. Số lượng bạn muốn mua?\n2. Màu sắc và kích thước bạn chọn?\n3. Địa chỉ giao hàng của bạn là gì?\n4. Số điện thoại liên hệ của bạn là gì?",
+  "created_at": {
+    "$date": "2025-12-28T21:44:49.890Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695142ab81c132057afb4065"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "Tôi muốn mua 1 cái màu SILVER và kích thước là 32mm địa chỉ giao hàng là cần thơ và số điện thoại là 012345678",
+  "answer": "Cảm ơn bạn đã cung cấp thông tin! \n\nTôi đã có:\n- **Sản phẩm**: MOTOROLA MOTO 360 (2ND GEN)\n- **Số lượng**: 1\n- **Màu sắc**: SILVER\n- **Kích thước**: 32mm\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n\nGiá của **MOTOROLA MOTO 360 (2ND GEN)** là 8,255,046 VND. \n\nTổng giá cho 1 sản phẩm là: **8,255,046 VND**.\n\nBạn có muốn thanh toán bằng phương thức nào? (COD, Banking hay Momo, mặc định là COD)",
+  "created_at": {
+    "$date": "2025-12-28T21:46:03.080Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695142b681c132057afb406a"
+  },
+  "thread_id": "c9aae297-b2e9-44d5-a69b-9fd0c664ae65",
+  "question": "COD",
+  "answer": "Tuyệt vời! Dưới đây là thông tin đơn hàng của bạn:\n\n- **Sản phẩm**: MOTOROLA MOTO 360 (2ND GEN)\n- **Số lượng**: 1\n- **Màu sắc**: SILVER\n- **Kích thước**: 32mm\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n- **Tổng giá**: 8,255,046 VND\n\nBây giờ, tôi sẽ tiến hành tạo đơn hàng cho bạn! Một chút thời gian nhé.Rất tiếc, nhưng có vẻ như sản phẩm **MOTOROLA MOTO 360 (2ND GEN)** với màu sắc và kích thước bạn chọn không có sẵn trong hệ thống. \n\nBạn có muốn xem sản phẩm khác hoặc có lựa chọn nào khác không? Hãy cho tôi biết!",
+  "created_at": {
+    "$date": "2025-12-28T21:46:14.669Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951432f81c132057afb406d"
+  },
+  "thread_id": "89ca8a2a-96a9-43e1-afb8-6a16c2e11959",
+  "question": "Hi",
+  "answer": "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?",
+  "created_at": {
+    "$date": "2025-12-28T21:48:15.289Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951433c81c132057afb4071"
+  },
+  "thread_id": "89ca8a2a-96a9-43e1-afb8-6a16c2e11959",
+  "question": "Tôi muốn mua motorola moto 360 (2nd gen)",
+  "answer": "MOTOROLA MOTO 360 (2ND GEN) có giá 8,255,046 VND, còn 40 sản phẩm trong kho. \n\nSản phẩm có các tùy chọn màu sắc và kích thước như sau:\n- **Màu sắc**:\n  - Đen da (BLACK LEATHER)\n  - Đen kim loại (BLACK METAL)\n  - Vàng hồng (ROSE GOLD)\n  - Bạc (SILVER)\n\n- **Kích thước**:\n  - 42MM\n  - 46MM\n\nBạn muốn mua bao nhiêu sản phẩm và chọn màu sắc cũng như kích thước nào?",
+  "created_at": {
+    "$date": "2025-12-28T21:48:28.213Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695143a781c132057afb4074"
+  },
+  "thread_id": "89ca8a2a-96a9-43e1-afb8-6a16c2e11959",
+  "question": "Tôi muốn mua 1 cái màu Bạc và có kích thước là 42mm",
+  "answer": "Tuyệt vời! Bạn muốn giao hàng đến địa chỉ nào?",
+  "created_at": {
+    "$date": "2025-12-28T21:50:15.532Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695143ad81c132057afb4077"
+  },
+  "thread_id": "89ca8a2a-96a9-43e1-afb8-6a16c2e11959",
+  "question": "Cần thơ",
+  "answer": "Xin vui lòng cung cấp địa chỉ cụ thể tại Cần Thơ để tôi có thể hoàn tất thông tin giao hàng. Bạn cũng vui lòng cho tôi biết số điện thoại liên hệ của bạn?",
+  "created_at": {
+    "$date": "2025-12-28T21:50:21.437Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695143ce81c132057afb407a"
+  },
+  "thread_id": "89ca8a2a-96a9-43e1-afb8-6a16c2e11959",
+  "question": "Ninh Kiều Cần thơ và số điện thoại là 012345678",
+  "answer": "Cảm ơn bạn! Cuối cùng, bạn muốn thanh toán bằng phương thức nào? (COD, Banking hay Momo, mặc định là COD)",
+  "created_at": {
+    "$date": "2025-12-28T21:50:54.789Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695144de90a479d5c3cb7e45"
+  },
+  "thread_id": "89ca8a2a-96a9-43e1-afb8-6a16c2e11959",
+  "question": "Tôi muốn mua motorola moto 360 (2nd gen)",
+  "answer": "Bạn đã chọn mua 1 chiếc Motorola Moto 360 (2nd gen) màu Bạc, kích thước 42mm. \n\nThông tin giao hàng của bạn là:\n- Địa chỉ: Ninh Kiều, Cần Thơ\n- Số điện thoại: 012345678\n- Phương thức thanh toán: COD (mặc định)\n\nBây giờ tôi sẽ tính tổng giá cho đơn hàng của bạn. \n\nGiá sản phẩm là 8,255,046 VND. Tổng giá cho 1 sản phẩm là 8,255,046 VND.\n\nTôi sẽ tiến hành tạo đơn hàng cho bạn. Một chút nhé!Sản phẩm Motorola Moto 360 (2nd gen) đã được tìm thấy với thông tin như sau:\n\n- **Giá**: 8,255,046 VND\n- **Còn lại trong kho**: 40 sản phẩm\n- **Màu sắc**: Bạc (SILVER)\n- **Kích thước**: 42MM\n\nThông tin giao hàng của bạn là:\n- Địa chỉ: Ninh Kiều, Cần Thơ\n- Số điện thoại: 012345678\n- Phương thức thanh toán: COD\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng cho bạn. Một chút nhé!Có vẻ như có sự cố với việc chọn biến thể cho sản phẩm Motorola Moto 360 (2nd gen). Để tôi kiểm tra lại các tùy chọn biến thể cho sản phẩm này.\n\nSản phẩm có các tùy chọn như sau:\n- **Màu sắc**:\n  - Đen da (BLACK LEATHER)\n  - Đen kim loại (BLACK METAL)\n  - Vàng hồng (ROSE GOLD)\n  - Bạc (SILVER)\n\n- **Kích thước**:\n  - 42MM\n  - 46MM\n\nBạn đã chọn màu Bạc và kích thước 42MM. Tuy nhiên, có thể có sự không tương thích trong cách chọn biến thể. \n\nHãy cho tôi biết nếu bạn muốn chọn một màu sắc hoặc kích thước khác, hoặc tôi có thể thử lại với các tùy chọn khác.",
+  "created_at": {
+    "$date": "2025-12-28T21:55:26.149Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951450290a479d5c3cb7e49"
+  },
+  "thread_id": "aaace213-4b27-472e-81a4-6b9641a223c5",
+  "question": "Tôi muốn mua motorola moto 360 (2nd gen)",
+  "answer": "MOTOROLA MOTO 360 (2ND GEN) có giá 8,255,046 VND, còn 40 sản phẩm trong kho. Sản phẩm có các màu và kích thước như sau:\n\n**Màu sắc:**\n- Đen da (BLACK LEATHER)\n- Đen kim loại (BLACK METAL)\n- Vàng hồng (ROSE GOLD)\n- Bạc (SILVER)\n\n**Kích thước:**\n- 42MM\n- 46MM\n\nBạn muốn mua bao nhiêu sản phẩm và chọn màu sắc cũng như kích thước nào?",
+  "created_at": {
+    "$date": "2025-12-28T21:56:02.379Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951451690a479d5c3cb7e4c"
+  },
+  "thread_id": "aaace213-4b27-472e-81a4-6b9641a223c5",
+  "question": "Số lượng 1 màu SILVER kích thước 42MM",
+  "answer": "Địa chỉ giao hàng của bạn là gì?",
+  "created_at": {
+    "$date": "2025-12-28T21:56:22.707Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951452390a479d5c3cb7e4f"
+  },
+  "thread_id": "aaace213-4b27-472e-81a4-6b9641a223c5",
+  "question": "Ninh kiều Cần thơ số điện thoại 012345678",
+  "answer": "Phương thức thanh toán của bạn là gì? (COD, Banking hay Momo, mặc định là COD)",
+  "created_at": {
+    "$date": "2025-12-28T21:56:35.703Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951453190a479d5c3cb7e58"
+  },
+  "thread_id": "aaace213-4b27-472e-81a4-6b9641a223c5",
+  "question": "COD",
+  "answer": "Có vẻ như có sự cố với lựa chọn biến thể cho sản phẩm MOTOROLA MOTO 360 (2ND GEN). Hãy để tôi xác nhận lại các biến thể có sẵn cho sản phẩm này.\n\nSản phẩm có các biến thể như sau:\n\n**Màu sắc:**\n- Đen da (BLACK LEATHER)\n- Đen kim loại (BLACK METAL)\n- Vàng hồng (ROSE GOLD)\n- Bạc (SILVER)\n\n**Kích thước:**\n- 42MM\n- 46MM\n\nBạn đã chọn màu Bạc (SILVER) và kích thước 42MM. Tuy nhiên, có thể có sự không tương thích trong cách chọn biến thể. Hãy cho tôi biết nếu bạn muốn thử một màu sắc hoặc kích thước khác, hoặc nếu bạn muốn giữ nguyên lựa chọn hiện tại.",
+  "created_at": {
+    "$date": "2025-12-28T21:56:49.252Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695146dab844379b2147233c"
+  },
+  "thread_id": "3c0b56b7-db0e-4066-ad59-51ff24bbb6f0",
+  "question": "Hi",
+  "answer": "Hello! How can I assist you today?",
+  "created_at": {
+    "$date": "2025-12-28T22:03:54.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695146f5b844379b21472340"
+  },
+  "thread_id": "3c0b56b7-db0e-4066-ad59-51ff24bbb6f0",
+  "question": "Tôi muốn mua motorola moto 360 (2nd gen)",
+  "answer": "MOTOROLA MOTO 360 (2ND GEN) có giá 8,255,046 VND, còn 40 sản phẩm trong kho. \n\nSản phẩm có các màu và kích thước sau:\n- **Màu sắc**:\n  - Đen da (BLACK LEATHER)\n  - Đen kim loại (BLACK METAL)\n  - Vàng hồng (ROSE GOLD)\n  - Bạc (SILVER)\n\n- **Kích thước**:\n  - 42MM\n  - 46MM\n\nBạn muốn mua bao nhiêu sản phẩm và chọn màu sắc cũng như kích thước nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:04:21.906Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514710b844379b21472343"
+  },
+  "thread_id": "3c0b56b7-db0e-4066-ad59-51ff24bbb6f0",
+  "question": "Số lượng 1 màu Bạc kích thước 42mm",
+  "answer": "Tuyệt vời! Bạn muốn giao hàng đến địa chỉ nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:04:48.482Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514720b844379b21472346"
+  },
+  "thread_id": "3c0b56b7-db0e-4066-ad59-51ff24bbb6f0",
+  "question": "Cần Thơ số điện thoại là 012345678",
+  "answer": "Cảm ơn bạn! Địa chỉ giao hàng là Cần Thơ và số điện thoại là 012345678.\n\nBạn muốn thanh toán bằng phương thức nào? (COD, Banking hay Momo, mặc định là COD)",
+  "created_at": {
+    "$date": "2025-12-28T22:05:04.353Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6951473cb844379b21472353"
+  },
+  "thread_id": "3c0b56b7-db0e-4066-ad59-51ff24bbb6f0",
+  "question": "cod",
+  "answer": "Tôi đã có đầy đủ thông tin để tạo đơn hàng:\n\n- **Sản phẩm**: Motorola Moto 360 (2nd Gen)\n- **Số lượng**: 1\n- **Màu sắc**: Bạc\n- **Kích thước**: 42mm\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n- **Giá**: 8,255,046 VND\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng. Một chút nhé!Tôi đã tìm thấy sản phẩm Motorola Moto 360 (2nd Gen) với thông tin như sau:\n\n- **Giá**: 8,255,046 VND\n- **Còn lại**: 40 sản phẩm\n- **Màu sắc**: Bạc\n- **Kích thước**: 42MM\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng với thông tin sau:\n\n- **Sản phẩm**: Motorola Moto 360 (2nd Gen)\n- **Số lượng**: 1\n- **Màu sắc**: Bạc\n- **Kích thước**: 42MM\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nMột chút nhé!Đơn hàng của bạn đã được tạo thành công! \n\n- **Mã đơn hàng**: 69514737b844379b21472351\n- **Sản phẩm**: Motorola Moto 360 (2nd Gen)\n- **Số lượng**: 1\n- **Màu sắc**: Bạc\n- **Kích thước**: 42MM\n- **Địa chỉ giao hàng**: Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nCảm ơn bạn đã mua sắm! Nếu bạn cần thêm bất kỳ điều gì, hãy cho tôi biết nhé!",
+  "created_at": {
+    "$date": "2025-12-28T22:05:32.044Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a0a2e961e8394a40ce7"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Hi",
+  "answer": "Chào bạn! Bạn cần giúp gì hôm nay?",
+  "created_at": {
+    "$date": "2025-12-28T22:17:30.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a1b2e961e8394a40ceb"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Tôi muốn mua đồng hồ thông minh",
+  "answer": "Xin lỗi, hiện tại không có sản phẩm đồng hồ thông minh nào trong kho. Bạn có muốn tìm kiếm một sản phẩm khác không?",
+  "created_at": {
+    "$date": "2025-12-28T22:17:47.976Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a2f2e961e8394a40cef"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Thế apple watch thì sao ?",
+  "answer": "Chúng tôi có sản phẩm \"Apple Watch Edition Series 2\" với thông tin như sau:\n\n- **Giá**: 8,703,425 VND\n- **Số lượng còn**: 20 sản phẩm\n- **Kích thước**: 42.6 x 36.5 x 11.4 mm\n- **Trọng lượng**: 45.6 g\n- **Màn hình**: AMOLED 1.6 inches, độ phân giải 390 x 312\n- **Hệ điều hành**: watchOS 3.0\n- **Chipset**: Apple S2\n- **CPU**: Dual-core\n\n**Các biến thể có sẵn**:\n- **Loại**: \n  - EDITION\n  - SPORT\n- **Màu sắc**: \n  - WHITE\n  - SPORT BAND\n- **Dây đeo**: \n  - 42MM\n  - 38MM\n\n![Apple Watch](https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp)\n\nBạn muốn mua bao nhiêu sản phẩm và chọn loại, màu sắc, hoặc kích thước nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:18:07.214Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a4d2e961e8394a40cf3"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "motorola moto 360 (2nd gen) thế còn loại này",
+  "answer": "Chúng tôi có sản phẩm \"MOTOROLA MOTO 360 (2ND GEN)\" với thông tin như sau:\n\n- **Giá**: 8,255,046 VND\n- **Số lượng còn**: 41 sản phẩm\n- **Kích thước**: 46 x 46 x 11.4 mm\n- **Trọng lượng**: Chưa có thông tin\n- **Màn hình**: AMOLED 1.56 inches, độ phân giải 360 x 330\n- **Hệ điều hành**: Android Wear OS\n- **Chipset**: Snapdragon 400\n- **CPU**: Quad-core 1.2 GHz Cortex-A7\n- **Bộ nhớ trong**: 4 GB, 512 MB RAM\n- **Camera**: Không có\n\n**Các biến thể có sẵn**:\n- **Màu sắc**: \n  - BLACK LEATHER\n  - BLACK METAL\n  - ROSE GOLD\n  - SILVER\n- **Kích thước**: \n  - 42MM\n  - 46MM\n\n![MOTOROLA MOTO 360 (2ND GEN)](https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg)\n\nBạn muốn mua bao nhiêu sản phẩm và chọn màu sắc, kích thước nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:18:37.671Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a612e961e8394a40cf6"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Tôi muốn so sánh giữa 2 sản phẩm",
+  "answer": "Dưới đây là so sánh giữa hai sản phẩm \"Apple Watch Edition Series 2\" và \"MOTOROLA MOTO 360 (2ND GEN)\":\n\n### Apple Watch Edition Series 2\n- **Giá**: 8,703,425 VND\n- **Kích thước**: 42.6 x 36.5 x 11.4 mm\n- **Trọng lượng**: 45.6 g\n- **Màn hình**: AMOLED 1.6 inches, độ phân giải 390 x 312\n- **Hệ điều hành**: watchOS 3.0\n- **Chipset**: Apple S2\n- **CPU**: Dual-core\n- **Biến thể**: EDITION, SPORT\n- **Màu sắc**: WHITE, SPORT BAND\n- **Dây đeo**: 42MM, 38MM\n\n### MOTOROLA MOTO 360 (2ND GEN)\n- **Giá**: 8,255,046 VND\n- **Kích thước**: 46 x 46 x 11.4 mm\n- **Trọng lượng**: Chưa có thông tin\n- **Màn hình**: AMOLED 1.56 inches, độ phân giải 360 x 330\n- **Hệ điều hành**: Android Wear OS\n- **Chipset**: Snapdragon 400\n- **CPU**: Quad-core 1.2 GHz Cortex-A7\n- **Biến thể**: Không có thông tin cụ thể\n- **Màu sắc**: BLACK LEATHER, BLACK METAL, ROSE GOLD, SILVER\n- **Kích thước**: 42MM, 46MM\n\n### Tóm tắt\n- **Giá**: MOTO 360 rẻ hơn một chút so với Apple Watch.\n- **Kích thước và trọng lượng**: Apple Watch nhẹ hơn và nhỏ gọn hơn.\n- **Màn hình**: Apple Watch có độ phân giải cao hơn.\n- **Hệ điều hành**: Apple Watch sử dụng watchOS, trong khi MOTO 360 sử dụng Android Wear OS.\n- **Chipset và CPU**: MOTO 360 có CPU mạnh hơn với Snapdragon 400.\n\nBạn có muốn mua một trong hai sản phẩm này không? Nếu có, vui lòng cho tôi biết số lượng và các tùy chọn bạn muốn!",
+  "created_at": {
+    "$date": "2025-12-28T22:18:57.675Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a7a2e961e8394a40cf9"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Có thể so sánh bằng cách tạo bảng để tôi dễ so sánh không ?",
+  "answer": "Dưới đây là bảng so sánh giữa \"Apple Watch Edition Series 2\" và \"MOTOROLA MOTO 360 (2ND GEN)\":\n\n| Thông số                     | Apple Watch Edition Series 2 | MOTOROLA MOTO 360 (2ND GEN) |\n|------------------------------|-------------------------------|-------------------------------|\n| **Giá**                      | 8,703,425 VND                 | 8,255,046 VND                 |\n| **Kích thước**              | 42.6 x 36.5 x 11.4 mm        | 46 x 46 x 11.4 mm             |\n| **Trọng lượng**             | 45.6 g                        | Chưa có thông tin             |\n| **Màn hình**                | AMOLED 1.6 inches, 390 x 312  | AMOLED 1.56 inches, 360 x 330  |\n| **Hệ điều hành**            | watchOS 3.0                  | Android Wear OS               |\n| **Chipset**                 | Apple S2                      | Snapdragon 400                |\n| **CPU**                     | Dual-core                     | Quad-core 1.2 GHz Cortex-A7   |\n| **Biến thể**                | EDITION, SPORT                | Không có thông tin cụ thể     |\n| **Màu sắc**                 | WHITE, SPORT BAND             | BLACK LEATHER, BLACK METAL, ROSE GOLD, SILVER |\n| **Kích thước dây đeo**     | 42MM, 38MM                   | 42MM, 46MM                   |\n\nHy vọng bảng so sánh này giúp bạn dễ dàng hơn trong việc đưa ra quyết định! Bạn có muốn mua một trong hai sản phẩm này không? Nếu có, vui lòng cho tôi biết số lượng và các tùy chọn bạn muốn!",
+  "created_at": {
+    "$date": "2025-12-28T22:19:22.061Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514a982e961e8394a40cfc"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Vậy tôi muốn mua MOTOROLA MOTO 360 (2ND GEN)",
+  "answer": "Tuyệt vời! Bạn muốn mua bao nhiêu chiếc MOTOROLA MOTO 360 (2ND GEN) và bạn chọn màu sắc nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:19:52.293Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514ab82e961e8394a40cff"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Tôi muốn mua 1 chiếc màu BLACK kích thước 42mm",
+  "answer": "Tuyệt vời! Bạn đã chọn mua 1 chiếc MOTOROLA MOTO 360 (2ND GEN) màu BLACK kích thước 42mm.\n\nBây giờ, tôi cần thêm một số thông tin để hoàn tất đơn hàng:\n\n1. **Địa chỉ giao hàng của bạn là gì?**\n2. **Số điện thoại liên hệ của bạn là gì?**\n3. **Phương thức thanh toán? (COD/Banking/Momo, mặc định là COD)**\n\nXin vui lòng cung cấp các thông tin này!",
+  "created_at": {
+    "$date": "2025-12-28T22:20:24.649Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514ad92e961e8394a40d04"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Địa chỉ Ninh Kiều Cần Thơ, số điện thoại là 012345678 phương thức thanh toán là cod",
+  "answer": "Cảm ơn bạn đã cung cấp thông tin! Dưới đây là thông tin đơn hàng của bạn:\n\n- **Sản phẩm**: 1 chiếc MOTOROLA MOTO 360 (2ND GEN)\n- **Màu sắc**: BLACK\n- **Kích thước**: 42MM\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nBây giờ tôi sẽ tính tổng giá và tạo đơn hàng cho bạn. Tổng giá của đơn hàng là 8,255,046 VND.\n\nTôi sẽ tiến hành tạo đơn hàng ngay bây giờ!Xin lỗi, có vẻ như sản phẩm \"MOTOROLA MOTO 360 (2ND GEN)\" không được tìm thấy trong hệ thống. \n\nBạn có muốn tôi tìm kiếm lại sản phẩm này hoặc một sản phẩm khác không?",
+  "created_at": {
+    "$date": "2025-12-28T22:20:57.139Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514af22e961e8394a40d09"
+  },
+  "thread_id": "3b46208c-9355-475d-941b-6290b7150678",
+  "question": "Vậy tôi muốn đổi sang màu SILVER",
+  "answer": "Bạn đã chọn mua 1 chiếc MOTOROLA MOTO 360 (2ND GEN) màu SILVER kích thước 42mm.\n\nDưới đây là thông tin đơn hàng của bạn:\n\n- **Sản phẩm**: 1 chiếc MOTOROLA MOTO 360 (2ND GEN)\n- **Màu sắc**: SILVER\n- **Kích thước**: 42MM\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nTổng giá của đơn hàng vẫn là 8,255,046 VND.\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng cho bạn!Xin lỗi, có vẻ như sản phẩm \"MOTOROLA MOTO 360 (2ND GEN)\" màu SILVER không được tìm thấy trong hệ thống. \n\nBạn có muốn tôi tìm kiếm một sản phẩm đồng hồ thông minh khác không? Hoặc bạn có thể chọn một màu sắc hoặc sản phẩm khác mà bạn muốn?",
+  "created_at": {
+    "$date": "2025-12-28T22:21:22.987Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514b8134be2e6bb254fe70"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "Hi",
+  "answer": "Chào bạn! Bạn cần tìm sản phẩm gì hôm nay?",
+  "created_at": {
+    "$date": "2025-12-28T22:23:45.556Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514b9034be2e6bb254fe74"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "Tôi muốn mua apple watch",
+  "answer": "Tôi tìm thấy sản phẩm \"APPLE WATCH EDITION SERIES 2\" với thông tin như sau:\n\n- **Giá**: 8,703,425 VND\n- **Số lượng còn lại**: 20 sản phẩm\n- **Kích thước**: 42.6 x 36.5 x 11.4 mm\n- **Trọng lượng**: 45.6 g\n- **Màn hình**: AMOLED 1.6 inches, độ phân giải 390 x 312\n- **Hệ điều hành**: watchOS 3.0\n- **Chipset**: Apple S2\n- **CPU**: Dual-core\n\n**Các biến thể có sẵn**:\n1. **Loại**: \n   - EDITION\n   - SPORT\n2. **Màu sắc**: \n   - WHITE\n   - SPORT BAND\n3. **Dây đeo**: \n   - 42MM\n   - 38MM\n\n![Apple Watch](https://res.cloudinary.com/dhc3k3olh/image/upload/v1751291216/ElectronicStore/product/ju8bmmneoxsj4tncxgvn.webp)\n\nBạn muốn mua bao nhiêu sản phẩm và chọn biến thể nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:24:00.153Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514ba334be2e6bb254fe78"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "Thế còn motorola moto 360 (2nd gen) thì sao ?",
+  "answer": "Tôi tìm thấy sản phẩm \"MOTOROLA MOTO 360 (2ND GEN)\" với thông tin như sau:\n\n- **Giá**: 8,255,046 VND\n- **Số lượng còn lại**: 41 sản phẩm\n- **Kích thước**: 46 x 46 x 11.4 mm\n- **Trọng lượng**: Chưa có thông tin\n- **Màn hình**: AMOLED 1.56 inches, độ phân giải 360 x 330\n- **Hệ điều hành**: Android Wear OS\n- **Chipset**: Snapdragon 400\n- **CPU**: Quad-core 1.2 GHz Cortex-A7\n- **Bộ nhớ trong**: 4 GB, 512 MB RAM\n- **Camera**: Không có\n\n**Các biến thể có sẵn**:\n1. **Màu sắc**: \n   - BLACK LEATHER\n   - BLACK METAL\n   - ROSE GOLD\n   - SILVER\n2. **Kích thước**: \n   - 42MM\n   - 46MM\n\n![Motorola Moto 360](https://res.cloudinary.com/dhc3k3olh/image/upload/v1766826753/dong-ho-thong-minh-moto-360-2nd-gen-chinh-hang-new-2018-1810231152241686_ld2arb.jpg)\n\nBạn muốn mua bao nhiêu sản phẩm và chọn biến thể nào?",
+  "created_at": {
+    "$date": "2025-12-28T22:24:19.199Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514bb834be2e6bb254fe7b"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "Có thể lập bảng so sánh giữa 2 sản phẩm không ?",
+  "answer": "Dưới đây là bảng so sánh giữa **Apple Watch Edition Series 2** và **Motorola Moto 360 (2nd Gen)**:\n\n| Thông số                     | Apple Watch Edition Series 2         | Motorola Moto 360 (2nd Gen)       |\n|------------------------------|--------------------------------------|------------------------------------|\n| **Giá**                      | 8,703,425 VND                       | 8,255,046 VND                      |\n| **Số lượng còn lại**        | 20 sản phẩm                         | 41 sản phẩm                        |\n| **Kích thước**              | 42.6 x 36.5 x 11.4 mm              | 46 x 46 x 11.4 mm                 |\n| **Trọng lượng**             | 45.6 g                              | Chưa có thông tin                 |\n| **Màn hình**                | AMOLED 1.6 inches, 390 x 312        | AMOLED 1.56 inches, 360 x 330     |\n| **Hệ điều hành**            | watchOS 3.0                        | Android Wear OS                    |\n| **Chipset**                  | Apple S2                            | Snapdragon 400                     |\n| **CPU**                      | Dual-core                           | Quad-core 1.2 GHz Cortex-A7       |\n| **Bộ nhớ trong**            | Không có thông tin                 | 4 GB, 512 MB RAM                   |\n| **Camera**                   | Không có                            | Không có                           |\n| **Biến thể màu sắc**        | WHITE, SPORT BAND                   | BLACK LEATHER, BLACK METAL, ROSE GOLD, SILVER |\n| **Kích thước dây đeo**      | 42MM, 38MM                         | 42MM, 46MM                        |\n\nNếu bạn cần thêm thông tin hoặc muốn mua một trong hai sản phẩm, hãy cho tôi biết!",
+  "created_at": {
+    "$date": "2025-12-28T22:24:40.259Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514bc634be2e6bb254fe7e"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "Nếu tôi có 8 triệu rưỡi thì nên mua loại nào ?",
+  "answer": "Nếu bạn có ngân sách khoảng 8 triệu rưỡi (8,500,000 VND), thì bạn chỉ có thể mua **Motorola Moto 360 (2nd Gen)** với giá 8,255,046 VND. \n\nTrong khi đó, **Apple Watch Edition Series 2** có giá 8,703,425 VND, vượt quá ngân sách của bạn.\n\nNếu bạn quyết định mua **Motorola Moto 360 (2nd Gen)**, hãy cho tôi biết số lượng và biến thể bạn muốn chọn!",
+  "created_at": {
+    "$date": "2025-12-28T22:24:54.069Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514be834be2e6bb254fe81"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "tôi muốn mua 1 chiếc màu silver kích thước 42mm",
+  "answer": "Tuyệt vời! Bạn đã chọn mua 1 chiếc **Motorola Moto 360 (2nd Gen)** màu **Silver** kích thước **42mm**.\n\nBây giờ, tôi cần thêm một số thông tin để hoàn tất đơn hàng:\n\n1. **Địa chỉ giao hàng của bạn là gì?**\n2. **Số điện thoại liên hệ của bạn là gì?**\n3. **Phương thức thanh toán? (COD/Banking/Momo, mặc định là COD)**\n\nXin vui lòng cung cấp thông tin trên!",
+  "created_at": {
+    "$date": "2025-12-28T22:25:28.123Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514c0e34be2e6bb254fe8a"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "Địa chỉ là ninh kiều cần thơ, số điện thoại 012345678 phương thức thanh toán là cod",
+  "answer": "Cảm ơn bạn đã cung cấp thông tin! Dưới đây là tóm tắt đơn hàng của bạn:\n\n- **Sản phẩm**: 1 chiếc Motorola Moto 360 (2nd Gen)\n- **Màu sắc**: Silver\n- **Kích thước**: 42mm\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nBây giờ tôi sẽ tính tổng giá và tạo đơn hàng cho bạn. Tổng giá là 8,255,046 VND.\n\nTôi sẽ tiến hành tạo đơn hàng ngay bây giờ!Có vẻ như có sự cố với việc tạo đơn hàng vì sản phẩm không được tìm thấy. Để tôi kiểm tra lại thông tin sản phẩm và tiến hành đặt hàng cho bạn. Một chút thời gian nhé!Tôi đã tìm thấy thông tin chính xác về sản phẩm **Motorola Moto 360 (2nd Gen)**. Dưới đây là thông tin chi tiết:\n\n- **Giá**: 8,255,046 VND\n- **Số lượng còn lại**: 41 sản phẩm\n- **Màu sắc**: Silver\n- **Kích thước**: 42MM\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng cho bạn với thông tin đã cung cấp:\n\n- **Sản phẩm**: 1 chiếc Motorola Moto 360 (2nd Gen)\n- **Màu sắc**: Silver\n- **Kích thước**: 42MM\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nTôi sẽ tạo đơn hàng ngay bây giờ!Có vẻ như có vấn đề với việc chọn biến thể cho sản phẩm **Motorola Moto 360 (2nd Gen)**. Để tôi kiểm tra lại các biến thể có sẵn và tiến hành đặt hàng cho bạn. Một chút thời gian nhé!\nSản phẩm **Motorola Moto 360 (2nd Gen)** có các biến thể như sau:\n\n- **Màu sắc**:\n  - BLACK LEATHER\n  - BLACK METAL\n  - ROSE GOLD\n  - SILVER\n\n- **Kích thước**:\n  - 42MM\n  - 46MM\n\nBạn đã chọn màu **Silver** và kích thước **42MM**, nhưng có thể có sự cố với cách chọn biến thể. \n\nTôi sẽ thử lại với thông tin này. Một chút thời gian nhé!",
+  "created_at": {
+    "$date": "2025-12-28T22:26:06.707Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69514c4f34be2e6bb254fe97"
+  },
+  "thread_id": "48ea744e-66b0-411b-87b8-87c086f98f77",
+  "question": "thế 42mm BLACK METAL",
+  "answer": "Bạn đã chọn mua 1 chiếc **Motorola Moto 360 (2nd Gen)** màu **Black Metal** kích thước **42mm**.\n\nDưới đây là tóm tắt đơn hàng của bạn:\n\n- **Sản phẩm**: 1 chiếc Motorola Moto 360 (2nd Gen)\n- **Màu sắc**: Black Metal\n- **Kích thước**: 42mm\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nTổng giá là 8,255,046 VND.\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng cho bạn! Một chút thời gian nhé!Có vẻ như có sự cố với việc tạo đơn hàng cho sản phẩm **Motorola Moto 360 (2nd Gen)**. Tôi không thể tìm thấy sản phẩm với thông tin đã cung cấp.\n\nĐể tiếp tục, tôi sẽ kiểm tra lại thông tin sản phẩm và tiến hành đặt hàng cho bạn. Một chút thời gian nhé! \n\nTôi sẽ tìm kiếm lại sản phẩm **Motorola Moto 360 (2nd Gen)** với màu sắc **Black Metal** và kích thước **42mm**. Một chút thời gian nhé!Tôi đã tìm thấy thông tin chính xác về sản phẩm **Motorola Moto 360 (2nd Gen)**. Dưới đây là thông tin chi tiết:\n\n- **Giá**: 8,255,046 VND\n- **Số lượng còn lại**: 41 sản phẩm\n- **Màu sắc**: Black Metal\n- **Kích thước**: 42MM\n\nBây giờ tôi sẽ tiến hành tạo đơn hàng cho bạn với thông tin đã cung cấp:\n\n- **Sản phẩm**: 1 chiếc Motorola Moto 360 (2nd Gen)\n- **Màu sắc**: Black Metal\n- **Kích thước**: 42MM\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n\nTôi sẽ tạo đơn hàng ngay bây giờ! Một chút thời gian nhé!Đơn hàng của bạn đã được tạo thành công! Dưới đây là thông tin đơn hàng:\n\n- **Sản phẩm**: 1 chiếc Motorola Moto 360 (2nd Gen)\n- **Màu sắc**: Black Metal\n- **Kích thước**: 42MM\n- **Giá**: 8,255,046 VND\n- **Địa chỉ giao hàng**: Ninh Kiều, Cần Thơ\n- **Số điện thoại**: 012345678\n- **Phương thức thanh toán**: COD\n- **Mã đơn hàng**: 69514c4b34be2e6bb254fe95\n\nCảm ơn bạn đã mua sắm! Nếu bạn cần thêm bất kỳ sự trợ giúp nào, hãy cho tôi biết!",
+  "created_at": {
+    "$date": "2025-12-28T22:27:11.330Z"
+  }
+}]
